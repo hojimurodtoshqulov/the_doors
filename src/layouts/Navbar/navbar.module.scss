@@ -1,0 +1,30 @@
+.navbar {
+     position: fixed;
+     top: 0;
+     background-color: red;
+     display: flex;
+     display: flex;
+     align-items: center;
+     justify-content: space-between;
+     width: 100%;
+     & > a {
+          width: 50%;
+          max-width: 150px;
+          background-color: green;
+          img {
+               width: 100%;
+          }
+     }
+}
+
+.menu {
+     background-color: green;
+     display: flex;
+     align-items: center;
+     justify-content: space-evenly;
+     width: 50%;
+     a {
+          color: white;
+          padding: 40px 0;
+     }
+}
