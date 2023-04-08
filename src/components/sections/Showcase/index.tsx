@@ -8,10 +8,11 @@ import hero4 from "../../../../public/media/hero4.png";
 function Showcase() {
   return (
     <div className={styles.showcase}>
-      <img src={hero1.src} alt="" className={`${styles.image} from-top`} />
-      <img src={hero2.src} alt="" className={`${styles.image} from-left`} />
-      <img src={hero3.src} alt="" className={`${styles.image} from-right`} />
-      <img src={hero4.src} alt="" className={`${styles.image} from-bottom`} />
+      <img src={hero1.src} alt="" className={`${styles.image}`} />
+      <img src={hero2.src} alt="" className={`${styles.image}`} />
+      <img src={hero3.src} alt="" className={`${styles.image}`} />
+      <img src={hero4.src} alt="" className={`${styles.image}`} />
+      <img src={hero4.src} alt="" className={`${styles.image}`} />
       <div className={styles.content}>
         <div>
           <h1>Lorem ipsum Lorem ipsom lorem</h1>
