@@ -1,0 +1,54 @@
+.product {
+     font-family: "Montserrat";
+     font-style: normal;
+     padding: 6px 6px 20px;
+     h2 {
+          font-weight: 400;
+          font-size: 16px;
+          line-height: 150%;
+          padding: 11px 0 5px;
+     }
+     h1 {
+          font-weight: 500;
+          font-size: 16px;
+          line-height: 150%;
+          span {
+               font-size: 18px;
+               font-weight: 700;
+          }
+     }
+     a {
+          width: 100%;
+     }
+     button {
+          width: 100%;
+          padding: 10px;
+     }
+}
+.rating {
+     display: flex;
+     gap: 8px;
+     padding: 7px 0 20px;
+     svg {
+          color: #ffc71e;
+          font-size: 20px;
+     }
+     & > span {
+          font-weight: 400;
+          font-size: 14px;
+          color: rgba(0, 0, 0, 0.65);
+          line-height: 158%;
+     }
+     p {
+          font-size: 16px;
+          span {
+               color: red;
+          }
+     }
+}
+
+.images {
+     img {
+          width: 100%;
+     }
+}

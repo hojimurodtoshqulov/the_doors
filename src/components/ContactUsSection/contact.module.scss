@@ -1,0 +1,89 @@
+.contactus {
+     background-attachment: fixed;
+     padding: 117px 7%;
+     display: grid;
+     grid-template-columns: 1fr 1fr;
+     gap: 5%;
+     row-gap: 20px;
+     font-family: "Montserrat";
+     & > div,
+     form {
+          border-radius: 10px;
+          width: 100%;
+          overflow: hidden;
+          iframe {
+               width: 100%;
+          }
+     }
+
+     form {
+          padding: 25px 30px;
+          backdrop-filter: blur(15px);
+          background: rgba(90, 90, 90, 0.5);
+          font-size: 15px;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          gap: 16px;
+          h1 {
+               font-size: 30px;
+               line-height: 37px;
+               color: #ffffff;
+          }
+          div {
+               display: flex;
+               gap: 16px;
+               // padding-bottom: 16px;
+          }
+          input,
+          textarea {
+               height: 50px;
+               border: none;
+               width: 100%;
+               padding: 11px 16px;
+               border-radius: 10px;
+               outline: none;
+          }
+          textarea {
+               height: 40%;
+               max-height: 200px;
+               resize: vertical;
+          }
+          button {
+               padding: 13px;
+          }
+          @media (max-width: 400px) {
+               gap: 10px;
+               div {
+                    gap: 10px;
+                    flex-wrap: wrap;
+               }
+               input {
+                    height: 40px;
+               }
+          }
+     }
+     @media (max-width: 820px) {
+          grid-template-columns: 1fr;
+     }
+}
+.line {
+     background-color: white;
+     height: 2px;
+}
+.map {
+     background: var(--blue-common);
+     color: white;
+     a {
+          color: white;
+     }
+     div {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          padding: 12px 30px;
+          flex-wrap: wrap;
+          gap: 5px;
+          font-size: 14px;
+     }
+}

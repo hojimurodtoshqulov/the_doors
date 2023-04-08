@@ -1,24 +1,31 @@
 .navbar {
      position: fixed;
      top: 0;
-     background-color: red;
+     left: 0;
      display: flex;
      display: flex;
      align-items: center;
      justify-content: space-between;
      width: 100%;
+     z-index: 100;
+     font-size: 18px;
+     backdrop-filter: blur(10px);
+     background-color: rgba(0, 0, 0, 0.18);
      & > a {
           width: 50%;
           max-width: 150px;
-          background-color: green;
           img {
                width: 100%;
           }
      }
+     div:last-child {
+          font-size: 22px;
+          display: flex;
+          gap: 10px;
+     }
 }
 
 .menu {
-     background-color: green;
      display: flex;
      align-items: center;
      justify-content: space-evenly;
@@ -26,5 +33,21 @@
      a {
           color: white;
           padding: 40px 0;
+          position: relative;
+          transition: 500ms;
+     }
+     a::before {
+          content: "";
+          position: absolute;
+          bottom: 0;
+          height: 2px;
+          background-color: rgb(255, 255, 255);
+          width: 0%;
+          transition: 500ms;
+     }
+     a:hover {
+          &::before {
+               width: 100%;
+          }
      }
 }

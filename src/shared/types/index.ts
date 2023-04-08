@@ -5,3 +5,12 @@ export type MainPropType = {
   style?: React.CSSProperties;
   children?: React.ReactNode;
 };
+
+export type ProductType = {
+  images: string[];
+  title: string;
+  rating: number;
+  ratingQuantity: number;
+  price: number;
+  discount?: number;
+};

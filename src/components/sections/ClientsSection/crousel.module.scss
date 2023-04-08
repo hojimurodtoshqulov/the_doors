@@ -1,0 +1,15 @@
+.carousel {
+     padding: 120px 10% 80px;
+     display: flex;
+     justify-content: space-between;
+     button {
+          padding: 0px 10px;
+          font-size: 30px;
+     }
+     .title {
+          width: 30%;
+     }
+     .slider {
+          width: 67%;
+     }
+}

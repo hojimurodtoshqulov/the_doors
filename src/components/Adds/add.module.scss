@@ -1,0 +1,36 @@
+.adds {
+     display: flex;
+     justify-content: space-between;
+     text-align: center;
+     font-family: "Work Sans";
+     gap: 5%;
+     row-gap: 30px;
+     div {
+          max-width: 200px;
+     }
+     h1 {
+          color: var(--blue-grey-common);
+          font-style: normal;
+          font-weight: 500;
+          font-size: 18px;
+          line-height: 21px;
+          padding: 20px 0;
+     }
+     p {
+          font-style: normal;
+          font-weight: 300;
+          font-size: 16px;
+          line-height: 25px;
+          /* or 156% */
+
+          text-align: center;
+
+          color: #7f8698;
+     }
+     @media (max-width: 700px) {
+          flex-wrap: wrap;
+          div {
+               width: 45%;
+          }
+     }
+}

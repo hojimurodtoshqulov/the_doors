@@ -18,10 +18,6 @@ const menuRoutes: MenuRouteType[] = [
   },
   {
     link: "/",
-    label: "Home",
-  },
-  {
-    link: "/",
     label: "About",
   },
   {
