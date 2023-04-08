@@ -19,6 +19,13 @@ function Partners({ partners }: { partners: PartnerType[] }) {
               <img src={partners.image} alt="" />
             </a>
           </Link>
+        ))}
+        {partners.map((partners: PartnerType) => (
+          <Link href={partners.link}>
+            <a>
+              <img src={partners.image} alt="" />
+            </a>
+          </Link>
         ))}{" "}
         {partners.map((partners: PartnerType) => (
           <Link href={partners.link}>
@@ -26,70 +33,14 @@ function Partners({ partners }: { partners: PartnerType[] }) {
               <img src={partners.image} alt="" />
             </a>
           </Link>
+        ))}
+        {partners.map((partners: PartnerType) => (
+          <Link href={partners.link}>
+            <a>
+              <img src={partners.image} alt="" />
+            </a>
+          </Link>
         ))}{" "}
-        {partners.map((partners: PartnerType) => (
-          <Link href={partners.link}>
-            <a>
-              <img src={partners.image} alt="" />
-            </a>
-          </Link>
-        ))}
-        {partners.map((partners: PartnerType) => (
-          <Link href={partners.link}>
-            <a>
-              <img src={partners.image} alt="" />
-            </a>
-          </Link>
-        ))}
-        {partners.map((partners: PartnerType) => (
-          <Link href={partners.link}>
-            <a>
-              <img src={partners.image} alt="" />
-            </a>
-          </Link>
-        ))}
-        {partners.map((partners: PartnerType) => (
-          <Link href={partners.link}>
-            <a>
-              <img src={partners.image} alt="" />
-            </a>
-          </Link>
-        ))}
-        {partners.map((partners: PartnerType) => (
-          <Link href={partners.link}>
-            <a>
-              <img src={partners.image} alt="" />
-            </a>
-          </Link>
-        ))}
-        {partners.map((partners: PartnerType) => (
-          <Link href={partners.link}>
-            <a>
-              <img src={partners.image} alt="" />
-            </a>
-          </Link>
-        ))}
-        {partners.map((partners: PartnerType) => (
-          <Link href={partners.link}>
-            <a>
-              <img src={partners.image} alt="" />
-            </a>
-          </Link>
-        ))}
-        {partners.map((partners: PartnerType) => (
-          <Link href={partners.link}>
-            <a>
-              <img src={partners.image} alt="" />
-            </a>
-          </Link>
-        ))}
-        {partners.map((partners: PartnerType) => (
-          <Link href={partners.link}>
-            <a>
-              <img src={partners.image} alt="" />
-            </a>
-          </Link>
-        ))}
         {partners.map((partners: PartnerType) => (
           <Link href={partners.link}>
             <a>

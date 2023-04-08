@@ -1,18 +1,92 @@
 .footer {
      background-color: #f0f0f0;
      padding: 20px 10% 15px;
+     font-family: "Work Sans";
+     font-style: normal;
      .top {
           display: flex;
           justify-content: space-between;
-          & > div {
+          gap: 3%;
+
+          h1,
+          h2 {
+               color: var(--blue-grey-common);
+          }
+          h1 {
+               font-weight: 600;
+               font-size: 30px;
+          }
+          h2 {
+               font-weight: 500;
+               font-size: 18px;
+               margin-bottom: 12px;
+          }
+
+          .row {
                display: flex;
                flex-direction: column;
+               gap: 5px;
           }
-          div:first-child {
+          .row:first-child {
                width: 30%;
+               padding-bottom: 0;
           }
-          form {
+
+          p,
+          a {
+               font-weight: 300;
+               line-height: 28px;
+               color: #707686;
+          }
+          p {
+               font-size: 18px;
+               margin: 15px 0 24px;
+          }
+          a {
+               font-size: 14px;
+          }
+          @media (max-width: 800px) {
+               flex-wrap: wrap;
+               row-gap: 30px;
+               .row:first-child {
+                    order: 1;
+                    width: 48%;
+               }
+               .row {
+                    width: 48%;
+               }
+          }
+     }
+     form {
+          display: flex;
+          max-width: 200px;
+          align-items: center;
+          background-color: white;
+          input {
+               background-color: transparent;
+               border: none;
+               outline: none;
+               width: 100%;
+               padding: 10px 20px;
+          }
+          button {
+               border: none;
+               height: 100%;
+               width: 30px;
                display: flex;
+               justify-content: center;
+               align-items: center;
+               background-color: transparent;
+          }
+     }
+     .icons {
+          display: flex;
+          justify-content: space-between;
+          max-width: 100px;
+          padding-top: 30px;
+          svg {
+               font-size: 25px;
+               color: var(--blue-common);
           }
      }
 }

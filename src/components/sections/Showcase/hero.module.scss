@@ -27,110 +27,88 @@
      height: 100%;
      object-fit: cover;
      clip-path: circle(8.5% at 20% 81%);
+     display: none;
+     // opacity: 0.2;
+     z-index: 1;
      &:nth-child(1) {
-          z-index: 1;
-          animation: from-top 4s linear infinite;
+          display: block;
+          // animation: from-top 4s linear infinite;
+          transform: translate3d(10px);
      }
      &:nth-child(2) {
-          z-index: 2;
-          animation: from-top1 4s linear infinite;
+          // animation: from-top2 4s linear infinite;
+          display: block;
+          transform: translate3d(12px);
      }
-     &:nth-child(3) {
-          z-index: 3;
-          animation: from-top2 4s linear infinite;
-     }
-     &:nth-child(4) {
-          z-index: 4;
-          animation: from-top3 4s linear infinite;
-     }
+     // &:nth-child(3) {
+     //      animation: from-top3 4s linear infinite;
+     //      display: block;
+     // }
+     // &:nth-child(4) {
+     //      display: block;
+     //      animation: from-top4 4s linear infinite;
+     // }
 }
 
 @keyframes from-top {
      0% {
-          translate: 0 -50%;
-          z-index: 0;
+          transform: translateX(150px) translateZ(0px);
      }
-     15% {
-          translate: 0;
-          clip-path: circle(8.5% at 20% 81%);
-     }
-     25% {
-          clip-path: circle(100% at 50% 50%);
-     }
-     50% {
-          clip-path: circle(100% at 50% 50%);
-     }
-     100% {
-          translate: 0;
-          z-index: 1;
-     }
-}
 
-@keyframes from-top1 {
-     0% {
-          translate: 0 -50%;
-          clip-path: circle(8.5% at 20% 81%);
-     }
-     25% {
-          translate: 0 -50%;
-     }
-     40% {
-          translate: 0;
-          clip-path: circle(8.5% at 20% 81%);
-     }
-     50% {
-          clip-path: circle(100% at 50% 50%);
-     }
-     75% {
-          clip-path: circle(100% at 50% 50%);
-     }
      100% {
-          clip-path: circle(100% at 50% 50%);
-          translate: 0;
+          transform: translateX(150px) translateZ(20px);
      }
 }
 
 @keyframes from-top2 {
      0% {
-          translate: 0 -50%;
-          clip-path: circle(8.5% at 20% 81%);
-     }
-     50% {
-          translate: 0 -50%;
-     }
-     65% {
-          translate: 0;
-          clip-path: circle(8.5% at 20% 81%);
-     }
-     75% {
-          clip-path: circle(100% at 50% 50%);
-     }
-     100% {
-          clip-path: circle(100% at 50% 50%);
-          translate: 0;
-     }
-}
-@keyframes from-top3 {
-     0% {
-          clip-path: circle(100% at 50% 50%);
-          z-index: 0;
+          transform: translateZ(0px);
      }
 
-     50% {
-          translate: 0;
-
-          clip-path: circle(8.5% at 20% 81%);
-     }
-     75% {
-          translate: 0 -50%;
-          z-index: 4;
-          clip-path: circle(8.5% at 20% 81%);
-     }
-     90% {
-          translate: 0;
-          clip-path: circle(8.5% at 20% 81%);
-     }
      100% {
-          clip-path: circle(100% at 50% 50%);
+          transform: x translateZ(20px);
      }
 }
+
+// @keyframes from-top3 {
+//      0% {
+//           transform: translateY(0%) translateZ(0px);
+//           clip-path: circle(8.5% at 20% 81%);
+//      }
+//      50% {
+//           transform: translateY(-50%) translateZ(10px);
+//           clip-path: circle(8.5% at 20% 81%);
+//      }
+//      65% {
+//           transform: translateY(0%) translateZ(5px);
+//           clip-path: circle(8.5% at 20% 81%);
+//      }
+//      75% {
+//           transform: translateZ(5px);
+//           clip-path: circle(100% at 50% 50%);
+//      }
+//      100% {
+//           clip-path: circle(100% at 50% 50%);
+//           transform: translateZ(4px);
+//      }
+// }
+
+// @keyframes from-top4 {
+//      25% {
+//           clip-path: circle(100% at 50% 50%);
+//           transform: translateZ(4px);
+//      }
+
+//      75% {
+//           transform: translateY(-50%) translateZ(10px);
+//           clip-path: circle(8.5% at 20% 81%);
+//      }
+//      90% {
+//           transform: translateY(0%) translateZ(5px);
+//           clip-path: circle(8.5% at 20% 81%);
+//      }
+//      100% {
+//           transform: translateZ(5px);
+//           clip-path: circle(100% at 50% 50%);
+//      }
+// }
