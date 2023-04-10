@@ -50,16 +50,16 @@
 
 @keyframes from-top {
      0% {
-          translate: 0 -100%;
+          translate: 0 -1500px;
           clip-path: circle(50px at 24% 79%);
           opacity: 0;
      }
-     17% {
-          opacity: 1;
+     20% {
           clip-path: circle(50px at 24% 79%);
           translate: 0;
      }
      25% {
+          opacity: 1;
           clip-path: circle(100% at 50% 50%);
      }
 
@@ -71,20 +71,20 @@
 
 @keyframes from-left {
      0% {
-          translate: -100%;
+          translate: -1500px;
      }
      25% {
-          translate: -100%;
+          translate: -1500px;
           clip-path: circle(50px at 50% 95%);
           opacity: 0;
      }
-     42% {
+     45% {
           clip-path: circle(50px at 50% 95%);
           translate: 0;
-          opacity: 1;
      }
      50% {
           clip-path: circle(100% at 50% 50%);
+          opacity: 1;
      }
      100% {
           clip-path: circle(100% at 50% 50%);
@@ -94,20 +94,19 @@
 
 @keyframes from-bottom {
      0% {
-          translate: 0 100%;
+          translate: 0 1500px;
      }
      50% {
-          translate: 0 100%;
+          translate: 0 1500px;
           clip-path: circle(50px at 76% 21%);
           opacity: 0;
      }
-     67% {
+     70% {
           clip-path: circle(50px at 76% 21%);
           translate: 0;
-
-          opacity: 1;
      }
      75% {
+          opacity: 1;
           clip-path: circle(100% at 50% 50%);
      }
      100% {
@@ -118,20 +117,20 @@
 
 @keyframes from-right {
      0% {
-          translate: 100%;
+          translate: 1500px;
      }
      75% {
-          translate: 100%;
+          translate: 1500px;
           clip-path: circle(50px at 50% 21%);
           opacity: 0;
      }
-     92% {
+     95% {
           clip-path: circle(50px at 50% 21%);
           translate: 0;
-          opacity: 1;
      }
 
      100% {
+          opacity: 1;
           translate: 0;
           clip-path: circle(100% at 50% 50%);
      }
