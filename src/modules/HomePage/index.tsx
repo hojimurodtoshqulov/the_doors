@@ -1,3 +1,4 @@
+import CardSlider from "@/components/CardSlider";
 import ContactUsSection from "@/components/ContactUsSection";
 import AboutSection from "@/components/sections/AboutSection";
 import ClientsSection from "@/components/sections/ClientsSection";

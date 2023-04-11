@@ -4,6 +4,8 @@ import hero1 from "../../../../public/media/hero1.png";
 import hero2 from "../../../../public/media/hero2.png";
 import hero3 from "../../../../public/media/hero3.png";
 import hero4 from "../../../../public/media/hero4.png";
+import { BiSearch } from "react-icons/bi";
+import Button from "@/components/Button";
 
 function Showcase() {
   return (
@@ -20,8 +22,16 @@ function Showcase() {
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua.
           </p>
-          <button>About more</button>
+          <Button style={{ borderRadius: "20px", padding: "12px 30px" }}>
+            About more
+          </Button>
         </div>
+        <form action="">
+          <input type="text" placeholder="Search production" />
+          <button type="submit">
+            <BiSearch />
+          </button>
+        </form>
       </div>
     </div>
   );

@@ -1,0 +1,46 @@
+.modal {
+     position: fixed;
+     top: 0;
+     left: 0;
+     padding: 10px;
+     z-index: 11;
+     .content {
+          position: fixed;
+          top: 50%;
+          left: 50%;
+          translate: -50% -150vh;
+          width: 80%;
+          background-color: rgb(255, 255, 255);
+          transition: 1s;
+          z-index: 12;
+          min-height: 350px;
+          min-width: 300px;
+          border-radius: 10px;
+          padding: 38px 26px;
+     }
+     &.active {
+          width: 100%;
+          height: 100%;
+          .content {
+               translate: -50% -50%;
+          }
+          .back {
+               width: 100%;
+          }
+     }
+     .back {
+          content: "";
+          position: fixed;
+          top: 0;
+          width: 0;
+          height: 100%;
+          background-color: rgba(0, 0, 0, 0.335);
+          transition: 1s;
+     }
+     .back:nth-child(2) {
+          left: 0;
+     }
+     .back:first-child {
+          right: 0;
+     }
+}

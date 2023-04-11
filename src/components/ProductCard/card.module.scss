@@ -2,6 +2,29 @@
      font-family: "Montserrat";
      font-style: normal;
      padding: 6px 6px 20px;
+     position: relative;
+     border: 1px solid #e3e3e3;
+     border-radius: 10px;
+     width: 23%;
+     @media (max-width: 1150px) {
+          width: 30%;
+     }
+     @media (max-width: 830px) {
+          width: 47%;
+     }
+     @media (max-width: 550px) {
+          width: 100%;
+     }
+     .discount {
+          clip-path: polygon(100% 0, 90% 50%, 100% 100%, 0 100%, 0 0);
+          top: 10%;
+          position: absolute;
+          background-color: red;
+          color: white;
+          padding: 3px 17px;
+          left: 0;
+          z-index: 10;
+     }
      h2 {
           font-weight: 400;
           font-size: 16px;
@@ -20,7 +43,7 @@
      a {
           width: 100%;
      }
-     button {
+     & > button {
           width: 100%;
           padding: 10px;
      }
@@ -48,7 +71,10 @@
 }
 
 .images {
-     img {
-          width: 100%;
-     }
+     // border-radius: 10px;
+     // overflow: hidden;
+     // height: 100px;
+     // img {
+     //      width: 100%;
+     // }
 }

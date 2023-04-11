@@ -20,34 +20,6 @@ function Partners({ partners }: { partners: PartnerType[] }) {
             </a>
           </Link>
         ))}
-        {partners.map((partners: PartnerType) => (
-          <Link href={partners.link}>
-            <a>
-              <img src={partners.image} alt="" />
-            </a>
-          </Link>
-        ))}{" "}
-        {partners.map((partners: PartnerType) => (
-          <Link href={partners.link}>
-            <a>
-              <img src={partners.image} alt="" />
-            </a>
-          </Link>
-        ))}
-        {partners.map((partners: PartnerType) => (
-          <Link href={partners.link}>
-            <a>
-              <img src={partners.image} alt="" />
-            </a>
-          </Link>
-        ))}{" "}
-        {partners.map((partners: PartnerType) => (
-          <Link href={partners.link}>
-            <a>
-              <img src={partners.image} alt="" />
-            </a>
-          </Link>
-        ))}
       </div>
     </div>
   );

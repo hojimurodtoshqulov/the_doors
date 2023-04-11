@@ -11,6 +11,7 @@ const products: ProductType[] = [
     title: "Handling equipment",
     price: 1099,
     rating: 4,
+    discount: 15,
     ratingQuantity: 232,
   },
   {
@@ -18,6 +19,7 @@ const products: ProductType[] = [
     title: "Handling equipment",
     price: 1099,
     rating: 4,
+    discount: 15,
     ratingQuantity: 232,
   },
   {

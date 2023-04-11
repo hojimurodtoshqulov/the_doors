@@ -1,6 +1,9 @@
 import AppLayout from "@/layouts/AppLayout";
-import "@/shared/styles/globals.scss";
-import "swiper/css";
+import "@/shared/scss/globals.scss";
+import "@/styles/index.scss";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+// import "swiper/css";
 // import "swiper/css/navigation";
 // import "swiper/css/pagination";
 // import "swiper/css/scrollbar";

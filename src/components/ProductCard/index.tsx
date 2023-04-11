@@ -1,22 +1,29 @@
 import { MainPropType, ProductType } from "@/shared/types";
 import styles from "./card.module.scss";
-import { AiFillStar, AiOutlineStar } from "react-icons/ai";
 import { FaRegStar, FaStar, FaStarHalfAlt } from "react-icons/fa";
 import Button from "../Button";
-import Link from "next/link";
+import CardSlider from "../CardSlider";
+import { useState } from "react";
+import Modal from "../Modal";
 
 function ProductCard({ product }: MainPropType & { product: ProductType }) {
+  console.log(product);
+  const [active, setActive] = useState<boolean>(false);
+
   return (
     <div className={styles.product}>
-      <div className={styles.images}>
-        <img src={product.images[0]} alt="" />
-      </div>
+      {product.discount ? <div className={styles.discount}>15%</div> : ""}
+      <CardSlider images={product.images} />
       <h2>Handling equipment</h2>
       <h1>
         from <span>{product.price}</span>${" "}
-        <span style={{ color: "red", paddingLeft: "10px" }}>
-          {product.price}$
-        </span>
+        {product.discount ? (
+          <span style={{ color: "red", paddingLeft: "10px" }}>
+            {product.price * (1 - product.discount / 100)}$
+          </span>
+        ) : (
+          ""
+        )}
       </h1>
       <div className={styles.rating}>
         <FaStar />
@@ -27,11 +34,11 @@ function ProductCard({ product }: MainPropType & { product: ProductType }) {
         <p>{product.rating} </p>
         <span>({product.ratingQuantity})</span>
       </div>
-      <Link href="/">
-        <a>
-          <Button>Add to cart</Button>
-        </a>
-      </Link>
+
+      <Button style={{ borderRadius: 10 }} onClick={() => setActive(true)}>
+        Add to cart
+      </Button>
+      <Modal product={product} active={active} setActive={setActive}></Modal>
     </div>
   );
 }
