@@ -27,10 +27,44 @@
 
           color: #7f8698;
      }
+
+     * {
+          outline: none;
+     }
+     .stick {
+          background-color: #969696;
+          width: 2px;
+          position: relative;
+          &::before {
+               content: "";
+               position: absolute;
+               padding: 4px;
+               border-radius: 50%;
+               top: 50%;
+               left: 50%;
+               translate: -50% -50%;
+               background-color: #f7941d;
+          }
+          &.blue::before {
+               background-color: var(--blue-common);
+          }
+     }
      @media (max-width: 700px) {
           flex-wrap: wrap;
           div {
-               width: 45%;
+               width: 43%;
+          }
+          .stick.blue {
+               display: none;
+          }
+     }
+     @media (max-width: 420px) {
+          justify-content: center;
+          div {
+               width: 100%;
+          }
+          .stick {
+               display: none;
           }
      }
 }

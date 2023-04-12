@@ -1,17 +1,28 @@
-import Title from "@/components/Title";
-import styles from "./about.module.scss";
-import Video from "@/components/Video";
-import Adds from "@/components/Adds";
+import styles from "./styles.module.scss";
+import image1 from "/public/media/hero1.png";
+import image2 from "/public/media/hero2.png";
 
 function AboutSection() {
   return (
-    <section className={styles.about}>
-      <Title>About our company</Title>
-
-      <Video src="https://d33wubrfki0l68.cloudfront.net/f68e6df6a1831686ec7c8dca195d93107f221cd2/a36ed/img/ocean.mp4" />
-
-      <Adds />
-    </section>
+    <div className={styles.about}>
+      <div className={styles.images}>
+        <img src={image1.src} alt="" />
+        <img src={image2.src} alt="" />
+      </div>
+      <div className={styles.description}>
+        <h3>Lorem ipsum</h3>
+        <p>
+          Международный концерн The Door — это промышленная группа
+          глубокоинтегрированных производственных предприятий, общей целью
+          которых является комплексная поставка полнокомплектных решений для
+          объектов промышленного строительства, частного домостроения, а также
+          объектов специального назначения, городской инфраструктуры и сельского
+          хозяйства. Все предлагаемые решения полностью состоят из продукции
+          DoorHan, кроме того, спроектированы и изготовлены на собственных
+          заводах концерна The Door.
+        </p>
+      </div>
+    </div>
   );
 }
 

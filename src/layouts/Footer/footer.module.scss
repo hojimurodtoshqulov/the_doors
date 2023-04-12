@@ -7,10 +7,10 @@
           display: flex;
           justify-content: space-between;
           gap: 3%;
-
+          padding-bottom: 30px;
           h1,
           h2 {
-               color: var(--blue-grey-common);
+               color: #707686;
           }
           h1 {
                font-weight: 600;
@@ -26,10 +26,11 @@
                display: flex;
                flex-direction: column;
                gap: 5px;
+               padding-top: 30px;
           }
           .row:first-child {
                width: 30%;
-               padding-bottom: 0;
+               padding-top: 0;
           }
 
           p,
@@ -56,10 +57,25 @@
                     width: 48%;
                }
           }
+          @media (max-width: 500px) {
+               flex-wrap: wrap;
+               row-gap: 30px;
+               .row:first-child {
+                    order: unset;
+                    width: 100%;
+               }
+               .row:nth-child(2) {
+                    order: 1;
+                    width: 100%;
+               }
+          }
+     }
+     * {
+          outline: none;
      }
      form {
           display: flex;
-          max-width: 200px;
+          max-width: 230px;
           align-items: center;
           background-color: white;
           input {
@@ -72,11 +88,15 @@
           button {
                border: none;
                height: 100%;
-               width: 30px;
+               padding: 15px;
                display: flex;
                justify-content: center;
                align-items: center;
                background-color: transparent;
+          }
+          svg {
+               font-size: 20px;
+               color: #7f8495;
           }
      }
      .icons {
@@ -87,6 +107,29 @@
           svg {
                font-size: 25px;
                color: var(--blue-common);
+          }
+     }
+     .bottom {
+          display: flex;
+          justify-content: space-between;
+          padding-top: 11px;
+          border-top: 2px solid rgba(204, 210, 222, 0.81);
+          h3 {
+               font-weight: 500;
+               font-size: 18px;
+               line-height: 26px;
+               color: #707686;
+          }
+          span {
+               gap: 10px;
+               font-weight: 400;
+               font-size: 14px;
+               line-height: 24px;
+
+               display: flex;
+               letter-spacing: 0.02em;
+
+               color: #707686;
           }
      }
 }

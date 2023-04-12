@@ -1,17 +1,18 @@
 import Partners from "@/components/Partners";
 import Title from "@/components/Title";
 import styles from "./styles.module.scss";
-import logo1 from "../../../../public/media/msi 7.png";
-import logo2 from "../../../../public/media/msi 8.png";
+import logo1 from "/public/media/msi 7.png";
+import logo2 from "/public/media/msi 8.png";
 
 export type PartnerType = {
+  id: string | number;
   link: string;
   image: string;
 };
 
 const partners: PartnerType[] = [
-  { link: "/", image: logo1.src },
-  { link: "/", image: logo2.src },
+  { id: "1", link: "/", image: logo1.src },
+  { id: "2", link: "/", image: logo2.src },
 ];
 
 function PartnersSection() {

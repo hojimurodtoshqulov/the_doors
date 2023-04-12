@@ -1,26 +1,25 @@
 import { ProductType } from "@/shared/types";
 import styles from "./modale.module.scss";
+import { Dispatch, SetStateAction } from "react";
 
 function Modal({
   product,
-  active,
-  setActive,
+  setProduct,
 }: {
-  product: ProductType;
-  active: boolean;
-  setActive: (a: boolean) => void;
+  product?: ProductType;
+  setProduct: Dispatch<SetStateAction<ProductType | undefined>>;
 }) {
   return (
-    <div className={`${styles.modal} ${active && styles.active}`}>
+    <div className={`${styles.modal} ${product && styles.active}`}>
       <p
         onClick={() => {
-          setActive(false);
+          setProduct(undefined);
         }}
         className={styles.back}
       ></p>
       <p
         onClick={() => {
-          setActive(false);
+          setProduct(undefined);
         }}
         className={styles.back}
       ></p>

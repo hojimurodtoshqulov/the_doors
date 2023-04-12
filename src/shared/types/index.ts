@@ -7,6 +7,7 @@ export type MainPropType = {
 };
 
 export type ProductType = {
+  id:string|number
   images: string[];
   title: string;
   rating: number;

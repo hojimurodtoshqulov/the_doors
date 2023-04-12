@@ -2,80 +2,31 @@ import Title from "@/components/Title";
 import styles from "./product.module.scss";
 import { ProductType } from "@/shared/types";
 import ProductCard from "@/components/ProductCard";
-import image1 from "../../../../public/media/hero1.png";
-import image2 from "/public/media/hero2.png";
-
-const products: ProductType[] = [
-  {
-    images: [image1.src, image2.src],
-    title: "Handling equipment",
-    price: 1099,
-    rating: 4,
-    discount: 15,
-    ratingQuantity: 232,
-  },
-  {
-    images: [image1.src, image2.src],
-    title: "Handling equipment",
-    price: 1099,
-    rating: 4,
-    discount: 15,
-    ratingQuantity: 232,
-  },
-  {
-    images: [image1.src, image2.src],
-    title: "Handling equipment",
-    price: 1099,
-    rating: 4,
-    ratingQuantity: 232,
-  },
-  {
-    images: [image1.src, image2.src],
-    title: "Handling equipment",
-    price: 1099,
-    rating: 4,
-    ratingQuantity: 232,
-  },
-  {
-    images: [image1.src, image2.src],
-    title: "Handling equipment",
-    price: 1099,
-    rating: 4,
-    ratingQuantity: 232,
-  },
-  {
-    images: [image1.src, image2.src],
-    title: "Handling equipment",
-    price: 1099,
-    rating: 4,
-    ratingQuantity: 232,
-  },
-  {
-    images: [image1.src, image2.src],
-    title: "Handling equipment",
-    price: 1099,
-    rating: 4,
-    ratingQuantity: 232,
-  },
-  {
-    images: [image1.src, image2.src],
-    title: "Handling equipment",
-    price: 1099,
-    rating: 4,
-    ratingQuantity: 232,
-  },
-];
+import { products } from "@/data/product";
+import CardsSlider from "@/components/CardsSlider";
+import { useState } from "react";
+import Modal from "@/components/Modal";
 
 function ProductSection() {
+  const [product, setProduct] = useState<ProductType>();
+
   return (
     <div className={styles.products}>
       <Title>Products</Title>
 
-      <div className={styles.cards}>
+      <div className={styles.cardsMax}>
         {products.map((product: ProductType) => (
-          <ProductCard product={product} />
+          <ProductCard
+            product={product}
+            setProduct={setProduct}
+            key={product.id}
+          />
         ))}
       </div>
+      <div className={styles.cardsMin}>
+        <CardsSlider products={products} setProduct={setProduct} />
+      </div>
+      <Modal product={product} setProduct={setProduct}></Modal>
     </div>
   );
 }

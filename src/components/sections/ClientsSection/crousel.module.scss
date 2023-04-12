@@ -2,14 +2,29 @@
      padding: 120px 10% 80px;
      display: flex;
      justify-content: space-between;
-     button {
-          padding: 0px 10px;
-          font-size: 30px;
+     gap: 15px;
+     row-gap: 40px;
+     position: relative;
+     overflow: hidden;
+     .about {
+          width: 50%;
+          mix-blend-mode: difference;
+          p {
+               font-weight: 300;
+               font-size: 14px;
+               line-height: 24px;
+               max-width: 400px;
+               color: #707686;
+          }
+          h1 {
+               max-width: 315px;
+               margin-bottom: 17px;
+          }
      }
-     .title {
-          width: 30%;
-     }
-     .slider {
-          width: 67%;
+     @media (max-width: 1070px) {
+          flex-wrap: wrap;
+          .about {
+               width: 100%;
+          }
      }
 }

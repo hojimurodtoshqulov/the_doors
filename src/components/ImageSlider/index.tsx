@@ -4,7 +4,7 @@ import React from "react";
 import Slider from "react-slick";
 import styles from "./slider.module.scss";
 
-function CardSlider({ images }: { images: string[] }) {
+function ImageSlider({ images }: { images: string[] }) {
   const settings = {
     infinite: true,
     speed: 500,
@@ -14,10 +14,10 @@ function CardSlider({ images }: { images: string[] }) {
     autoplay: true,
   };
   return (
-    <div className={`card-slider-component ${styles.silder}`}>
+    <div className={`image-slider-component ${styles.silder}`}>
       <Slider {...settings}>
-        {images.map((image) => (
-          <div>
+        {images.map((image, i) => (
+          <div key={i}>
             <img className={styles.image} src={image} alt="" />
           </div>
         ))}
@@ -26,4 +26,4 @@ function CardSlider({ images }: { images: string[] }) {
   );
 }
 
-export default CardSlider;
+export default ImageSlider;

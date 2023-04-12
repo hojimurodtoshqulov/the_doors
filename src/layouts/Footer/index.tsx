@@ -2,6 +2,7 @@ import { MainPropType } from "@/shared/types";
 import styles from "./footer.module.scss";
 import { BsFacebook, BsTwitter } from "react-icons/bs";
 import { AiFillInstagram } from "react-icons/ai";
+import { GrMail } from "react-icons/gr";
 import Link from "next/link";
 function Footer({ style }: MainPropType) {
   return (
@@ -14,8 +15,10 @@ function Footer({ style }: MainPropType) {
             conse.
           </p>
           <form action="/">
-            <input type="text" />
-            <button>s</button>
+            <input type="text" placeholder="Your email here" />
+            <button>
+              <GrMail />
+            </button>
           </form>
           <div className={styles.icons}>
             <BsFacebook />
@@ -43,6 +46,18 @@ function Footer({ style }: MainPropType) {
           <Link href="/">Lorem</Link>
           <Link href="/">Lorem</Link>
         </div>
+      </div>
+      <div className={styles.bottom}>
+        <h3>©Ulina Official 2022</h3>
+        <Link href={"/"}>
+          <a>
+            <span>
+              <p>Privacy policy</p>
+              <p>Cookies</p>
+              <p>Terms of service</p>
+            </span>
+          </a>
+        </Link>
       </div>
     </footer>
   );

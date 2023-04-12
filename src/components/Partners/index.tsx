@@ -7,14 +7,14 @@ function Partners({ partners }: { partners: PartnerType[] }) {
     <div className={styles.parnters}>
       <div>
         {partners.map((partners: PartnerType) => (
-          <Link href={partners.link}>
+          <Link href={partners.link} key={partners.id}>
             <a>
               <img src={partners.image} alt="" />
             </a>
           </Link>
         ))}{" "}
         {partners.map((partners: PartnerType) => (
-          <Link href={partners.link}>
+          <Link href={partners.link} key={partners.id}>
             <a>
               <img src={partners.image} alt="" />
             </a>

@@ -2,24 +2,29 @@ import { MainPropType, ProductType } from "@/shared/types";
 import styles from "./card.module.scss";
 import { FaRegStar, FaStar, FaStarHalfAlt } from "react-icons/fa";
 import Button from "../Button";
-import CardSlider from "../CardSlider";
-import { useState } from "react";
+import CardSlider from "../ImageSlider";
+import { Dispatch, SetStateAction, useState } from "react";
 import Modal from "../Modal";
+import ImageSlider from "../ImageSlider";
 
-function ProductCard({ product }: MainPropType & { product: ProductType }) {
-  console.log(product);
-  const [active, setActive] = useState<boolean>(false);
-
+function ProductCard({
+  product,
+  setProduct,
+  style,
+}: MainPropType & {
+  product?: ProductType;
+  setProduct: Dispatch<SetStateAction<ProductType | undefined>>;
+}) {
   return (
-    <div className={styles.product}>
-      {product.discount ? <div className={styles.discount}>15%</div> : ""}
-      <CardSlider images={product.images} />
+    <div className={styles.product} style={style}>
+      {product?.discount ? <div className={styles.discount}>15%</div> : ""}
+      {product ? <ImageSlider images={product.images} /> : ""}
       <h2>Handling equipment</h2>
       <h1>
-        from <span>{product.price}</span>${" "}
-        {product.discount ? (
+        from <span>{product?.price}</span>${" "}
+        {product?.discount ? (
           <span style={{ color: "red", paddingLeft: "10px" }}>
-            {product.price * (1 - product.discount / 100)}$
+            {product?.price * (1 - product.discount / 100)}$
           </span>
         ) : (
           ""
@@ -31,14 +36,13 @@ function ProductCard({ product }: MainPropType & { product: ProductType }) {
         <FaStar />
         <FaStarHalfAlt />
         <FaRegStar />
-        <p>{product.rating} </p>
-        <span>({product.ratingQuantity})</span>
+        <p>{product?.rating} </p>
+        <span>({product?.ratingQuantity})</span>
       </div>
 
-      <Button style={{ borderRadius: 10 }} onClick={() => setActive(true)}>
+      <Button style={{ borderRadius: 10 }} onClick={() => setProduct(product)}>
         Add to cart
       </Button>
-      <Modal product={product} active={active} setActive={setActive}></Modal>
     </div>
   );
 }

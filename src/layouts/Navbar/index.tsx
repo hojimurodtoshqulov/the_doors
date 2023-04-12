@@ -5,30 +5,7 @@ import { BsPerson } from "react-icons/bs";
 import { BiSearch } from "react-icons/bi";
 import styles from "./navbar.module.scss";
 import Link from "next/link";
-
-type MenuRouteType = {
-  link: string;
-  label: string;
-};
-
-const menuRoutes: MenuRouteType[] = [
-  {
-    link: "/",
-    label: "Home",
-  },
-  {
-    link: "/",
-    label: "About",
-  },
-  {
-    link: "/",
-    label: "Blog",
-  },
-  {
-    link: "/",
-    label: "Contact",
-  },
-];
+import { MenuRouteType, menuConfig } from "@/modules/menuConfig";
 
 function Navbar() {
   return (
@@ -39,8 +16,8 @@ function Navbar() {
         </a>
       </Link>
       <div className={styles.menu}>
-        {menuRoutes.map((route: MenuRouteType) => (
-          <Link href={route.link}>
+        {menuConfig.map((route: MenuRouteType) => (
+          <Link href={route.link} key={route.id}>
             <a className={"link"}>{route.label}</a>
           </Link>
         ))}
