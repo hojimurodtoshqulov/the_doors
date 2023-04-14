@@ -7,7 +7,7 @@ function ShowcaseContent({
   children,
   title,
   paragraph,
-}: MainPropType & { title: string; paragraph: string }) {
+}: MainPropType & { title: React.ReactNode; paragraph: string }) {
   return (
     <div className={styles.content}>
       <div>
@@ -15,12 +15,12 @@ function ShowcaseContent({
         <p>{paragraph}</p>
         {children}
       </div>
-      <form action="">
+      {/* <form action="">
         <input type="text" placeholder="Search production" />
         <button type="submit">
           <BiSearch />
         </button>
-      </form>
+      </form> */}
     </div>
   );
 }

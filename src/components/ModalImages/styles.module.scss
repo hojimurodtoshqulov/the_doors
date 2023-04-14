@@ -1,0 +1,41 @@
+.images {
+     width: 50%;
+     // height: 100%;
+     display: flex;
+     background-color: red;
+     display: flex;
+     // flex-wrap: wrap;
+     .miniimages {
+          background-color: green;
+          width: 30%;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+     }
+     .mainimage {
+          width: 70%;
+          height: 100%;
+          div {
+               height: 100%;
+          }
+     }
+     img {
+          width: 100%;
+          height: 100%;
+          outline: 1px solid white;
+     }
+     @media (max-width: 1200px) {
+          flex-direction: column-reverse;
+          .mainimage {
+               height: 100%;
+               width: 100%;
+          }
+          .miniimages {
+               flex-direction: row;
+               width: 100%;
+          }
+     }
+     @media (max-width: 1000px) {
+          width: 100%;
+     }
+}

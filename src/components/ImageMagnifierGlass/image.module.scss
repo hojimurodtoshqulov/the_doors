@@ -1,0 +1,22 @@
+.container {
+     position: relative;
+     height: 100%;
+}
+
+.mainimage {
+     display: block;
+     // object-fit: cover;
+}
+
+.magnifierglass {
+     position: absolute;
+     border-radius: 50%;
+     overflow: hidden;
+     pointer-events: none;
+     outline: 1px solid rgb(255, 255, 255);
+     z-index: 10;
+     background-blend-mode: hard-light;
+     @media (max-width: 500px) {
+          display: none;
+     }
+}

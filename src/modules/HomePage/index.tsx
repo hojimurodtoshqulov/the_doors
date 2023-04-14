@@ -1,4 +1,4 @@
-import ContactUsSection from "@/components/ContactUsSection";
+import ContactUsSection from "@/components/sections/ContactUsSection";
 import ClientsSection from "@/components/sections/ClientsSection";
 import PartnersSection from "@/components/sections/PartnersSection";
 import ProductSection from "@/components/sections/ProductSection";

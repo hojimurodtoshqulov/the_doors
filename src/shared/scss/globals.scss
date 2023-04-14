@@ -15,6 +15,10 @@
   --blue-grey-common: #34394c;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 a {
   display: inline-block;
 }

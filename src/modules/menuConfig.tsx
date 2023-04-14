@@ -10,7 +10,17 @@ export const menuConfig: MenuRouteType[] = [
   {
     id: "2",
     label: "About",
-    link: "/about",
+    link: "/#about",
+  },
+  {
+    id: "3",
+    label: "Contact",
+    link: "/#contact",
+  },
+  {
+    id: "4",
+    label: "News",
+    link: "/news",
   },
 ];
 

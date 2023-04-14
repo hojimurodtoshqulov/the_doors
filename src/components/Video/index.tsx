@@ -5,7 +5,7 @@ import { log } from "console";
 import Link from "next/link";
 
 function Video({ src }: { src: string }) {
-  const [play, setPlay] = useState(false);
+  const [play, setPlay] = useState(true);
   const videoRef = useRef<HTMLVideoElement>(null);
   useEffect(() => {
     if (!videoRef) return;
@@ -15,7 +15,7 @@ function Video({ src }: { src: string }) {
 
   return (
     <div className={styles.video} onClick={() => setPlay(!play)}>
-      <video autoPlay ref={videoRef}>
+      <video autoPlay loop muted ref={videoRef}>
         <source src={src} type="video/mp4" />{" "}
       </video>{" "}
       {play ? (

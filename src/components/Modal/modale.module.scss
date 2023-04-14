@@ -3,8 +3,10 @@
      top: 0;
      left: 0;
      padding: 10px;
-     z-index: 11;
+     z-index: 200;
      .content {
+          max-height: 700px;
+          height: 80vh;
           position: fixed;
           top: 50%;
           left: 50%;
@@ -17,6 +19,15 @@
           min-width: 300px;
           border-radius: 10px;
           padding: 38px 26px;
+          display: flex;
+          justify-content: space-between;
+          overflow: auto;
+          @media (max-width: 1000px) {
+               flex-direction: column;
+          }
+     }
+     .text {
+          width: 50%;
      }
      &.active {
           // width: 100%;

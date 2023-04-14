@@ -5,14 +5,11 @@ import { MutableRefObject, useRef } from "react";
 
 function ClientCarousel() {
   const swiperRef = useRef(null);
-  console.dir(swiperRef?.current);
 
   return (
     <div>
       <button
         onClick={() => {
-          console.dir(swiperRef?.current);
-
           swiperRef.current;
         }}
       >

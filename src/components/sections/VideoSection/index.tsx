@@ -5,12 +5,19 @@ import Adds from "@/components/Adds";
 
 function VideoSection() {
   return (
-    <section className={styles.about}>
+    <section className={styles.about} id="about">
       <Title>About our company</Title>
 
-      <Video src="https://d33wubrfki0l68.cloudfront.net/f68e6df6a1831686ec7c8dca195d93107f221cd2/a36ed/img/ocean.mp4" />
+      <Video src="https://prolinegroup.uz/wp-content/uploads/2022/02/new_project.mp4" />
 
       <Adds />
+      {/* <video
+        src="https://prolinegroup.uz/wp-content/uploads/2022/02/new_project.mp4"
+        style={{ position: "sticky", top: 0, backgroundColor: "white" }}
+        muted
+        loop
+        autoPlay
+      ></video> */}
     </section>
   );
 }
