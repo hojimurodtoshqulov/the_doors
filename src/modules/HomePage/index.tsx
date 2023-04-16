@@ -5,12 +5,14 @@ import ProductSection from "@/components/sections/ProductSection";
 import Showcase from "@/components/sections/Showcase";
 import React from "react";
 import VideoSection from "@/components/sections/VideoSection";
+import Adds from "@/components/Adds";
 
 function HomePage() {
   return (
     <div>
       <Showcase />
-      <VideoSection />
+      {/* <VideoSection /> */}
+      <Adds />
       <ProductSection />
       <ClientsSection />
       <ContactUsSection />

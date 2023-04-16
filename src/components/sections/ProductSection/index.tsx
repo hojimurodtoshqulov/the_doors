@@ -12,7 +12,7 @@ function ProductSection() {
 
   return (
     <div className={styles.products}>
-      <Title>Products</Title>
+      <Title style={{ marginBottom: "calc(20px + 2vw)" }}>Products</Title>
 
       <div className={styles.cardsMax}>
         {products.map((product: ProductType) => (

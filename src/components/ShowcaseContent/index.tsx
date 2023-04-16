@@ -1,6 +1,6 @@
 import { MainPropType } from "@/shared/types";
 import React from "react";
-import styles from "../sections/Showcase/hero.module.scss";
+import styles from "./style.module.scss";
 import { BiSearch } from "react-icons/bi";
 
 function ShowcaseContent({
@@ -15,12 +15,6 @@ function ShowcaseContent({
         <p>{paragraph}</p>
         {children}
       </div>
-      {/* <form action="">
-        <input type="text" placeholder="Search production" />
-        <button type="submit">
-          <BiSearch />
-        </button>
-      </form> */}
     </div>
   );
 }

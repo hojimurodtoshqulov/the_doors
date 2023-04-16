@@ -1,0 +1,45 @@
+.content {
+     position: absolute;
+     z-index: 5;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     flex-direction: column;
+     gap: 80px;
+     inset: 0;
+     div {
+          text-align: center;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          flex-direction: column;
+          max-width: 590px;
+     }
+     h1 {
+          font-family: "Outfit";
+          max-width: 600px;
+          font-weight: 500;
+          font-size: 60px;
+          line-height: 65px;
+          text-align: center;
+     }
+     p {
+          margin: 20px 0;
+          font-weight: 500;
+          font-size: 18px;
+          line-height: 28px;
+     }
+
+     @media (max-width: 600px) {
+          gap: 50px;
+          h1 {
+               font-size: 40px;
+               line-height: 50px;
+          }
+          p {
+               font-size: 15px;
+               line-height: 20px;
+               margin: 10px 0;
+          }
+     }
+}

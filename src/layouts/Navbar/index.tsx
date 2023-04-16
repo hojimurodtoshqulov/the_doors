@@ -7,6 +7,7 @@ import styles from "./navbar.module.scss";
 import Link from "next/link";
 import { MenuRouteType, menuConfig } from "@/modules/menuConfig";
 import Button from "@/components/Button";
+import { useRouter } from "next/router";
 
 function Navbar() {
   const [scrollPosition, setScrollPosition] = useState<number>(0);
@@ -36,16 +37,21 @@ function Navbar() {
 
     return () => window.removeEventListener("scroll", handleScroll);
   }, [scrollPosition]);
-  // console.log(scrollPosition);
+  console.log();
 
   return (
-    <nav className={`${styles.navbar} container-padding`} ref={ref}>
+    <nav
+      className={`${styles.navbar} ${
+        useRouter().pathname === "/" && styles.black
+      } container-padding`}
+      ref={ref}
+    >
       <Link href="/">
         <a>
           <button className={styles.logo}>Katalog</button>
         </a>
       </Link>
-      <div className={styles.menu}>
+      <div className={` ${styles.menu}`}>
         {menuConfig.map((route: MenuRouteType) => (
           <Link href={route.link} key={route.id}>
             <a className={"link"}>{route.label}</a>

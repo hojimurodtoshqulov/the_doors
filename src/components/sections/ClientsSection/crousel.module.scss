@@ -6,19 +6,27 @@
      row-gap: 40px;
      position: relative;
      overflow: hidden;
+     &::before {
+          content: "";
+          position: absolute;
+          z-index: -4;
+          background-color: #003d76;
+          inset: 0;
+     }
      .about {
           width: 50%;
-          mix-blend-mode: difference;
+          // mix-blend-mode: difference;
           p {
                font-weight: 300;
                font-size: 14px;
                line-height: 24px;
                max-width: 400px;
-               color: #707686;
+               color: #ededed;
           }
           h1 {
                max-width: 315px;
                margin-bottom: 17px;
+               color: white;
           }
      }
      @media (max-width: 1070px) {
