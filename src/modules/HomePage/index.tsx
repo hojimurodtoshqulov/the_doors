@@ -6,11 +6,13 @@ import Showcase from "@/components/sections/Showcase";
 import React from "react";
 import VideoSection from "@/components/sections/VideoSection";
 import Adds from "@/components/Adds";
+import MagnificentWork from "@/components/sections/MagnificentWork";
 
 function HomePage() {
   return (
     <div>
       <Showcase />
+      <MagnificentWork />
       {/* <VideoSection /> */}
       <Adds />
       <ProductSection />

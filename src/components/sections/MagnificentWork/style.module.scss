@@ -1,0 +1,109 @@
+.work {
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+     color: white;
+     background-color: #003d76;
+     padding: 80px 0 80px 7%;
+     gap: 5%;
+     height: 100vh;
+}
+
+.text {
+     display: flex;
+     flex-direction: column;
+     height: 100%;
+     justify-content: space-between;
+
+     h1 {
+          font-family: "Outfit";
+          font-weight: 500;
+          font-size: 70px;
+          line-height: 115%;
+          text-transform: uppercase;
+     }
+     & > p {
+          // padding: 30px 0 60px;
+          font-size: 16px;
+          line-height: 150%;
+          padding-bottom: 30px;
+     }
+
+     svg {
+          // font-size: 40px;
+     }
+
+     @media (max-width: 1080px) {
+          h1 {
+               font-size: 50px;
+          }
+          p {
+               font-size: 12px;
+          }
+          svg {
+               font-size: 10px;
+          }
+     }
+}
+.static {
+     display: flex;
+     align-items: center;
+     gap: 20px;
+     // padding-bottom: 30px;
+     h2 {
+          font-size: 64px;
+     }
+     p {
+          font-weight: 400;
+          font-size: 18px;
+          line-height: 160%;
+          /* identical to box height, or 29px */
+
+          /* Neutral/50 */
+
+          color: #abb2c4;
+     }
+     svg {
+          border-radius: 50%;
+          width: 100px;
+          height: 100px;
+          padding: 17px;
+          aspect-ratio: 1/1;
+          display: flex;
+          align-items: center;
+          border: 1px solid;
+     }
+}
+
+.images {
+     display: flex;
+     gap: 30px;
+     align-items: center;
+     img {
+          border-radius: 15px;
+          object-fit: cover;
+     }
+     & > img {
+          // height: 80%;
+
+          width: 35%;
+          aspect-ratio: 3/7;
+          align-self: flex-end;
+     }
+     div {
+          display: flex;
+          flex-direction: column;
+          gap: 30px;
+          img {
+               width: 100%;
+               aspect-ratio: 1/1;
+          }
+          img:first-child {
+               width: 50%;
+          }
+          img:last-child {
+               width: 100%;
+               border-radius: 15px 0 0 15px;
+          }
+     }
+}
