@@ -6,7 +6,15 @@ import Button from "../Button";
 import { log } from "console";
 
 function ProductModal({ product }: { product: ProductType }) {
-  const [number, setNumber] = useState(1);
+  const [form, setForm] = useState<{
+    name: string;
+    phone: string;
+    quantity: number;
+  }>({
+    name: "",
+    phone: "",
+    quantity: 1,
+  });
   function handleClick() {
     console.log("clicked");
   }
@@ -19,11 +27,24 @@ function ProductModal({ product }: { product: ProductType }) {
         <div className={styles.price}>
           <h2>from 1 099$</h2>
           <div>
-            <button onClick={() => setNumber((prev) => (prev ? prev - 1 : 0))}>
+            <button
+              onClick={() =>
+                setForm((prev) => ({
+                  ...prev,
+                  quantity: prev.quantity - 1 ? prev.quantity - 1 : 1,
+                }))
+              }
+            >
               -
             </button>
-            <input type="text" value={number} />
-            <button onClick={() => setNumber((prev) => prev + 1)}>+</button>
+            <input type="text" value={form.quantity} />
+            <button
+              onClick={() =>
+                setForm((prev) => ({ ...prev, quantity: prev.quantity + 1 }))
+              }
+            >
+              +
+            </button>
           </div>
         </div>
         <div className={styles.description}>
@@ -35,6 +56,25 @@ function ProductModal({ product }: { product: ProductType }) {
           deleniti molestias? Adipisci e ique expedita aut ipsam, odio vel vero
           ducimus corporis saepe ea aliquam cum nam. Nulla, aspernatur optio
           vero magni laboriosam saepe esse? Nostrum, corporis ipsam.
+        </div>
+        <p>Менеджеры компании ответят на все вопросы по телефону:</p>
+        <div className={styles.form}>
+          <input
+            type="text"
+            placeholder="Full Name"
+            value={form.name}
+            onChange={(e) =>
+              setForm((prev) => ({ ...prev, name: e.target.value }))
+            }
+          />
+          <input
+            type="text"
+            placeholder="Phone number"
+            value={form.phone}
+            onChange={(e) =>
+              setForm((prev) => ({ ...prev, phone: e.target.value }))
+            }
+          />
         </div>
         <Button onClick={handleClick} style={{ width: "100%" }}>
           ОФОРМИТЬ ЗАКАЗ В ТАШКЕНТЕ

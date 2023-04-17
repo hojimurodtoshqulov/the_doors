@@ -16,18 +16,21 @@
           max-width: 590px;
      }
      h1 {
-          font-family: "Outfit";
+          // font-family: "Outfit";
           max-width: 600px;
-          font-weight: 500;
-          font-size: 60px;
-          line-height: 65px;
+          font-weight: 400;
+          font-size: 70px;
+          // line-height: 65px;
           text-align: center;
+          display: flex;
+          align-items: center;
+          gap: 20px;
      }
      p {
           margin: 20px 0;
-          font-weight: 500;
-          font-size: 18px;
-          line-height: 28px;
+          font-weight: 400;
+          font-size: 30px;
+          line-height: 133%;
      }
 
      @media (max-width: 600px) {

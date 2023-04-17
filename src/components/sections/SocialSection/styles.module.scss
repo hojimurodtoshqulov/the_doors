@@ -1,0 +1,51 @@
+.socials {
+     display: flex;
+     justify-content: space-between;
+     padding: 7vw;
+     gap: 5%;
+     & > div {
+          width: 100%;
+     }
+     h1 {
+          font-weight: 400;
+          font-size: 50px;
+          line-height: 65px;
+
+          max-width: 312px;
+          text-transform: capitalize;
+
+          color: #787878;
+     }
+     p {
+          font-weight: 400;
+          font-size: 25px;
+          line-height: 46px;
+          /* or 184% */
+
+          color: #787878;
+          margin-bottom: 40px;
+     }
+     .icons {
+          display: flex;
+          font-weight: 500;
+          gap: 10%;
+          svg {
+               font-size: 35px;
+               line-height: 46px;
+               color: #787878;
+          }
+     }
+     @media (max-width: 800px) {
+          flex-wrap: wrap;
+          gap: 40px;
+     }
+     @media (max-width: 370px) {
+          h1 {
+               font-size: 40px;
+          }
+          p {
+               font-size: 20px;
+               line-height: 170%;
+          }
+     }
+}

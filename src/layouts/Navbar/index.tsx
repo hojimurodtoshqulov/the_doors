@@ -19,6 +19,7 @@ function Navbar() {
 
       if (window.pageYOffset === 0) {
         ref.current.style.backdropFilter = "blur(0px)";
+        ref.current.style.background = "transparent";
         console.log(1);
       } else {
         ref.current.style.backdropFilter = "blur(10px)";
