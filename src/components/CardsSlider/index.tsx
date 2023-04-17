@@ -30,7 +30,7 @@ function CardsSlider({
     dotsClass: "slick-dot",
     centerPadding: "60px",
     autoplay: true,
-    autoplaySpeed: 1000,
+    autoplaySpeed: 5000,
     responsive: [
       {
         breakpoint: 1000,

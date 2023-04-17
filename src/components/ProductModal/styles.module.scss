@@ -5,6 +5,9 @@
      background-color: white;
      height: 100%;
      overflow: auto;
+     &::-webkit-scrollbar {
+          display: none;
+     }
      .text {
           width: 40%;
           max-height: 100vh;
@@ -27,16 +30,26 @@
           height: 40px;
           font-size: 20px;
           text-align: center;
+          border: 1px solid rgba(0, 0, 0, 0.3);
      }
-     button {
+     .price button {
           background-color: inherit;
           width: 40px;
+          font-size: 25px;
+          border: none;
      }
      .price {
           display: flex;
+          align-items: center;
+          justify-content: space-between;
+          padding: 20px 0;
      }
      .price div {
           display: flex;
+          align-items: center;
+          border: 1px solid rgba(0, 0, 0, 0.3);
+          overflow: hidden;
+          border-radius: 10px;
      }
 
      .description {
