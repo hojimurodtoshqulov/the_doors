@@ -1,12 +1,13 @@
-import ContactUsSection from "@/components/sections/ContactUsSection";
 import ClientsSection from "@/components/sections/ClientsSection";
 import PartnersSection from "@/components/sections/PartnersSection";
 import ProductSection from "@/components/sections/ProductSection";
 import Showcase from "@/components/sections/Showcase";
 import React from "react";
-import VideoSection from "@/components/sections/VideoSection";
 import Adds from "@/components/Adds";
 import MagnificentWork from "@/components/sections/MagnificentWork";
+import FormSection from "@/components/sections/FormSection";
+import NewsSection from "@/components/sections/NewsSection";
+import AboutSection from "@/components/sections/AboutSection";
 
 function HomePage() {
   return (
@@ -17,7 +18,9 @@ function HomePage() {
       <Adds />
       <ProductSection />
       <ClientsSection />
-      <ContactUsSection />
+      {/* <NewsSection /> */}
+      <AboutSection />
+      <FormSection />
       <PartnersSection />
     </div>
   );

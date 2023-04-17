@@ -6,9 +6,11 @@ import { products } from "@/data/product";
 import CardsSlider from "@/components/CardsSlider";
 import { useState } from "react";
 import Modal from "@/components/Modal";
+import ProductModal from "@/components/ProductModal";
 
 function ProductSection() {
   const [product, setProduct] = useState<ProductType>();
+  const [isModal, setIsModal] = useState<boolean>(false);
 
   return (
     <div className={styles.products}>
@@ -19,14 +21,21 @@ function ProductSection() {
           <ProductCard
             product={product}
             setProduct={setProduct}
+            setIsModal={setIsModal}
             key={product.id}
           />
         ))}
       </div>
       <div className={styles.cardsMin}>
-        <CardsSlider products={products} setProduct={setProduct} />
+        <CardsSlider
+          products={products}
+          setProduct={setProduct}
+          setIsModal={setIsModal}
+        />
       </div>
-      <Modal product={product} setProduct={setProduct}></Modal>
+      <Modal product={product} setIsModal={setIsModal} isModal={isModal}>
+        {product && <ProductModal product={product} />}
+      </Modal>
     </div>
   );
 }

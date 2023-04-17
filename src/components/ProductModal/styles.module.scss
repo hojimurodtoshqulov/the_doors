@@ -1,0 +1,51 @@
+.content {
+     display: flex;
+     justify-content: space-between;
+     gap: 3%;
+     background-color: white;
+     height: 100%;
+     overflow: auto;
+     .text {
+          width: 40%;
+          max-height: 100vh;
+          display: flex;
+          flex-direction: column;
+     }
+     h1 {
+          font-size: 35px;
+          line-height: 150%;
+          font-weight: 500;
+          color: rgba(0, 0, 0, 0.8);
+     }
+     h2 {
+          font-size: 22px;
+          line-height: 150%;
+          color: rgba(0, 0, 0, 0.87);
+     }
+     input {
+          width: 40px;
+          height: 40px;
+          font-size: 20px;
+          text-align: center;
+     }
+     button {
+          background-color: inherit;
+          width: 40px;
+     }
+     .price {
+          display: flex;
+     }
+     .price div {
+          display: flex;
+     }
+
+     .description {
+          height: 100%;
+     }
+     @media (max-width: 1000px) {
+          flex-direction: column;
+          .text {
+               width: 100%;
+          }
+     }
+}

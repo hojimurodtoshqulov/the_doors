@@ -6,14 +6,16 @@ import styles from "./slider.module.scss";
 
 function ImageSlider({ images }: { images: string[] }) {
   const [isSliding, setIsSliding] = useState<boolean>(false);
+
   const settings = {
-    infinite: isSliding,
-    speed: 500,
+    infinite: true,
     slidesToShow: 1,
     slidesToScroll: 1,
-    autoplaySpeed: 5000,
-    autoplay: true,
+    speed: 1000,
+    autoplaySpeed: 2000,
+    autoplay: isSliding,
     pauseOnHover: false,
+    cssEase: "linear",
   };
   return (
     <div

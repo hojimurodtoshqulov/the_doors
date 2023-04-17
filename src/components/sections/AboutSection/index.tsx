@@ -10,7 +10,7 @@ function AboutSection() {
         <img src={image2.src} alt="" />
       </div>
       <div className={styles.description}>
-        <h3>Lorem ipsum</h3>
+        <h3>О нас</h3>
         <p>
           Международный концерн The Door — это промышленная группа
           глубокоинтегрированных производственных предприятий, общей целью

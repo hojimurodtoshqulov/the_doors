@@ -48,6 +48,7 @@ function ClientSlider() {
         </a>
       );
     },
+    dotsClass: "slick-dot",
 
     dots: true,
     infinite: true,
@@ -56,7 +57,6 @@ function ClientSlider() {
     // autoplay: true,
     speed: 500,
     autoplaySpeed: 2000,
-    dotsClass: "slick-dot",
 
     responsive: [
       {

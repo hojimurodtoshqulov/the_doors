@@ -1,39 +1,49 @@
 import { ProductType } from "@/shared/types";
 import styles from "./modale.module.scss";
-import { Dispatch, SetStateAction } from "react";
+import React, { Dispatch, SetStateAction, useEffect, useState } from "react";
 import ModalImages from "../ModalImages";
+import Button from "../Button";
+import ProductModal from "../ProductModal";
 
 function Modal({
   product,
-  setProduct,
+  children,
+  setIsModal,
+  isModal,
 }: {
   product?: ProductType;
-  setProduct: Dispatch<SetStateAction<ProductType | undefined>>;
+  setIsModal: Dispatch<SetStateAction<boolean>>;
+  children: React.ReactNode;
+  isModal: boolean;
 }) {
+  useEffect(() => {
+    const y = window.scrollY;
+    const handleScroll = () => {
+      isModal && window.scrollTo(window.scrollX, y);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [isModal]);
+
   return (
-    <div className={`${styles.modal} ${product && styles.active}`}>
+    <div className={`${styles.modal} ${isModal && styles.active}`}>
       <p
         onClick={() => {
-          setProduct(undefined);
+          setIsModal(false);
         }}
         className={styles.back}
       ></p>
       <p
         onClick={() => {
-          setProduct(undefined);
+          setIsModal(false);
         }}
         className={styles.back}
       ></p>
-      <div className={styles.content}>
-        <ModalImages images={product?.images || []} />
-        {/* {JSON.stringify(product)} */}
-        <div className={styles.text}>
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fugiat porro
-          quos dolores officia unde quasi laboriosam voluptates consectetur
-          totam aut possimus voluptatum provident recusandae, mollitia fuga
-          accusamus rem neque minus.
-        </div>
-      </div>
+      <div className={styles.content}>{children} </div>
     </div>
   );
 }

@@ -11,9 +11,11 @@ function ProductCard({
   product,
   setProduct,
   style,
+  setIsModal,
 }: MainPropType & {
   product?: ProductType;
   setProduct: Dispatch<SetStateAction<ProductType | undefined>>;
+  setIsModal: Dispatch<SetStateAction<boolean>>;
 }) {
   return (
     <div className={styles.product} style={style}>
@@ -40,7 +42,13 @@ function ProductCard({
         <span>({product?.ratingQuantity})</span>
       </div>
 
-      <Button style={{ borderRadius: 10 }} onClick={() => setProduct(product)}>
+      <Button
+        style={{ borderRadius: 10 }}
+        onClick={() => {
+          setIsModal(true);
+          setProduct(product);
+        }}
+      >
         Add to cart
       </Button>
     </div>

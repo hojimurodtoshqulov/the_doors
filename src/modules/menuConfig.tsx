@@ -13,14 +13,14 @@ export const menuConfig: MenuRouteType[] = [
     link: "/#contact",
   },
   {
+    id: "4",
+    label: "News",
+    link: "/#news",
+  },
+  {
     id: "2",
     label: "About",
     link: "/about",
-  },
-  {
-    id: "4",
-    label: "News",
-    link: "/news",
   },
 ];
 
