@@ -1,8 +1,15 @@
 .title {
      font-family: "Roboto";
      font-style: normal;
-     font-weight: 500;
+     font-weight: 400;
      font-size: 50px;
      line-height: 60px;
-     color: var(--blue-grey-common);
+     color: #787878;
+     translate: -200px;
+     opacity: 0;
+     transition: 2s;
+     &.active {
+          opacity: 1;
+          translate: 0;
+     }
 }

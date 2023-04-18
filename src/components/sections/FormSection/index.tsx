@@ -5,7 +5,7 @@ import Button from "../../Button";
 
 function FormSection() {
   return (
-    <div className={styles.contact}>
+    <div className={styles.contact} id="about">
       <form action="/">
         <h1>Contact us</h1>
         <div className={styles.line}></div>

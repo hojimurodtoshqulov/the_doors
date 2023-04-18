@@ -6,17 +6,33 @@
      align-items: center;
      flex-direction: column;
      gap: 80px;
-     inset: 0;
-     div {
+     inset: 0 7vw;
+     translate: -100%;
+     transition: 2s;
+     opacity: 0;
+     & > div {
           text-align: center;
           display: flex;
           align-items: center;
           justify-content: center;
           flex-direction: column;
           max-width: 590px;
+          div {
+               overflow: hidden;
+          }
+     }
+     &.active {
+          opacity: 1;
+          translate: 0;
+          h1 {
+               transition-delay: 2s;
+               translate: 0;
+          }
      }
      h1 {
           // font-family: "Outfit";
+          translate: 0 100%;
+          transition: 2s;
           max-width: 600px;
           font-weight: 400;
           font-size: 70px;
@@ -44,5 +60,11 @@
                line-height: 20px;
                margin: 10px 0;
           }
+     }
+}
+
+@keyframes title {
+     to {
+          translate: 0;
      }
 }

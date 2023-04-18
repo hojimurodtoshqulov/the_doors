@@ -12,6 +12,7 @@ import { useRouter } from "next/router";
 function Navbar() {
   const [scrollPosition, setScrollPosition] = useState<number>(0);
   const ref = useRef<HTMLHeadElement>(null);
+  const route = useRouter();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -20,9 +21,12 @@ function Navbar() {
       if (window.pageYOffset === 0) {
         ref.current.style.backdropFilter = "blur(0px)";
         ref.current.style.background = "transparent";
-        console.log(1);
       } else {
         ref.current.style.backdropFilter = "blur(10px)";
+        ref.current.style.background =
+          route.pathname === "/"
+            ? "rgba(255, 255, 255, 0.2)"
+            : "rgba(0, 0, 0, 0.2)";
       }
 
       const currentScrollPos = window.pageYOffset;
@@ -38,12 +42,11 @@ function Navbar() {
 
     return () => window.removeEventListener("scroll", handleScroll);
   }, [scrollPosition]);
-  console.log();
 
   return (
     <nav
       className={`${styles.navbar} ${
-        useRouter().pathname === "/" && styles.black
+        route.pathname === "/" && styles.black
       } container-padding`}
       ref={ref}
     >
@@ -59,7 +62,7 @@ function Navbar() {
           </Link>
         ))}
       </div>
-      <Link href={"/"}>
+      <Link href={"/#contact"}>
         <a>
           <Button
             style={{

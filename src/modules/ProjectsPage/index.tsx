@@ -3,6 +3,7 @@ import AboutShowcase from "@/components/sections/MainShowcase";
 import Adds from "@/components/Adds";
 import AboutSection from "@/components/sections/AboutSection";
 import hero from "../../../public/media/hero3.png";
+import OurProjects from "@/components/sections/OurProjects";
 
 function ProjectsPage() {
   return (
@@ -14,6 +15,7 @@ function ProjectsPage() {
       >
         Наши последние проекты
       </AboutShowcase>
+      <OurProjects />
       <Adds />
     </div>
   );

@@ -5,9 +5,9 @@
      gap: 3%;
      background-color: white;
      height: 100%;
-     overflow: auto;
      color: #787878;
-     &::-webkit-scrollbar {
+     &::-webkit-scrollbar,
+     *::-webkit-scrollbar {
           display: none;
      }
      .text {
@@ -15,7 +15,10 @@
           max-height: 100vh;
           display: flex;
           flex-direction: column;
+          overflow: auto;
+          height: 100%;
      }
+
      h1 {
           font-size: 35px;
           line-height: 150%;
@@ -74,8 +77,10 @@
      }
      @media (max-width: 1000px) {
           flex-direction: column;
+          overflow: auto;
           .text {
                width: 100%;
+               overflow: unset;
           }
      }
 }

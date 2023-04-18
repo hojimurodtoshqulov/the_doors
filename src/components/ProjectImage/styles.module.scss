@@ -1,0 +1,8 @@
+.image {
+     transform: rotateY(90deg);
+     transition: 2s;
+     &.active {
+          background-color: red;
+          transform: rotateY(0deg);
+     }
+}

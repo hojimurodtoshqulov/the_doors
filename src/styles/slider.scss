@@ -1,5 +1,8 @@
 .cards-slider-component .image-slider-component,
 .image-slider-component {
+     img {
+          border-radius: 10px;
+     }
      .slick-next {
           right: 10px;
      }

@@ -6,6 +6,13 @@
      border: 1px solid #e3e3e3;
      border-radius: 10px;
      width: 23%;
+     opacity: 0;
+     translate: 0 20%;
+     transition: 2s;
+     &.active {
+          translate: 0;
+          opacity: 1;
+     }
      @media (max-width: 1150px) {
           width: 30%;
      }

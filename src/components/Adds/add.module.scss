@@ -2,12 +2,34 @@
      display: flex;
      justify-content: space-between;
      text-align: center;
+     align-items: center;
      font-family: "Work Sans";
      gap: 5%;
      row-gap: 30px;
      padding: 10vw 7%;
-     div {
+     // transition: 1s;
+     &.active {
+          .stick {
+               height: 160px;
+               transition-delay: 2s;
+          }
+          .stick::before {
+               opacity: 1;
+               scale: 1;
+               transition-delay: 1s;
+          }
+          div {
+               opacity: 1;
+               translate: 0;
+               scale: 1;
+          }
+     }
+     .image {
           max-width: 200px;
+          translate: 0 100%;
+          transition: 1s;
+          opacity: 0;
+          scale: 0.8;
      }
      h1 {
           color: var(--blue-grey-common);
@@ -36,15 +58,22 @@
           background-color: #969696;
           width: 2px;
           position: relative;
+          // scale: 0;
+          height: 0;
+          transition: 1s;
           &::before {
                content: "";
                position: absolute;
                padding: 4px;
+               transition: 1s;
+
                border-radius: 50%;
                top: 50%;
                left: 50%;
                translate: -50% -50%;
                background-color: #f7941d;
+               scale: 10;
+               opacity: 0;
           }
           &.blue::before {
                background-color: var(--blue-common);

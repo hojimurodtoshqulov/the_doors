@@ -1,10 +1,21 @@
 .showcase {
      padding: 7%;
-     // height: 100vh;
+     height: 100vh;
      display: flex;
      align-items: center;
      position: relative;
 
+     &.active {
+          p,
+          h1 span {
+               transform: rotate(0deg) translate(0px);
+               opacity: 1;
+          }
+          .buttons {
+               translate: 0;
+               opacity: 1;
+          }
+     }
      h1 {
           font-weight: 500;
           font-size: 140px;
@@ -13,6 +24,14 @@
           letter-spacing: -3px;
           text-transform: uppercase;
           color: #003d76;
+          span {
+               display: inline-block;
+               transform: rotateX(90deg);
+               transition: 1s;
+          }
+          span:last-child {
+               transition-delay: 1s;
+          }
      }
      p {
           font-weight: 500;
@@ -21,11 +40,19 @@
           color: #878787;
           max-width: 480px;
           margin: 40px 0 40px;
+          transform: rotateX(90deg);
+          transition: 1s;
+          transition-delay: 2s;
      }
      .buttons {
           display: flex;
           gap: 20px;
           flex-wrap: wrap;
+
+          transition: 1s;
+          transition-delay: 3s;
+          opacity: 0;
+          translate: -50%;
      }
      button {
           display: flex;
@@ -72,7 +99,7 @@
 }
 .images {
      position: absolute;
-     bottom: 2vw;
+     bottom: 2%;
      right: 10vw;
      z-index: -1;
      width: 50vw;

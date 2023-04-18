@@ -1,9 +1,30 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import styles from "./style.module.scss";
 import { AiOutlineLike } from "react-icons/ai";
 import image from "../../../../public/media/hero2.png";
+import VanillaTilt from "vanilla-tilt";
 
 function MagnificentWork() {
+  const ref1 = useRef(null);
+  const ref2 = useRef(null);
+  const ref3 = useRef(null);
+
+  useEffect(() => {
+    if (!ref1.current || !ref2.current || !ref3.current) return;
+    const options = {
+      max: 20,
+      speed: 1000,
+      glare: true,
+      "max-glare": 0.5,
+    };
+    VanillaTilt.init(ref1.current, options);
+    VanillaTilt.init(ref2.current, options);
+    VanillaTilt.init(ref3.current, options);
+    // clean up function
+    return () => {
+      // ref.current.vanillaTilt.destroy();
+    };
+  }, [ref1, ref2, ref3]);
   return (
     <div className={styles.work}>
       <div className={styles.text}>
@@ -31,10 +52,10 @@ function MagnificentWork() {
         </div>
       </div>
       <div className={styles.images}>
-        <img src={image.src} alt="" />
+        <img src={image.src} alt="" ref={ref1} />
         <div>
-          <img src={image.src} alt="" />
-          <img src={image.src} alt="" />
+          <img src={image.src} alt="" ref={ref2} />
+          <img src={image.src} alt="" ref={ref3} />
         </div>
       </div>
     </div>
