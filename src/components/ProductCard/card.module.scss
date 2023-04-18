@@ -13,6 +13,9 @@
           translate: 0;
           opacity: 1;
      }
+     @media (max-width: 1200px) {
+          transition: 0s;
+     }
      @media (max-width: 1150px) {
           width: 30%;
      }
@@ -22,6 +25,7 @@
      @media (max-width: 550px) {
           width: 100%;
      }
+
      .discount {
           clip-path: polygon(100% 0, 90% 50%, 100% 100%, 0 100%, 0 0);
           top: 10%;

@@ -18,9 +18,10 @@ function AboutSection() {
     }
     const options = {
       max: 20,
+      scale: 1.05,
+
       speed: 1000,
       glare: true,
-      "max-glare": 0.5,
     };
     VanillaTilt.init(ref1.current, options);
     VanillaTilt.init(ref2.current, options);

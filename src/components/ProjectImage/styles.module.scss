@@ -1,6 +1,6 @@
 .image {
-     transform: rotateY(90deg);
-     transition: 2s;
+     transform: rotateY(50deg);
+     transition: 1s;
      &.active {
           background-color: red;
           transform: rotateY(0deg);

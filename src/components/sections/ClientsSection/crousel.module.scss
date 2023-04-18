@@ -6,6 +6,19 @@
      row-gap: 40px;
      position: relative;
      overflow: hidden;
+
+     &.active {
+          .about p {
+               transform: rotate(0deg);
+          }
+          div div div div div div div div * {
+               scale: 1;
+               transition-delay: 2s;
+          }
+          div div {
+               translate: 0;
+          }
+     }
      &::before {
           content: "";
           position: absolute;
@@ -22,12 +35,22 @@
                line-height: 24px;
                max-width: 400px;
                color: #ededed;
+               transform: rotateX(90deg);
+               transition: 2s;
           }
           h1 {
                max-width: 315px;
                margin-bottom: 17px;
                color: white;
           }
+     }
+     & > div > div > div > div div {
+          translate: 100%;
+          transition: 2s;
+     }
+     div div div div div div div div * {
+          scale: 0;
+          transition: 1.5s;
      }
      @media (max-width: 1070px) {
           flex-wrap: wrap;

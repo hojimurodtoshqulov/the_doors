@@ -13,6 +13,7 @@ function MagnificentWork() {
     if (!ref1.current || !ref2.current || !ref3.current) return;
     const options = {
       max: 20,
+      scale: 1.05,
       speed: 1000,
       glare: true,
       "max-glare": 0.5,
