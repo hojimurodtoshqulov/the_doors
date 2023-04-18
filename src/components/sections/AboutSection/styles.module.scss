@@ -5,6 +5,20 @@
      padding: 150px 7vw 150px 0;
      gap: 5%;
      font-family: sans-serif;
+     &.active {
+          .images img {
+               translate: 0;
+               scale: 1;
+               opacity: 1;
+          }
+          .description {
+               opacity: 1;
+               h3,
+               p {
+                    translate: 0;
+               }
+          }
+     }
      .images {
           width: 50%;
           aspect-ratio: 1/1;
@@ -16,6 +30,10 @@
                object-fit: cover;
                border: 5px solid white;
                border-radius: 10px;
+               translate: -300px;
+               opacity: 0;
+               scale: 1.1;
+               transition: 1s;
           }
           img:first-child {
                left: 0;
@@ -24,18 +42,25 @@
           img:last-child {
                bottom: 0;
                right: 0;
+               transition-delay: 1s;
           }
      }
      .description {
           width: 50%;
           font-style: normal;
+          opacity: 0;
+          transition: 1s;
           h3 {
                padding-bottom: 30px;
                font-size: 50px;
                line-height: 35px;
                color: #34394c;
+               transition: 2s;
+               translate: 300px;
           }
           p {
+               translate: 280px;
+               transition: 1s;
                font-family: sans-serif;
                font-weight: 500;
                font-size: 20px;

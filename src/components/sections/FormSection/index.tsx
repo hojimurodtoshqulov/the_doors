@@ -2,10 +2,16 @@ import Link from "next/link";
 import bg from "../../../../public/media/constactus.png";
 import styles from "./contact.module.scss";
 import Button from "../../Button";
+import useIntersectionObserver from "@/utils/InterSectionObserver";
+import { useRef } from "react";
 
 function FormSection() {
+  
+  const ref = useRef(null);
+  const entity = useIntersectionObserver(ref, {});
+
   return (
-    <div className={styles.contact} id="about">
+    <div className={`${entity?.isIntersecting && styles.active} ${styles.contact}`} id="about" ref={ref}>
       <form action="/">
         <h1>Contact us</h1>
         <div className={styles.line}></div>

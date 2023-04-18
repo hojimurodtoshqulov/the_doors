@@ -3,12 +3,17 @@ import styles from "./styles.module.scss";
 import image1 from "/public/media/hero1.png";
 import image2 from "/public/media/hero2.png";
 import VanillaTilt from "vanilla-tilt";
+import useIntersectionObserver from "@/utils/InterSectionObserver";
 
 function AboutSection() {
   const ref1 = useRef(null);
   const ref2 = useRef(null);
+
+  const ref = useRef(null);
+  const entity = useIntersectionObserver(ref, {});
+
   useEffect(() => {
-    if (!ref1.current) {
+    if (!ref1.current || !ref2.current) {
       return;
     }
     const options = {
@@ -19,9 +24,14 @@ function AboutSection() {
     };
     VanillaTilt.init(ref1.current, options);
     VanillaTilt.init(ref2.current, options);
-  }, []);
+  }, [ref1.current, ref2.current]);
+
   return (
-    <div className={styles.about} id="about">
+    <div
+      className={`${entity?.isIntersecting && styles.active} ${styles.about}`}
+      id="about"
+      ref={ref}
+    >
       <div className={styles.images}>
         <img src={image1.src} alt="" ref={ref1} />
         <img src={image2.src} alt="" ref={ref2} />
