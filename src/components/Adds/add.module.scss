@@ -11,9 +11,11 @@
      &.active {
           .stick {
                height: 160px;
+               transition: 1s;
                transition-delay: 2s;
           }
           .stick::before {
+               transition: 1s;
                opacity: 1;
                scale: 1;
                transition-delay: 1s;
@@ -60,13 +62,10 @@
           position: relative;
           // scale: 0;
           height: 0;
-          transition: 1s;
           &::before {
                content: "";
                position: absolute;
                padding: 4px;
-               transition: 1s;
-
                border-radius: 50%;
                top: 50%;
                left: 50%;

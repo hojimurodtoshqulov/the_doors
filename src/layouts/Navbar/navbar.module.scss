@@ -4,19 +4,16 @@
      left: 0;
      display: flex;
      align-items: center;
+     gap: 15%;
      justify-content: space-between;
      width: 100%;
      z-index: 100;
      font-size: 18px;
      transition: 0.5s;
      background-color: rgba(0, 0, 0, 0.2);
-
-     & > a {
-          width: 50%;
-          max-width: 150px;
-          img {
-               width: 100%;
-          }
+     min-height: 100px;
+     a {
+          display: inline-block;
      }
      div:last-child {
           font-size: 22px;
@@ -55,23 +52,73 @@
                background-color: black;
           }
      }
+     .menuBtn {
+          display: none;
+          background-color: red;
+     }
+     @media (max-width: 1000px) {
+          .menuBtn {
+               display: block;
+          }
+          .menu {
+               position: fixed;
+               color: black;
+               top: 100%;
+               left: 0;
+               flex-direction: column;
+               align-items: stretch;
+               min-width: 200px;
+               width: 40%;
+               z-index: 10;
+               transition: 1s;
+               translate: -100%;
+               z-index: -12;
+          }
+          .menu a::before {
+               background-color: black;
+               transition: 1s;
+               height: 1px;
+          }
+          .menu a {
+               padding: 15px 10%;
+          }
+          .menu.open {
+               translate: 0;
+          }
+          .menu::before {
+               content: "";
+               transition: 1s;
+               position: absolute;
+               height: 200vh;
+               width: 100vw;
+               top: -100px;
+               left: 0;
+               translate: -100%;
+          }
+          .menu.open::before {
+               translate: 0;
+               background-color: rgb(255, 255, 255);
+          }
+     }
 }
 
 .menu {
      display: flex;
      align-items: center;
-     justify-content: space-evenly;
-     width: 50%;
+     justify-content: space-between;
+     width: 100%;
      color: white;
      a {
           padding: 30px 0;
           position: relative;
+          font-size: 18px;
           transition: 500ms;
      }
      a::before {
           content: "";
           position: absolute;
           bottom: 0;
+          left: 0;
           height: 2px;
           background-color: rgb(255, 255, 255);
           width: 0%;
@@ -83,5 +130,28 @@
           &::before {
                width: 100%;
           }
+     }
+     a:last-child::before {
+          display: none;
+     }
+}
+
+.menuBtn {
+     height: 30px;
+     width: 40px;
+     position: relative;
+
+     &::after,
+     &::before {
+          content: "";
+          position: absolute;
+          // top: 0;
+          right: 0;
+          height: 3px;
+          width: 100%;
+          background-color: rgb(0, 0, 0);
+     }
+     &::before {
+          bottom: 0;
      }
 }

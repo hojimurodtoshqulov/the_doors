@@ -10,12 +10,17 @@
                translate: 0;
                scale: 1;
                opacity: 1;
+               transition: 2s;
+          }
+          .images img:last-child {
+               transition-delay: 1s;
           }
           .description {
                opacity: 1;
                h3,
                p {
                     translate: 0;
+                    transition: 2s;
                }
           }
      }
@@ -30,10 +35,8 @@
                object-fit: cover;
                border: 5px solid white;
                border-radius: 10px;
-               translate: -300px;
-               opacity: 0;
+               translate: -1000px;
                scale: 1.1;
-               transition: 1s;
           }
           img:first-child {
                left: 0;
@@ -42,7 +45,6 @@
           img:last-child {
                bottom: 0;
                right: 0;
-               transition-delay: 1s;
           }
      }
      .description {
@@ -55,12 +57,10 @@
                font-size: 50px;
                line-height: 35px;
                color: #34394c;
-               transition: 2s;
                translate: 300px;
           }
           p {
                translate: 280px;
-               transition: 1s;
                font-family: sans-serif;
                font-weight: 500;
                font-size: 20px;

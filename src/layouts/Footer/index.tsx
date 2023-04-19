@@ -14,12 +14,7 @@ function Footer({ style }: MainPropType) {
             Quis nostrud exercitatin ullamc boris nisi ut aliquip ex ea commodo
             conse.
           </p>
-          <form action="/">
-            <input type="text" placeholder="Your email here" />
-            <button>
-              <GrMail />
-            </button>
-          </form>
+
           <div className={styles.icons}>
             <BsFacebook />
             <AiFillInstagram />

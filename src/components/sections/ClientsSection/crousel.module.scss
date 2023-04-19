@@ -14,9 +14,11 @@
           div div div div div div div div * {
                scale: 1;
                transition-delay: 2s;
+               transition: 1.5s;
           }
           div div {
                translate: 0;
+               transition: 2s;
           }
      }
      &::before {
@@ -46,11 +48,9 @@
      }
      & > div > div > div > div div {
           translate: 100%;
-          transition: 2s;
      }
      div div div div div div div div * {
           scale: 0;
-          transition: 1.5s;
      }
      @media (max-width: 1070px) {
           flex-wrap: wrap;

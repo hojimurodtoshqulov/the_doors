@@ -8,7 +8,6 @@
      gap: 80px;
      inset: 0 7vw;
      translate: -100%;
-     transition: 2s;
      opacity: 0;
      & > div {
           text-align: center;
@@ -24,7 +23,11 @@
      &.active {
           opacity: 1;
           translate: 0;
+          transition: 2s;
+
           h1 {
+               transition: 2s;
+
                transition-delay: 2s;
                translate: 0;
           }
@@ -32,7 +35,6 @@
      h1 {
           // font-family: "Outfit";
           translate: 0 100%;
-          transition: 2s;
           max-width: 600px;
           font-weight: 400;
           font-size: 70px;

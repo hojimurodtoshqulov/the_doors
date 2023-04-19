@@ -11,6 +11,7 @@ import { useRouter } from "next/router";
 
 function Navbar() {
   const [scrollPosition, setScrollPosition] = useState<number>(0);
+  const [isOpen, setIsOpen] = useState<boolean>(false);
   const ref = useRef<HTMLHeadElement>(null);
   const route = useRouter();
 
@@ -34,7 +35,6 @@ function Navbar() {
       ref.current.style.translate = `0 ${
         scrollPosition > currentScrollPos ? 0 : "-100%"
       }`;
-
       setScrollPosition(currentScrollPos);
     };
 
@@ -55,29 +55,37 @@ function Navbar() {
           <button className={styles.logo}>Katalog</button>
         </a>
       </Link>
-      <div className={` ${styles.menu}`}>
+      <div
+        className={styles.menuBtn}
+        onClick={() => setIsOpen((pre) => !pre)}
+      ></div>
+
+      <div
+        className={` ${isOpen || styles.open} ${styles.menu}`}
+        onClick={() => setIsOpen((pre) => !pre)}
+      >
         {menuConfig.map((route: MenuRouteType) => (
           <Link href={route.link} key={route.id}>
             <a className={"link"}>{route.label}</a>
           </Link>
-        ))}
+        ))}{" "}
+        <Link href={"/#contact"}>
+          <a>
+            <Button
+              style={{
+                borderRadius: 10,
+                minWidth: 160,
+                gap: 10,
+                alignItems: "center",
+                display: "flex",
+                justifyContent: "space-between",
+              }}
+            >
+              <BsFillTelephoneFill /> Request a call
+            </Button>
+          </a>
+        </Link>
       </div>
-      <Link href={"/#contact"}>
-        <a>
-          <Button
-            style={{
-              borderRadius: 10,
-              minWidth: 160,
-              gap: 10,
-              alignItems: "center",
-              display: "flex",
-              justifyContent: "space-between",
-            }}
-          >
-            <BsFillTelephoneFill /> Request a call
-          </Button>
-        </a>
-      </Link>
     </nav>
   );
 }

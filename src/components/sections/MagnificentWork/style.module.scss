@@ -7,7 +7,7 @@
      padding: 80px 0;
      gap: 5%;
      min-height: 100vh;
-
+     margin-top: 1px;
      @media (max-width: 800px) {
           flex-direction: column;
           gap: 50px;
@@ -16,6 +16,15 @@
           }
           .images {
                padding-left: 7vw;
+          }
+     }
+     &.active {
+          .images img,
+          .text * {
+               translate: 0;
+               scale: 1;
+               opacity: 1;
+               transform: rotateX(0deg);
           }
      }
 }
@@ -27,6 +36,13 @@
      align-self: stretch;
      gap: 20px;
      padding-left: 7vw;
+     // translate: -100%;
+     transition: 2s;
+     * {
+          opacity: 0;
+          transform: rotateX(90deg);
+          transition: 1s;
+     }
      h1 {
           font-weight: 500;
           font-size: 70px;
@@ -91,6 +107,8 @@
      img {
           border-radius: 15px;
           object-fit: cover;
+          scale: 0;
+          transition: 0.5s;
      }
      & > img {
           // height: 80%;
@@ -109,10 +127,12 @@
           }
           img:first-child {
                width: 50%;
+               transition-delay: 0.5s;
           }
           img:last-child {
                width: 100%;
                border-radius: 15px 0 0 15px;
+               transition-delay: 1s;
           }
      }
 

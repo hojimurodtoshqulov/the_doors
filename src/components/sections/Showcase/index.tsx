@@ -3,16 +3,11 @@ import React, { useRef } from "react";
 import hero1 from "../../../../public/media/hero1.png";
 import hero2 from "../../../../public/media/hero2.png";
 import hero3 from "../../../../public/media/Group.png";
-import hero4 from "../../../../public/media/hero4.png";
-import { BiSearch } from "react-icons/bi";
-import Button from "@/components/Button";
-import ShowcaseContent from "@/components/ShowcaseContent";
 import useIntersectionObserver from "@/utils/InterSectionObserver";
 
 function Showcase() {
   const ref = useRef(null);
   const entity = useIntersectionObserver(ref, {});
-  console.log(entity?.isIntersecting);
 
   return (
     <div

@@ -2,7 +2,6 @@
      transform: rotateY(50deg);
      transition: 1s;
      &.active {
-          background-color: red;
           transform: rotateY(0deg);
      }
 }

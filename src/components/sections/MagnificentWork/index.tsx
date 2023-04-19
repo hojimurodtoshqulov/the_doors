@@ -3,11 +3,14 @@ import styles from "./style.module.scss";
 import { AiOutlineLike } from "react-icons/ai";
 import image from "../../../../public/media/hero2.png";
 import VanillaTilt from "vanilla-tilt";
+import useIntersectionObserver from "@/utils/InterSectionObserver";
 
 function MagnificentWork() {
   const ref1 = useRef(null);
   const ref2 = useRef(null);
   const ref3 = useRef(null);
+  const ref = useRef(null);
+  const entity = useIntersectionObserver(ref, { rootMargin: "-20% 0px" });
 
   useEffect(() => {
     if (!ref1.current || !ref2.current || !ref3.current) return;
@@ -27,7 +30,10 @@ function MagnificentWork() {
     };
   }, [ref1, ref2, ref3]);
   return (
-    <div className={styles.work}>
+    <div
+      className={`${entity?.isIntersecting && styles.active} ${styles.work}`}
+      ref={ref}
+    >
       <div className={styles.text}>
         <h1>MAGNIFICENT WORK</h1>
         <p>

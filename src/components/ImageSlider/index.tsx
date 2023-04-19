@@ -9,6 +9,7 @@ function ImageSlider({ images }: { images: string[] }) {
   const ref: React.LegacyRef<Slider> = useRef(null);
 
   const handleSliderHover = () => {
+    clearInterval(currentSlide);
     setCurrentSlide(
       setInterval(() => {
         ref.current?.slickNext();
