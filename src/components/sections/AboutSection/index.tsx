@@ -30,14 +30,13 @@ function AboutSection() {
   return (
     <div
       className={`${entity?.isIntersecting && styles.active} ${styles.about}`}
-      id="about"
       ref={ref}
     >
       <div className={styles.images}>
         <img src={image1.src} alt="" ref={ref1} />
         <img src={image2.src} alt="" ref={ref2} />
       </div>
-      <div className={styles.description}>
+      <div className={styles.description} id="about">
         <h3>О нас</h3>
         <p>
           Международный концерн The Door — это промышленная группа

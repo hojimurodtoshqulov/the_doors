@@ -6,13 +6,16 @@ import useIntersectionObserver from "@/utils/InterSectionObserver";
 import { useRef } from "react";
 
 function FormSection() {
-  
   const ref = useRef(null);
   const entity = useIntersectionObserver(ref, {});
 
   return (
-    <div className={`${entity?.isIntersecting && styles.active} ${styles.contact}`} id="about" ref={ref}>
-      <form action="/">
+    <div
+      className={`${entity?.isIntersecting && styles.active} ${styles.contact}`}
+      id="about"
+      ref={ref}
+    >
+      <form action="/" id="contact">
         <h1>Contact us</h1>
         <div className={styles.line}></div>
         <input type="text" placeholder="First name*" />
@@ -21,7 +24,7 @@ function FormSection() {
         <div className={styles.line}></div>
         <Button>Request a call</Button>
       </form>
-      <div className={styles.map} id="contact">
+      <div className={styles.map}>
         {/* <div style="position:relative;overflow:hidden;"> */}
 
         <iframe src="https://yandex.com/map-widget/v1/?ll=69.270039%2C41.299661&mode=routes&rtext=~41.300296%2C69.269608&rtt=auto&ruri=~&z=17"></iframe>

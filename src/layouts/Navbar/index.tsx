@@ -56,12 +56,12 @@ function Navbar() {
         </a>
       </Link>
       <div
-        className={styles.menuBtn}
+        className={`${isOpen && styles.x} ${styles.menuBtn}`}
         onClick={() => setIsOpen((pre) => !pre)}
       ></div>
 
       <div
-        className={` ${isOpen || styles.open} ${styles.menu}`}
+        className={` ${isOpen && styles.open} ${styles.menu}`}
         onClick={() => setIsOpen((pre) => !pre)}
       >
         {menuConfig.map((route: MenuRouteType) => (

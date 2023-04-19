@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styles from "./layout.module.scss";
 import Navbar from "../Navbar";
 import Footer from "../Footer";
