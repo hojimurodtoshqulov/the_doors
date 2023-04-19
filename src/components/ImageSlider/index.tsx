@@ -21,6 +21,7 @@ function ImageSlider({ images }: { images: string[] }) {
     infinite: true,
     slidesToShow: 1,
     slidesToScroll: 1,
+    arrows: false,
     speed: 2000,
   };
   return (

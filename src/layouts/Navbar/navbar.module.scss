@@ -52,8 +52,18 @@
                background-color: black;
           }
      }
+     &.black .menuBtn {
+          &::after,
+          &::before {
+               background-color: rgb(0, 0, 0);
+          }
+     }
      .menuBtn {
           display: none;
+          &::after,
+          &::before {
+               background-color: rgb(255, 255, 255);
+          }
      }
      @media (max-width: 1000px) {
           .menuBtn {
@@ -148,7 +158,6 @@
           right: 0;
           height: 2px;
           width: 100%;
-          background-color: rgb(0, 0, 0);
           transform-origin: center center;
           transition: 1s;
      }
