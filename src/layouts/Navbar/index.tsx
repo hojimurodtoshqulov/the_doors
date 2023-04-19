@@ -7,37 +7,28 @@ import styles from "./navbar.module.scss";
 import Link from "next/link";
 import { MenuRouteType, menuConfig } from "@/modules/menuConfig";
 import Button from "@/components/Button";
-
 function Navbar() {
   const [scrollPosition, setScrollPosition] = useState<number>(0);
   const ref = useRef<HTMLHeadElement>(null);
-
   useEffect(() => {
     const handleScroll = () => {
       if (!ref.current) return;
-
       if (window.pageYOffset === 0) {
         ref.current.style.backdropFilter = "blur(0px)";
         console.log(1);
       } else {
         ref.current.style.backdropFilter = "blur(10px)";
       }
-
       const currentScrollPos = window.pageYOffset;
-
       ref.current.style.translate = `0 ${
         scrollPosition > currentScrollPos ? 0 : "-100%"
       }`;
-
       setScrollPosition(currentScrollPos);
     };
-
     window.addEventListener("scroll", handleScroll);
-
     return () => window.removeEventListener("scroll", handleScroll);
   }, [scrollPosition]);
   // console.log(scrollPosition);
-
   return (
     <nav className={`${styles.navbar} container-padding`} ref={ref}>
       <Link href="/">
