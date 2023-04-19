@@ -1,7 +1,9 @@
 import React, { useEffect, useRef } from "react";
 import styles from "./style.module.scss";
 import { AiOutlineLike } from "react-icons/ai";
-import image from "../../../../public/media/hero2.png";
+import image1 from "../../../../public/media/Rectangle 6959.png";
+import image2 from "../../../../public/media/Rectangle 6960 (1).png";
+import image3 from "../../../../public/media/Rectangle 6961.png";
 import VanillaTilt from "vanilla-tilt";
 import useIntersectionObserver from "@/utils/InterSectionObserver";
 
@@ -59,10 +61,10 @@ function MagnificentWork() {
         </div>
       </div>
       <div className={styles.images}>
-        <img src={image.src} alt="" ref={ref1} />
+        <img src={image1.src} alt="" ref={ref1} />
         <div>
-          <img src={image.src} alt="" ref={ref2} />
-          <img src={image.src} alt="" ref={ref3} />
+          <img src={image3.src} alt="" ref={ref2} />
+          <img src={image2.src} alt="" ref={ref3} />
         </div>
       </div>
     </div>

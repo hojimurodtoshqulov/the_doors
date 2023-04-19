@@ -1,7 +1,7 @@
 import { useEffect, useRef } from "react";
 import styles from "./styles.module.scss";
-import image1 from "/public/media/hero1.png";
-import image2 from "/public/media/hero2.png";
+import image1 from "/public/media/Rectangle 15.png";
+import image2 from "/public/media/Rectangle 9.png";
 import VanillaTilt from "vanilla-tilt";
 import useIntersectionObserver from "@/utils/InterSectionObserver";
 

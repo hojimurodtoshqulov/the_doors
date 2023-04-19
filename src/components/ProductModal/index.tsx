@@ -57,7 +57,9 @@ function ProductModal({ product }: { product: ProductType }) {
           ducimus corporis saepe ea aliquam cum nam. Nulla, aspernatur optio
           vero magni laboriosam saepe esse? Nostrum, corporis ipsam.
         </div>
-        <p>Менеджеры компании ответят на все вопросы по телефону:</p>
+        <p style={{ paddingTop: 15 }}>
+          Менеджеры компании ответят на все вопросы по телефону:
+        </p>
         <div className={styles.form}>
           <input
             type="text"
@@ -76,7 +78,10 @@ function ProductModal({ product }: { product: ProductType }) {
             }
           />
         </div>
-        <Button onClick={handleClick} style={{ width: "100%" }}>
+        <Button
+          onClick={handleClick}
+          style={{ width: "100%", borderRadius: 10 }}
+        >
           ОФОРМИТЬ ЗАКАЗ В ТАШКЕНТЕ
         </Button>
       </div>

@@ -22,7 +22,7 @@ function FormSection() {
         <input type="text" placeholder="Phone number*" />
         <textarea placeholder="Message"></textarea>
         <div className={styles.line}></div>
-        <Button>Request a call</Button>
+        <Button style={{ borderRadius: 10 }}>Request a call</Button>
       </form>
       <div className={styles.map}>
         {/* <div style="position:relative;overflow:hidden;"> */}

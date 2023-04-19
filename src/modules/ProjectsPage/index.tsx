@@ -1,8 +1,7 @@
 import React from "react";
 import AboutShowcase from "@/components/sections/MainShowcase";
 import Adds from "@/components/Adds";
-import AboutSection from "@/components/sections/AboutSection";
-import hero from "../../../public/media/hero3.png";
+import hero from "../../../public/media/qwqw.png";
 import OurProjects from "@/components/sections/OurProjects";
 
 function ProjectsPage() {

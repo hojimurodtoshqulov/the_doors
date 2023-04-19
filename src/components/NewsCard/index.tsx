@@ -1,5 +1,5 @@
 import React from "react";
-import image from "../../../public/media/CONTACTHERO.png";
+import image from "../../../public/media/Rectangle 15.png";
 import styles from "./card.module.scss";
 
 function NewsCard() {
@@ -9,7 +9,7 @@ function NewsCard() {
       <img src={image.src} alt="" />
       <p>
         Lörem ipsum plaren sust. Telenas agnostitism kana såsom fysisk cd.
-        Supratarade mism pobaliga.{" "}
+        Supratarade mism pobaliga.
       </p>
     </div>
   );
