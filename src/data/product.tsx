@@ -1,11 +1,13 @@
 import { ProductType } from "@/shared/types";
-import image1 from "/public/media/hero1.png";
-import image2 from "/public/media/hero2.png";
+import image1 from "/public/media/Rectangle 6.png";
+import image2 from "/public/media/Rectangle 7 (1).png";
+import image3 from "/public/media/Rectangle 9.png";
+import image4 from "/public/media/Rectangle 15.png";
 
 export const products = [
   {
     id: "1",
-    images: [image1.src, image1.src, image1.src, image2.src],
+    images: [image1.src, image2.src, image3.src],
 
     title: "Handling equipment",
     description:
@@ -17,7 +19,7 @@ export const products = [
   },
   {
     id: "2",
-    images: [image1.src, image1.src, image1.src, image2.src],
+    images: [image1.src, image2.src, image3.src],
     title: "Handling equipment",
     description:
       " dipisci architecto nihil eos fugit quisquam mollitia. Quam minus, quo quod animi rem placeat soluta non aut, optio sapiente cumque voluptas consequatur numquam aspernatur recusandae impedit rerum unde hic modi voluptatem. Fugit, voluptate recusandae? Mollitia accusantium magnam temporibus quidem iusto assumenda commodi at hic, quisquam nulla voluptatum corrupti quis! Aliquid enim, nam ducimus eveniet iure eos labore? Praesentium maiores non quos aut adipisci exercitationem minima hic ducimus, odio delectus nam ullam dolorum vel reiciendis, voluptatem impedit nesciunt optio? Delectus pariatur quo error at similique quis officia fugit, vero quidem eligendi veritatis!",
@@ -28,7 +30,7 @@ export const products = [
   },
   {
     id: "3",
-    images: [image1.src, image1.src, image1.src, image2.src],
+    images: [image1.src, image2.src, image3.src],
     title: "Handling equipment",
     description:
       "       Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo nesciunt in, repellendus possimus commodi blanditiis aliquam natus placeat similique. Iure iste ducimus quasi rem. Alias incidunt maxime odit enim ex ratione possimus inventore animi. Labore facilis, nesciunt minima, corrupti laboriosam consequuntur ducimus temp tio sapiente cumque voluptas consequatur numquam aspernatur recusandae impedit rerum unde hic modi voluptatem. Fugit, voluptate recusandae? Mollitia accusantium magnam temporibus quidem iusto assumenda commodi at hic, quisquam nulla voluptatum corrupti quis! Aliquid enim, nam ducimus eveniet iure eos labore? Praesentium maiores non quos aut adipisci exercitationem minima hic ducimus, odio delectus nam ullam dolorum vel reiciendis, voluptatem impedit nesciunt optio? Delectus pariatur quo error at similique quis officia fugit, vero quidem eligendi veritatis!",
@@ -38,7 +40,7 @@ export const products = [
   },
   {
     id: "4",
-    images: [image1.src, image1.src, image1.src, image2.src],
+    images: [image1.src, image2.src, image3.src],
 
     title: "Handling equipment",
     description:
@@ -49,7 +51,7 @@ export const products = [
   },
   {
     id: "5",
-    images: [image1.src, image1.src, image1.src, image2.src],
+    images: [image1.src, image2.src, image3.src],
 
     title: "Handling equipment",
     description:
@@ -60,7 +62,7 @@ export const products = [
   },
   {
     id: "6",
-    images: [image1.src, image1.src, image1.src, image2.src],
+    images: [image1.src, image2.src, image3.src],
 
     title: "Handling equipment",
     description:
@@ -71,7 +73,7 @@ export const products = [
   },
   {
     id: "7",
-    images: [image1.src, image1.src, image1.src, image2.src],
+    images: [image1.src, image2.src, image3.src],
 
     title: "Handling equipment",
     description:
@@ -82,7 +84,7 @@ export const products = [
   },
   {
     id: "8",
-    images: [image1.src, image1.src, image1.src, image2.src],
+    images: [image1.src, image2.src, image3.src],
 
     title: "Handling equipment",
     description:
