@@ -6,10 +6,7 @@
      background-color: white;
      height: 100%;
      color: #787878;
-     &::-webkit-scrollbar,
-     *::-webkit-scrollbar {
-          display: none;
-     }
+
      .text {
           width: 40%;
           max-height: 100vh;
@@ -81,6 +78,12 @@
           .text {
                width: 100%;
                overflow: unset;
+          }
+     }
+     @media (min-width: 765px) {
+          &::-webkit-scrollbar,
+          *::-webkit-scrollbar {
+               display: none;
           }
      }
 }
