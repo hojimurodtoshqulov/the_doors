@@ -2,12 +2,12 @@ import { ProductType } from "@/shared/types";
 import image1 from "/public/media/Rectangle 6.png";
 import image2 from "/public/media/Rectangle 7 (1).png";
 import image3 from "/public/media/Rectangle 9.png";
-import image4 from "/public/media/Rectangle 15.png";
+import hero from "/public/media/hero1.png";
 
 export const products = [
   {
     id: "1",
-    images: [image1.src, image2.src, image3.src],
+    images: [hero.src, image2.src, image3.src],
 
     title: "Handling equipment",
     description:

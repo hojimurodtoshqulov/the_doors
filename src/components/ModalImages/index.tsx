@@ -1,10 +1,12 @@
 import { MouseEvent, useRef, useState } from "react";
 import styles from "./styles.module.scss";
 import { log } from "console";
+import hero from "../../../public/media/Rectangle 6959.png";
 
 function ModalImages({ images }: { images?: string[] }) {
-  const [image, setImage] = useState(images?.[0]);
+  const [image, setImage] = useState<string>(images?.[0] || "");
   const [cursorPosition, setCursorPosition] = useState({ x: 0, y: 0 });
+  const [imageSize, setImageSize] = useState({ x: 0, y: 0 });
   const [showMagnifier, setShowMagnifier] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
   const zoomLevel = 3;
@@ -14,6 +16,7 @@ function ModalImages({ images }: { images?: string[] }) {
       const containerRect = containerRef.current.getBoundingClientRect();
       const x = e.clientX - containerRect.left;
       const y = e.clientY - containerRect.top;
+
       setCursorPosition({ x, y });
       setShowMagnifier(true);
     }
@@ -22,6 +25,8 @@ function ModalImages({ images }: { images?: string[] }) {
   const handleMouseLeave = () => {
     setShowMagnifier(false);
   };
+
+  console.log(image);
   const magnifierStyle = {
     backgroundImage: `url(${image})`,
     backgroundPosition: `${-cursorPosition.x * zoomLevel}px ${
@@ -32,11 +37,9 @@ function ModalImages({ images }: { images?: string[] }) {
     left: cursorPosition.x,
     transform: "translate(-50%, -50%)",
     zIndex: 999,
-    pointerevent: "none",
     display: showMagnifier ? "block" : "none",
   };
-
-  console.log(showMagnifier);
+  console.log(1);
 
   return (
     <div className={styles.images}>
@@ -57,7 +60,9 @@ function ModalImages({ images }: { images?: string[] }) {
         onMouseMove={handleMouseMove}
       >
         <img src={image} alt="" />
-        <div className={styles.magnifierGlass} style={magnifierStyle}></div>
+        <div className={styles.magnifierGlass} style={magnifierStyle}>
+          {/* <img src={i mage} alt="" /> */}
+        </div>
       </div>
     </div>
   );
