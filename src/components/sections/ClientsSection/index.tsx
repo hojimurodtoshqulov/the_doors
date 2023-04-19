@@ -4,10 +4,19 @@ import ClientCarousel from "@/components/ClientCarousel";
 import { useRef } from "react";
 import ClientSlider from "@/components/ClientSlider";
 import Blob from "@/components/Blob";
+import useIntersectionObserver from "@/utils/InterSectionObserver";
 
 function ClientsSection() {
+  const ref = useRef(null);
+  const entity = useIntersectionObserver(ref, {});
+
   return (
-    <div className={styles.carousel}>
+    <div
+      className={`${entity?.isIntersecting && styles.active} ${
+        styles.carousel
+      }`}
+      ref={ref}
+    >
       <Blob blobType="first" color="blue" />
       <Blob blobType="second" color="blue" />
       <Blob blobType="third" color="blue" />

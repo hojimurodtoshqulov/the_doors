@@ -1,0 +1,86 @@
+.content {
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+     gap: 3%;
+     background-color: white;
+     height: 100%;
+     color: #787878;
+     &::-webkit-scrollbar,
+     *::-webkit-scrollbar {
+          display: none;
+     }
+     .text {
+          width: 40%;
+          max-height: 100vh;
+          display: flex;
+          flex-direction: column;
+          overflow: auto;
+          height: 100%;
+     }
+
+     h1 {
+          font-size: 35px;
+          line-height: 150%;
+          font-weight: 500;
+          color: rgba(0, 0, 0, 0.8);
+     }
+     h2 {
+          font-size: 22px;
+          line-height: 150%;
+          color: rgba(0, 0, 0, 0.87);
+     }
+     .form {
+          display: flex;
+          gap: 10px;
+          padding: 10px 0 24px;
+          input {
+               width: 100%;
+               padding: 2% 5%;
+               border-radius: 10px;
+               outline: none;
+               border: 1px solid #e3e3e3;
+          }
+     }
+     .price input {
+          width: 40px;
+          height: 40px;
+          font-size: 20px;
+          text-align: center;
+          border: 1px solid rgba(0, 0, 0, 0.3);
+     }
+     .price button {
+          background-color: inherit;
+          width: 40px;
+          font-size: 25px;
+          border: none;
+     }
+     .price {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          padding: 20px 0;
+     }
+     .price div {
+          display: flex;
+          align-items: center;
+          border: 1px solid rgba(0, 0, 0, 0.3);
+          overflow: hidden;
+          border-radius: 10px;
+     }
+
+     .description {
+          height: 100%;
+          padding: 25px 0;
+          border-top: 1px solid #e3e3e3;
+          border-bottom: 1px solid #e3e3e3;
+     }
+     @media (max-width: 1000px) {
+          flex-direction: column;
+          overflow: auto;
+          .text {
+               width: 100%;
+               overflow: unset;
+          }
+     }
+}

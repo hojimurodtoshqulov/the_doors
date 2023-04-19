@@ -7,17 +7,26 @@ import styles from "./navbar.module.scss";
 import Link from "next/link";
 import { MenuRouteType, menuConfig } from "@/modules/menuConfig";
 import Button from "@/components/Button";
+import { useRouter } from "next/router";
+
 function Navbar() {
   const [scrollPosition, setScrollPosition] = useState<number>(0);
+  const [isOpen, setIsOpen] = useState<boolean>(false);
   const ref = useRef<HTMLHeadElement>(null);
+  const route = useRouter();
+
   useEffect(() => {
     const handleScroll = () => {
       if (!ref.current) return;
       if (window.pageYOffset === 0) {
         ref.current.style.backdropFilter = "blur(0px)";
-        console.log(1);
+        ref.current.style.background = "transparent";
       } else {
         ref.current.style.backdropFilter = "blur(10px)";
+        ref.current.style.background =
+          route.pathname === "/"
+            ? "rgba(255, 255, 255, 0.2)"
+            : "rgba(0, 0, 0, 0.2)";
       }
       const currentScrollPos = window.pageYOffset;
       ref.current.style.translate = `0 ${
@@ -28,37 +37,49 @@ function Navbar() {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, [scrollPosition]);
-  // console.log(scrollPosition);
   return (
-    <nav className={`${styles.navbar} container-padding`} ref={ref}>
+    <nav
+      className={`${styles.navbar} ${
+        route.pathname === "/" && styles.black
+      } container-padding`}
+      ref={ref}
+    >
       <Link href="/">
         <a>
           <button className={styles.logo}>Katalog</button>
         </a>
       </Link>
-      <div className={styles.menu}>
+      <div
+        className={`${isOpen && styles.x} ${styles.menuBtn}`}
+        onClick={() => setIsOpen((pre) => !pre)}
+      ></div>
+
+      <div
+        className={` ${isOpen && styles.open} ${styles.menu}`}
+        onClick={() => setIsOpen((pre) => !pre)}
+      >
         {menuConfig.map((route: MenuRouteType) => (
           <Link href={route.link} key={route.id}>
             <a className={"link"}>{route.label}</a>
           </Link>
-        ))}
+        ))}{" "}
+        <Link href={"/#contact"}>
+          <a>
+            <Button
+              style={{
+                borderRadius: 10,
+                minWidth: 160,
+                gap: 10,
+                alignItems: "center",
+                display: "flex",
+                justifyContent: "space-between",
+              }}
+            >
+              <BsFillTelephoneFill /> Request a call
+            </Button>
+          </a>
+        </Link>
       </div>
-      <Link href={"/"}>
-        <a>
-          <Button
-            style={{
-              borderRadius: 10,
-              minWidth: 160,
-              gap: 10,
-              alignItems: "center",
-              display: "flex",
-              justifyContent: "space-between",
-            }}
-          >
-            <BsFillTelephoneFill /> Request a call
-          </Button>
-        </a>
-      </Link>
     </nav>
   );
 }

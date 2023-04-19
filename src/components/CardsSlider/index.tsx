@@ -7,9 +7,11 @@ import ProductCard from "../ProductCard";
 function CardsSlider({
   products,
   setProduct,
+  setIsModal,
 }: {
   products: ProductType[];
   setProduct: Dispatch<SetStateAction<ProductType | undefined>>;
+  setIsModal: Dispatch<SetStateAction<boolean>>;
 }) {
   const settings = {
     customPaging: function () {
@@ -28,7 +30,7 @@ function CardsSlider({
     dotsClass: "slick-dot",
     centerPadding: "60px",
     autoplay: true,
-    autoplaySpeed: 1000,
+    autoplaySpeed: 5000,
     responsive: [
       {
         breakpoint: 1000,
@@ -54,6 +56,7 @@ function CardsSlider({
               setProduct={setProduct}
               product={product}
               style={{ width: "90%", margin: "0 auto" }}
+              setIsModal={setIsModal}
             />
           </div>
         ))}

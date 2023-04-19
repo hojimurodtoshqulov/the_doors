@@ -1,27 +1,36 @@
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import Slider from "react-slick";
 import styles from "./slider.module.scss";
 
 function ImageSlider({ images }: { images: string[] }) {
-  const [isSliding, setIsSliding] = useState<boolean>(false);
+  const [currentSlide, setCurrentSlide] = useState<NodeJS.Timer>();
+  const ref: React.LegacyRef<Slider> = useRef(null);
+
+  const handleSliderHover = () => {
+    clearInterval(currentSlide);
+    setCurrentSlide(
+      setInterval(() => {
+        ref.current?.slickNext();
+      }, 0)
+    );
+  };
+
   const settings = {
-    infinite: isSliding,
-    speed: 500,
+    infinite: true,
     slidesToShow: 1,
     slidesToScroll: 1,
-    autoplaySpeed: 5000,
-    autoplay: true,
-    pauseOnHover: false,
+    arrows: false,
+    speed: 2000,
   };
   return (
     <div
       className={`image-slider-component ${styles.silder}`}
-      onMouseEnter={() => setIsSliding(true)}
-      onMouseLeave={() => setIsSliding(false)}
+      onMouseLeave={() => clearInterval(currentSlide)}
+      onMouseEnter={handleSliderHover}
     >
-      <Slider {...settings}>
+      <Slider {...settings} ref={ref}>
         {images.map((image, i) => (
           <div key={i}>
             <img className={styles.image} src={image} alt="" />

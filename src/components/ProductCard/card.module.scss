@@ -1,11 +1,21 @@
 .product {
-     font-family: "Montserrat";
+     font-family: "Roboto";
      font-style: normal;
      padding: 6px 6px 20px;
      position: relative;
      border: 1px solid #e3e3e3;
      border-radius: 10px;
      width: 23%;
+     opacity: 0;
+     translate: 0 20%;
+     transition: 2s;
+     &.active {
+          translate: 0;
+          opacity: 1;
+     }
+     @media (max-width: 1200px) {
+          transition: 0s;
+     }
      @media (max-width: 1150px) {
           width: 30%;
      }
@@ -15,6 +25,7 @@
      @media (max-width: 550px) {
           width: 100%;
      }
+
      .discount {
           clip-path: polygon(100% 0, 90% 50%, 100% 100%, 0 100%, 0 0);
           top: 10%;

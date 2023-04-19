@@ -8,15 +8,17 @@ import { BsFillTelephoneFill } from "react-icons/bs";
 function AboutPage() {
   return (
     <div>
-      <AboutShowcase
+      {/* <AboutShowcase
         image={hero.src}
-        p="Менеджеры компании ответят на все
-вопросы по телефону:"
+        p="
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Minus natus
+        magni alias similique sequi incidunt nulla consectetur, porro velit"
       >
-        <BsFillTelephoneFill /> &nbsp; +123 456 7890
+        {" "}
+        About our company
       </AboutShowcase>
       <AboutSection />
-      <Adds style={{ padding: "150px 7%" }} />
+      <Adds style={{ padding: "150px 7%" }} /> */}
     </div>
   );
 }

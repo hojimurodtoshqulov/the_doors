@@ -73,32 +73,7 @@
      * {
           outline: none;
      }
-     form {
-          display: flex;
-          max-width: 230px;
-          align-items: center;
-          background-color: white;
-          input {
-               background-color: transparent;
-               border: none;
-               outline: none;
-               width: 100%;
-               padding: 10px 20px;
-          }
-          button {
-               border: none;
-               height: 100%;
-               padding: 15px;
-               display: flex;
-               justify-content: center;
-               align-items: center;
-               background-color: transparent;
-          }
-          svg {
-               font-size: 20px;
-               color: #7f8495;
-          }
-     }
+
      .icons {
           display: flex;
           justify-content: space-between;

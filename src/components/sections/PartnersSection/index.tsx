@@ -13,6 +13,10 @@ export type PartnerType = {
 const partners: PartnerType[] = [
   { id: "1", link: "/", image: logo1.src },
   { id: "2", link: "/", image: logo2.src },
+  { id: "3", link: "/", image: logo1.src },
+  { id: "4", link: "/", image: logo2.src },
+  { id: "5", link: "/", image: logo1.src },
+  { id: "6", link: "/", image: logo2.src },
 ];
 
 function PartnersSection() {
