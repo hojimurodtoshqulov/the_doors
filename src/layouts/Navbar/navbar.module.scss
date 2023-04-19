@@ -12,6 +12,12 @@
      transition: 0.5s;
      background-color: rgba(0, 0, 0, 0.2);
      min-height: 100px;
+     img {
+          max-width: 200px;
+          width: 100%;
+          height: 40px;
+          object-fit: contain;
+     }
      a {
           display: inline-block;
      }
@@ -135,7 +141,6 @@
      }
      a:hover,
      a.active {
-          font-weight: 700;
           &::before {
                width: 100%;
           }
@@ -149,7 +154,6 @@
      height: 20px;
      width: 40px;
      position: relative;
-
      &::after,
      &::before {
           content: "";
@@ -171,6 +175,7 @@
           &::after,
           &::before {
                height: 1px;
+               background-color: black !important;
           }
           &::before {
                bottom: 50%;

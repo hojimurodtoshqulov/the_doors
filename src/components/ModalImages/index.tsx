@@ -1,4 +1,4 @@
-import { MouseEvent, useRef, useState } from "react";
+import { MouseEvent, useEffect, useMemo, useRef, useState } from "react";
 import styles from "./styles.module.scss";
 import { log } from "console";
 import hero from "../../../public/media/Rectangle 6959.png";
@@ -6,7 +6,6 @@ import hero from "../../../public/media/Rectangle 6959.png";
 function ModalImages({ images }: { images?: string[] }) {
   const [image, setImage] = useState<string>(images?.[0] || "");
   const [cursorPosition, setCursorPosition] = useState({ x: 0, y: 0 });
-  const [imageSize, setImageSize] = useState({ x: 0, y: 0 });
   const [showMagnifier, setShowMagnifier] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
   const zoomLevel = 3;
@@ -26,20 +25,22 @@ function ModalImages({ images }: { images?: string[] }) {
     setShowMagnifier(false);
   };
 
-  console.log(image);
+  useEffect(() => {
+    setImage(images?.[0] || "");
+  }, [images]);
+
   const magnifierStyle = {
-    backgroundImage: `url(${image})`,
-    backgroundPosition: `${-cursorPosition.x * zoomLevel}px ${
-      -cursorPosition.y * zoomLevel
-    }px`,
-    backgroundSize: `${zoomLevel * 100}%`,
-    top: cursorPosition.y,
-    left: cursorPosition.x,
-    transform: "translate(-50%, -50%)",
-    zIndex: 999,
-    display: showMagnifier ? "block" : "none",
+    // backgroundPosition: `${-cursorPosition.x * zoomLevel}px ${
+    //   -cursorPosition.y * zoomLevel
+    // }px`,
+    // backgroundSize: `${zoomLevel * 100}%`,
+    // top: cursorPosition.y,
+    // left: cursorPosition.x,
+    // transform: "translate(-50%, -50%)",
+    // zIndex: 999,
+    // display: showMagnifier ? "block" : "none",
   };
-  console.log(1);
+  console.log(magnifierStyle);
 
   return (
     <div className={styles.images}>
@@ -52,6 +53,12 @@ function ModalImages({ images }: { images?: string[] }) {
             }}
           />
         ))}
+        <img
+          src={images?.[0]}
+          onClick={(e) => {
+            setImage(images?.[0] || "");
+          }}
+        />
       </div>
       <div
         className={styles.mainimage}

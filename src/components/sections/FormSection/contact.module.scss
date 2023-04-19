@@ -112,15 +112,15 @@
      display: flex;
      flex-direction: column;
      color: white;
-
+     border-radius: 20px;
      & > div {
           display: flex;
           justify-content: space-between;
           align-items: center;
-          padding: 12px 30px;
+          padding: 20px 30px;
           flex-wrap: wrap;
           gap: 5px;
-          font-size: 14px;
+          font-size: 25px;
      }
 
      iframe {

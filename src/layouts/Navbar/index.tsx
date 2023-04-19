@@ -1,8 +1,8 @@
 import React, { useEffect, useRef, useState } from "react";
-import logo from "../../../public/media/logo.png";
+import logo from "../../../public/media/black logo.png";
+import logolight from "../../../public/media/Group (1).png";
 import { AiOutlineShoppingCart } from "react-icons/ai";
 import { BsFillTelephoneFill, BsPerson } from "react-icons/bs";
-import { BiSearch } from "react-icons/bi";
 import styles from "./navbar.module.scss";
 import Link from "next/link";
 import { MenuRouteType, menuConfig } from "@/modules/menuConfig";
@@ -14,7 +14,7 @@ function Navbar() {
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const ref = useRef<HTMLHeadElement>(null);
   const route = useRouter();
-
+  const isLight = route.pathname === "/";
   useEffect(() => {
     const handleScroll = () => {
       if (!ref.current) return;
@@ -46,13 +46,18 @@ function Navbar() {
   return (
     <nav
       className={`${styles.navbar} ${
-        route.pathname === "/" && styles.black
+        isLight && styles.black
       } container-padding`}
       ref={ref}
     >
+      {/* <Link href="/">
+      <a>
+        <button className={styles.logo}>Katalog</button>
+      </a>
+    </Link> */}
       <Link href="/">
         <a>
-          <button className={styles.logo}>Katalog</button>
+          <img src={isLight ? logo.src : logolight.src} alt="" />
         </a>
       </Link>
       <div

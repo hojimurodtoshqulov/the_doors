@@ -16,11 +16,11 @@ function NewsSlider() {
     dots: true,
 
     infinite: true,
-    slidesToShow: 2,
+    slidesToShow: 3,
     slidesToScroll: 1,
 
     centerMode: true,
-    centerPadding: "200px",
+    centerPadding: "100px",
 
     autoplay: true,
     autoplaySpeed: 10000,
@@ -28,7 +28,11 @@ function NewsSlider() {
     responsive: [
       {
         breakpoint: 1200,
-        settings: { centerPadding: "50px" },
+        settings: { slidesToShow: 2, centerPadding: "150px" },
+      },
+      {
+        breakpoint: 1000,
+        settings: { centerPadding: "50px", slidesToShow: 2 },
       },
       {
         breakpoint: 750,
