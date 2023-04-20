@@ -1,192 +1,213 @@
+@import "../../styles/variables.scss";
 .navbar {
-     position: fixed;
-     top: 0;
-     left: 0;
-     display: flex;
-     align-items: center;
-     gap: 15%;
-     justify-content: space-between;
-     width: 100%;
-     z-index: 100;
-     font-size: 18px;
-     transition: 0.5s;
-     background-color: rgba(0, 0, 0, 0.2);
-     min-height: 100px;
-     img {
-          max-width: 200px;
-          width: 100%;
-          height: 40px;
-          object-fit: contain;
-     }
-     a {
-          display: inline-block;
-     }
-     div:last-child {
-          font-size: 22px;
-          display: flex;
-          gap: 10px;
-     }
-     .logo {
-          background-color: #003d76;
-          color: white;
-          border: none;
-          border-radius: 10px;
-          padding: 12px 42px;
-          position: relative;
-          transition: 300ms;
-          &::before {
-               content: "";
-               top: 100%;
-               left: 50%;
-               translate: -50%;
-               width: 10%;
-               aspect-ratio: 2/1;
-               background-color: #003d76;
-               position: absolute;
-               clip-path: polygon(0% 0%, 100% 0%, 50% 100%);
-          }
-          &:hover {
-               scale: 1.1;
-          }
-     }
-     &.black {
-          background-color: rgba(255, 255, 255, 0.2);
-          .menu {
-               color: black;
-          }
-          a::before {
-               background-color: black;
-          }
-     }
-     &.black .menuBtn {
-          &::after,
-          &::before {
-               background-color: rgb(0, 0, 0);
-          }
-     }
-     .menuBtn {
-          display: none;
-          &::after,
-          &::before {
-               background-color: rgb(255, 255, 255);
-          }
-     }
-     @media (max-width: 1000px) {
-          .menuBtn {
-               display: block;
-          }
-          .menu {
-               position: fixed;
-               color: black;
-               top: 100px;
-               left: 0;
-               flex-direction: column;
-               align-items: stretch;
-               min-width: 200px;
-               width: 40%;
-               z-index: 10;
-               transition: 1s;
-               translate: -100%;
-               z-index: -12;
-          }
-          .menu a::before {
-               background-color: black;
-               transition: 1s;
-               height: 1px;
-          }
-          .menu a {
-               padding: 15px 10%;
-          }
-          .menu.open {
-               translate: 0;
-          }
-          .menu::before {
-               content: "";
-               transition: 1s;
-               position: absolute;
-               height: 200vh;
-               width: 100vw;
-               top: -100px;
-               left: 0;
-               translate: -100%;
-          }
-          .menu.open::before {
-               translate: 0;
-               background-color: rgb(255, 255, 255);
-          }
-     }
+	position: fixed;
+	top: 0;
+	left: 0;
+	display: flex;
+	align-items: center;
+	gap: 15%;
+	justify-content: space-between;
+	width: 100%;
+	z-index: 100;
+	font-size: 18px;
+	transition: 0.5s;
+	background-color: rgba(0, 0, 0, 0.2);
+	min-height: 100px;
+	img {
+		max-width: 200px;
+		width: 100%;
+		height: 40px;
+		object-fit: contain;
+	}
+	a {
+		display: inline-block;
+	}
+	div:last-child {
+		font-size: 22px;
+		display: flex;
+		gap: 10px;
+	}
+	.logo {
+		background-color: $primary;
+		color: white;
+		border: none;
+		border-radius: 10px;
+		padding: 12px 42px;
+		position: relative;
+		transition: 300ms;
+		&::before {
+			content: "";
+			top: 100%;
+			left: 50%;
+			translate: -50%;
+			width: 10%;
+			aspect-ratio: 2/1;
+			background-color: $primary;
+			position: absolute;
+			clip-path: polygon(0% 0%, 100% 0%, 50% 100%);
+		}
+		&:hover {
+			scale: 1.1;
+		}
+	}
+	&.black {
+		background-color: rgba(255, 255, 255, 0.2);
+		.menu {
+			color: black;
+		}
+		a::before {
+			background-color: black;
+		}
+	}
+	&.black .menuBtn {
+		&::after,
+		&::before {
+			background-color: rgb(0, 0, 0);
+		}
+	}
+	.menuBtn {
+		display: none;
+		&::after,
+		&::before {
+			background-color: rgb(255, 255, 255);
+		}
+	}
+	&__lang {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		gap: 5px;
+		button {
+			width: 25px;
+			height: 25px;
+			border-radius: 50%;
+			background-size: cover;
+			border: none;
+			cursor: pointer;
+		}
+		&_ru {
+			background-image: url("../../../public/media/flag_ru.jpg");
+		}
+		&_uz {
+			background-image: url("../../../public/media/flag_uz.jpg");
+		}
+	}
+	@media (max-width: 1000px) {
+		.menuBtn {
+			display: block;
+		}
+		.menu {
+			position: fixed;
+			color: black;
+			top: 100px;
+			left: 0;
+			flex-direction: column;
+			align-items: stretch;
+			min-width: 200px;
+			width: 40%;
+			z-index: 10;
+			transition: 1s;
+			translate: -100%;
+			z-index: -12;
+		}
+		.menu a::before {
+			background-color: black;
+			transition: 1s;
+			height: 1px;
+		}
+		.menu a {
+			padding: 15px 10%;
+		}
+		.menu.open {
+			translate: 0;
+		}
+		.menu::before {
+			content: "";
+			transition: 1s;
+			position: absolute;
+			height: 200vh;
+			width: 100vw;
+			top: -100px;
+			left: 0;
+			translate: -100%;
+		}
+		.menu.open::before {
+			translate: 0;
+			background-color: rgb(255, 255, 255);
+		}
+	}
 }
 
 .menu {
-     display: flex;
-     align-items: center;
-     justify-content: space-between;
-     width: 100%;
-     color: white;
-     a {
-          padding: 30px 0;
-          position: relative;
-          font-size: 18px;
-          transition: 500ms;
-     }
-     a::before {
-          content: "";
-          position: absolute;
-          bottom: 0;
-          left: 0;
-          height: 2px;
-          background-color: rgb(255, 255, 255);
-          width: 0%;
-          transition: 500ms;
-     }
-     a:hover,
-     a.active {
-          &::before {
-               width: 100%;
-          }
-     }
-     a:last-child::before {
-          display: none;
-     }
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	width: 100%;
+	color: white;
+	a {
+		padding: 30px 0;
+		position: relative;
+		font-size: 18px;
+		transition: 500ms;
+	}
+	a::before {
+		content: "";
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		height: 2px;
+		background-color: $light;
+		width: 0%;
+		transition: 500ms;
+	}
+	a:hover,
+	a.active {
+		&::before {
+			width: 100%;
+		}
+	}
+	a:last-child::before {
+		display: none;
+	}
 }
 
 .menuBtn {
-     height: 20px;
-     width: 40px;
-     position: relative;
-     &::after,
-     &::before {
-          content: "";
-          position: absolute;
-          top: 0;
-          right: 0;
-          height: 2px;
-          width: 100%;
-          transform-origin: center center;
-          transition: 1s;
-     }
-     &::before {
-          top: unset;
-          bottom: 0;
-          width: 60%;
-     }
+	height: 20px;
+	width: 40px;
+	position: relative;
+	&::after,
+	&::before {
+		content: "";
+		position: absolute;
+		top: 0;
+		right: 0;
+		height: 2px;
+		width: 100%;
+		transform-origin: center center;
+		transition: 1s;
+	}
+	&::before {
+		top: unset;
+		bottom: 0;
+		width: 60%;
+	}
 
-     &.x {
-          &::after,
-          &::before {
-               height: 1px;
-               background-color: black !important;
-          }
-          &::before {
-               bottom: 50%;
-               translate: 0 50%;
-               rotate: -50deg;
-               width: 100%;
-          }
-          &::after {
-               top: 50%;
-               translate: 0 -50%;
-               rotate: 50deg;
-          }
-     }
+	&.x {
+		&::after,
+		&::before {
+			height: 1px;
+			background-color: black !important;
+		}
+		&::before {
+			bottom: 50%;
+			translate: 0 50%;
+			rotate: -50deg;
+			width: 100%;
+		}
+		&::after {
+			top: 50%;
+			translate: 0 -50%;
+			rotate: 50deg;
+		}
+	}
 }
