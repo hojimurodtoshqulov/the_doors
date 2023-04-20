@@ -75,8 +75,8 @@
 	&__lang {
 		display: flex;
 		align-items: center;
-		justify-content: center;
 		gap: 5px;
+		z-index: 10;
 		button {
 			width: 25px;
 			height: 25px;
@@ -115,9 +115,11 @@
 			transition: 1s;
 			height: 1px;
 		}
-		.menu a {
+		.menu a,
+		.menu div {
 			padding: 15px 10%;
 		}
+
 		.menu.open {
 			translate: 0;
 		}
