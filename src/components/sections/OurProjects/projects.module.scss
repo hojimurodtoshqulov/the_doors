@@ -1,5 +1,8 @@
 .projects {
      padding: 4vw 7vw;
+     translate: 0 100px;
+     opacity: 0;
+     transition: 1s;
      h1 {
           padding-bottom: 30px;
      }
@@ -19,6 +22,10 @@
      }
      .row:nth-child(even) {
           margin-top: 60px;
+     }
+     &.active {
+          translate: 0;
+          opacity: 1;
      }
 }
 

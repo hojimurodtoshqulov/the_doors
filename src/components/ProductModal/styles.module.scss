@@ -1,12 +1,11 @@
 .content {
      display: flex;
      justify-content: space-between;
-     align-items: center;
+     // align-items: stretch;
      gap: 3%;
      background-color: white;
      height: 100%;
      color: #787878;
-
      .text {
           width: 40%;
           max-height: 100vh;
@@ -73,14 +72,14 @@
           border-bottom: 1px solid #e3e3e3;
      }
      @media (max-width: 1000px) {
-          flex-direction: column;
+          display: block;
           overflow: auto;
           .text {
                width: 100%;
                overflow: unset;
           }
      }
-     @media (min-width: 765px) {
+     @media (min-width: 1000px) {
           &::-webkit-scrollbar,
           *::-webkit-scrollbar {
                display: none;
