@@ -8,9 +8,10 @@ import image5 from "/public/media/Rectangle 754.png";
 import image6 from "/public/media/Rectangle 755.png";
 import image7 from "/public/media/Rectangle 756.png";
 import image8 from "/public/media/Rectangle 757.png";
-import React from "react";
+import React, { useRef } from "react";
 import Slider from "react-slick";
 import Image from "./Image";
+import useIntersectionObserver from "@/utils/InterSectionObserver";
 
 const images = [
   image1.src,
@@ -24,6 +25,8 @@ const images = [
 ];
 
 function OurProjects() {
+  const ref = useRef(null);
+  const entity = useIntersectionObserver(ref, { rootMargin: "-100px 0px" });
   const settings = {
     customPaging: function () {
       return (
@@ -40,7 +43,6 @@ function OurProjects() {
 
     className: styles.slider,
     infinite: true,
-    // speed: 500,
     slidesToShow: 3,
     slidesToScroll: 1,
     responsive: [
@@ -59,7 +61,12 @@ function OurProjects() {
     ],
   };
   return (
-    <div className={styles.projects}>
+    <div
+      className={`${entity?.isIntersecting && styles.active} ${
+        styles.projects
+      }`}
+      ref={ref}
+    >
       <Title>Наши проекты</Title>
       <div className={styles.images}>
         <div className={styles.row}>

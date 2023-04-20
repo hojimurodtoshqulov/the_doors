@@ -1,5 +1,4 @@
 import Link from "next/link";
-import bg from "../../../../public/media/constactus.png";
 import styles from "./contact.module.scss";
 import Button from "../../Button";
 import useIntersectionObserver from "@/utils/InterSectionObserver";
