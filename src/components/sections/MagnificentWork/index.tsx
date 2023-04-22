@@ -48,7 +48,7 @@ function MagnificentWork() {
         <div className={styles.static}>
           <AiOutlineLike />
           <div>
-            <h1>875+</h1>
+            <h1>835+</h1>
             <p>Projects Done</p>
           </div>
         </div>{" "}
