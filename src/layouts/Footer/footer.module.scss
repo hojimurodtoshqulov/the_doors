@@ -3,6 +3,27 @@
      padding: 20px 10% 15px;
      font-family: "Work Sans";
      font-style: normal;
+     a,
+     p,
+     h1,
+     h2,
+     h3,
+     svg {
+          opacity: 0;
+          scale: 0 1;
+     }
+     &.active {
+          a,
+          p,
+          h1,
+          h2,
+          h3,
+          svg {
+               opacity: 1;
+               scale: 1;
+               transition: 1s;
+          }
+     }
      .top {
           display: flex;
           justify-content: space-between;

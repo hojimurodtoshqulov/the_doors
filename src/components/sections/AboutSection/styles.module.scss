@@ -10,17 +10,17 @@
                translate: 0;
                scale: 1;
                opacity: 1;
-               transition: 2s;
+               transition: 1s;
           }
           .images img:last-child {
-               transition-delay: 1s;
+               transition-delay: 0.5s;
           }
           .description {
                opacity: 1;
                h3,
                p {
                     translate: 0;
-                    transition: 2s;
+                    transition: 1s;
                }
           }
      }
@@ -35,7 +35,7 @@
                object-fit: cover;
                border: 5px solid white;
                border-radius: 10px;
-               translate: -1000px;
+               translate: -200%;
                scale: 1.1;
           }
           img:first-child {

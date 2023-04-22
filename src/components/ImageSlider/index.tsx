@@ -10,6 +10,7 @@ function ImageSlider({ images }: { images: string[] }) {
 
   const handleSliderHover = () => {
     clearInterval(currentSlide);
+    if (window.innerWidth < 1200) return;
     setCurrentSlide(
       setInterval(() => {
         ref.current?.slickNext();
@@ -21,8 +22,17 @@ function ImageSlider({ images }: { images: string[] }) {
     infinite: true,
     slidesToShow: 1,
     slidesToScroll: 1,
-    arrows: false,
     speed: 2000,
+    arrows: false,
+    responsive: [
+      {
+        breakpoint: 1200,
+        settings: {
+          arrows: true,
+          speed: 500,
+        },
+      },
+    ],
   };
   return (
     <div

@@ -93,6 +93,7 @@
 		}
 	}
 	@media (max-width: 1000px) {
+		min-height: 70px;
 		.menuBtn {
 			display: block;
 		}
@@ -105,7 +106,6 @@
 			align-items: stretch;
 			min-width: 200px;
 			width: 40%;
-			z-index: 10;
 			transition: 1s;
 			translate: -100%;
 			z-index: -12;

@@ -4,9 +4,18 @@ import { BsFacebook, BsTwitter } from "react-icons/bs";
 import { AiFillInstagram } from "react-icons/ai";
 import { GrMail } from "react-icons/gr";
 import Link from "next/link";
+import useIntersectionObserver from "@/utils/InterSectionObserver";
+import {useRef} from "react"
+
+
 function Footer({ style }: MainPropType) {
+
+  const ref = useRef(null);
+  const entity = useIntersectionObserver(ref, {});
+
+
   return (
-    <footer style={style} className={styles.footer}>
+    <footer style={style} className={`${ entity?.isIntersecting && styles.active} ${styles.footer}`} ref={ref}>
       <div className={styles.top}>
         <div className={styles.row}>
           <h1>The Door</h1>

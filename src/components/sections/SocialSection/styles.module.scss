@@ -7,20 +7,19 @@
      &.active {
           // background-color: red;
           h1 {
-               transition: 2s;
+               transition: 1s;
                translate: 0;
                opacity: 1;
           }
           p {
                transform: rotateX(0deg);
-               transition: 1s;
+               transition: 0.5s;
 
-               transition-delay: 2s;
+               transition-delay: 0.7s;
           }
           .icons svg {
                opacity: 1;
-               transition: 2s;
-               transition-delay: 1s;
+               transition: 1s;
                translate: 0;
           }
      }

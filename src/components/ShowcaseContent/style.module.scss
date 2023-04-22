@@ -23,12 +23,11 @@
      &.active {
           opacity: 1;
           translate: 0;
-          transition: 2s;
+          transition: 1s;
 
           h1 {
-               transition: 2s;
-
-               transition-delay: 2s;
+               transition: 1s;
+               transition-delay: 1s;
                translate: 0;
           }
      }

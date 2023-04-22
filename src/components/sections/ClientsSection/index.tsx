@@ -1,6 +1,5 @@
 import Title from "@/components/Title";
 import styles from "./crousel.module.scss";
-import ClientCarousel from "@/components/ClientCarousel";
 import { useRef } from "react";
 import ClientSlider from "@/components/ClientSlider";
 import Blob from "@/components/Blob";
