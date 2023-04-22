@@ -40,15 +40,6 @@ function ProductCard({
           ""
         )}
       </h1>
-      <div className={styles.rating}>
-        <FaStar />
-        <FaStar />
-        <FaStar />
-        <FaStarHalfAlt />
-        <FaRegStar />
-        <p>{product?.rating} </p>
-        <span>({product?.ratingQuantity})</span>
-      </div>
 
       <Button
         style={{ borderRadius: 10 }}

@@ -46,6 +46,7 @@
           font-weight: 500;
           font-size: 16px;
           line-height: 150%;
+          margin-bottom: 5px;
           span {
                font-size: 18px;
                font-weight: 700;
@@ -57,26 +58,5 @@
      & > button {
           width: 100%;
           padding: 10px;
-     }
-}
-.rating {
-     display: flex;
-     gap: 8px;
-     padding: 7px 0 20px;
-     svg {
-          color: #ffc71e;
-          font-size: 20px;
-     }
-     & > span {
-          font-weight: 400;
-          font-size: 14px;
-          color: rgba(0, 0, 0, 0.65);
-          line-height: 158%;
-     }
-     p {
-          font-size: 16px;
-          span {
-               color: red;
-          }
      }
 }
