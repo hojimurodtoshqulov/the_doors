@@ -2,6 +2,7 @@ import { ProductType } from "@/shared/types";
 import image1 from "/public/media/Rectangle 6.png";
 import image2 from "/public/media/Rectangle 7 (1).png";
 import image3 from "/public/media/Rectangle 9.png";
+const x = 2;
 
 export const products = [
   {
