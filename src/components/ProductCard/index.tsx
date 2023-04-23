@@ -27,9 +27,13 @@ function ProductCard({
       style={style}
       ref={ref}
     >
-      {product?.discount ? <div className={styles.discount}>15%</div> : ""}
-      {product ? <ImageSlider images={product.images} /> : ""}
-      <h2>Handling equipment</h2>
+      {product?.discount ? (
+        <div className={styles.discount}>{product.discount}%</div>
+      ) : (
+        ""
+      )}
+      {product ? <ImageSlider images={product.attachmentContents} /> : ""}
+      <h2>{product?.titleUz}</h2>
       <h1>
         from <span>{product?.price}</span>${" "}
         {product?.discount ? (

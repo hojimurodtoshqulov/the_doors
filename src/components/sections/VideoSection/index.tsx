@@ -1,4 +1,3 @@
-import { useScroll } from "framer-motion";
 import styles from "./about.module.scss";
 import { useState, useEffect, useRef } from "react";
 import useIntersectionObserver from "@/utils/InterSectionObserver";

@@ -4,7 +4,7 @@ import React, { useRef, useState } from "react";
 import Slider from "react-slick";
 import styles from "./slider.module.scss";
 
-function ImageSlider({ images }: { images: string[] }) {
+function ImageSlider({ images }: { images: { data: string }[] }) {
   const [currentSlide, setCurrentSlide] = useState<NodeJS.Timer>();
   const ref: React.LegacyRef<Slider> = useRef(null);
 
@@ -43,7 +43,11 @@ function ImageSlider({ images }: { images: string[] }) {
       <Slider {...settings} ref={ref}>
         {images.map((image, i) => (
           <div key={i}>
-            <img className={styles.image} src={image} alt="" />
+            <img
+              className={styles.image}
+              src={`data:image/png;base64,${image.data}`}
+              alt=""
+            />
           </div>
         ))}
       </Slider>

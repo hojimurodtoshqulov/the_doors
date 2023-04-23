@@ -7,11 +7,15 @@ export type MainPropType = {
 };
 
 export type ProductType = {
-  id:string|number
-  images: string[];
-  title: string;
-  rating: number;
-  ratingQuantity: number;
+  id: string | number;
+  titleUz: string;
+  titleRu: string;
+  descriptionUz: string;
+  descriptionRu: string;
+  discount: number;
   price: number;
-  discount?: number;
+  attachmentContents: {
+    data: string;
+    id: number;
+  }[];
 };

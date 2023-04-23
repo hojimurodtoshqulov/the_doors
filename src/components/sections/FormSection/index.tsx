@@ -2,11 +2,51 @@ import Link from "next/link";
 import styles from "./contact.module.scss";
 import Button from "../../Button";
 import useIntersectionObserver from "@/utils/InterSectionObserver";
-import { useRef } from "react";
+import { useRef, useState } from "react";
+import { API_URL } from "@/shared/constants";
+import axios from "axios";
+import { toast } from "react-toastify";
+import { log } from "console";
 
 function FormSection() {
   const ref = useRef(null);
   const entity = useIntersectionObserver(ref, {});
+  const [disable, setDisable] = useState<boolean>(false);
+  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const formdata = new FormData(e.currentTarget);
+    const data = Object.fromEntries(formdata.entries());
+    setDisable(true);
+    console.log(1);
+
+    axios
+      .post(`${API_URL}/api/order`, data)
+      .finally(() => setDisable(false))
+      .then((res) => {
+        toast.success("Order sent", {
+          position: "top-right",
+          autoClose: 2000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+        });
+      })
+      .catch(() =>
+        toast.error("Cannot send your order", {
+          position: "top-right",
+          autoClose: 2000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+        })
+      );
+  };
 
   return (
     <div
@@ -14,12 +54,17 @@ function FormSection() {
       id="about"
       ref={ref}
     >
-      <form action="/" id="contact">
+      <form action="/" id="contact" onSubmit={handleSubmit}>
         <h1>Contact us</h1>
         <div className={styles.line}></div>
-        <input type="text" placeholder="First name*" />
-        <input type="text" placeholder="Phone number*" />
-        <textarea placeholder="Message"></textarea>
+        <input type="text" name="fullName" placeholder="Full name*" required />
+        <input
+          type="text"
+          name="phoneNumber"
+          placeholder="Phone number*"
+          required
+        />
+        <textarea name="message" placeholder="Message"></textarea>
         <div className={styles.line}></div>
         <Button style={{ borderRadius: 10 }}>Request a call</Button>
       </form>
