@@ -1,7 +1,6 @@
 import { AiFillPlayCircle } from "react-icons/ai";
 import styles from "./video.module.scss";
 import { useEffect, useRef, useState } from "react";
-import { log } from "console";
 import Link from "next/link";
 
 function Video({ src }: { src: string }) {

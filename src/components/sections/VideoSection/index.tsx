@@ -19,7 +19,6 @@ function VideoSection() {
       if (scroll - 20 < 0) {
         vdRef.current.currentTime = 0;
       }
-      console.log(window.pageYOffset > 3000);
 
       window.pageYOffset < 3000
         ? vdRef.current?.play()

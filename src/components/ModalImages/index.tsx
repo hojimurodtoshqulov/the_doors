@@ -1,6 +1,5 @@
 import { MouseEvent, useEffect, useMemo, useRef, useState } from "react";
 import styles from "./styles.module.scss";
-import { log } from "console";
 import hero from "../../../public/media/Rectangle 6959.png";
 import ImageMagnifierGlass from "../ImageMagnifier";
 
@@ -10,7 +9,6 @@ function ModalImages({ images }: { images?: { data: string }[] }) {
   useEffect(() => {
     setImage(images?.[0].data || "");
   }, [images]);
-  console.log(image);
 
   return (
     <div className={styles.images}>

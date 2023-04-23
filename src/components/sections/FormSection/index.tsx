@@ -6,7 +6,6 @@ import { useRef, useState } from "react";
 import { API_URL } from "@/shared/constants";
 import axios from "axios";
 import { toast } from "react-toastify";
-import { log } from "console";
 
 function FormSection() {
   const ref = useRef(null);
@@ -17,12 +16,14 @@ function FormSection() {
     const formdata = new FormData(e.currentTarget);
     const data = Object.fromEntries(formdata.entries());
     setDisable(true);
-    console.log(1);
+    console.log(`${API_URL}/api/order`, data);
 
     axios
       .post(`${API_URL}/api/order`, data)
       .finally(() => setDisable(false))
       .then((res) => {
+        e.currentTarget.reset();
+
         toast.success("Order sent", {
           position: "top-right",
           autoClose: 2000,
@@ -66,7 +67,20 @@ function FormSection() {
         />
         <textarea name="message" placeholder="Message"></textarea>
         <div className={styles.line}></div>
-        <Button style={{ borderRadius: 10 }}>Request a call</Button>
+        <Button
+          style={{
+            borderRadius: 10,
+            ...(disable
+              ? {
+                  background:
+                    "linear-gradient(100.85deg, #0060ba8e -6.27%, #0067d58c 52.36%)",
+                }
+              : {}),
+          }}
+          disabled={disable}
+        >
+          Request a call
+        </Button>
       </form>
       <div className={styles.map}>
         {/* <div style="position:relative;overflow:hidden;"> */}
