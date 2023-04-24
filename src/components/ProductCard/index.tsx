@@ -40,7 +40,6 @@ function ProductCard({
           ""
         )}
       </h1>
-
       <Button
         style={{ borderRadius: 10 }}
         onClick={() => {
