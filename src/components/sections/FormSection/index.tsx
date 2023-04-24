@@ -23,7 +23,7 @@ function FormSection() {
       .post(`${API_URL}/api/order`, data)
       .finally(() => setDisable(false))
       .then((res) => {
-        e.currentTarget.reset();
+        console.log(res);
 
         toast.success("Order sent", {
           position: "top-right",
@@ -36,7 +36,7 @@ function FormSection() {
           theme: "light",
         });
       })
-      .catch(() =>
+      .catch((e) => {
         toast.error("Cannot send your order", {
           position: "top-right",
           autoClose: 2000,
@@ -46,8 +46,8 @@ function FormSection() {
           draggable: true,
           progress: undefined,
           theme: "light",
-        })
-      );
+        });
+      });
   };
 
   return (
@@ -59,7 +59,7 @@ function FormSection() {
       <form action="/" id="contact" onSubmit={handleSubmit}>
         <h1>Contact us</h1>
         <div className={styles.line}></div>
-        <input type="text" name="fullName" placeholder="Full name*" required />
+        <input type="text" name="name" placeholder="Full name*" required />
         <input
           type="text"
           name="phoneNumber"
