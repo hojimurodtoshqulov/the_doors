@@ -5,9 +5,16 @@ import hero2 from "../../../../public/media/Image (3).png";
 import hero3 from "../../../../public/media/Group.png";
 import useIntersectionObserver from "@/utils/InterSectionObserver";
 
+import useIntl from "react-intl/src/components/useIntl";
+
 function Showcase() {
   const ref = useRef(null);
   const entity = useIntersectionObserver(ref, {});
+
+  const intl = useIntl();
+  const t = (id: string) => {
+    return intl.formatMessage({ id: id });
+  };
 
   return (
     <div
@@ -18,7 +25,8 @@ function Showcase() {
     >
       <div className={styles.text}>
         <h1>
-          <span>ECOHOUSE</span> <span>Style</span>
+          {/* <span>ECOHOUSE</span> <span>Style</span> */}
+          <span>{t("showcase.title")}</span>
         </h1>
         <p>
           Stay informed about the market with real estate news and insights
