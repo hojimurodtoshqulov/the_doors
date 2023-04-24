@@ -6,9 +6,15 @@ function Button({
   children,
   style,
   onClick,
-}: MainPropType & { onClick?: () => void }) {
+  disabled,
+}: MainPropType & { onClick?: () => void; disabled?: boolean }) {
   return (
-    <button className={styles.button} style={style} onClick={onClick}>
+    <button
+      className={styles.button}
+      style={style}
+      onClick={onClick}
+      disabled={disabled}
+    >
       {children}
     </button>
   );

@@ -68,7 +68,7 @@ const ImageMagnifierGlass: React.FC<ImageMagnifierGlassProps> = ({
     <div className={styles.container}>
       <img
         className={styles.mainimage}
-        src={imageSrc}
+        src={`data:image/png;base64,${imageSrc}`}
         alt="Main Image"
         onMouseMove={handleMouseMove}
         onMouseLeave={handleMouseLeave}
@@ -88,7 +88,7 @@ const ImageMagnifierGlass: React.FC<ImageMagnifierGlassProps> = ({
             top: `${glassPosition.y}px`,
             width: `${glassSize.width}px`,
             height: `${glassSize.height}px`,
-            backgroundImage: `url("${imageSrc}")`,
+            backgroundImage: `url("data:image/png;base64,${imageSrc}")`,
             backgroundSize: `${100 * zoomLevel * zoomLevel}% ${
               100 * zoomLevel * zoomLevel
             }%`,

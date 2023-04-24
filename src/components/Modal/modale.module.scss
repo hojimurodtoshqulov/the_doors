@@ -56,4 +56,16 @@
      .back:first-child {
           right: 0;
      }
+     .x {
+          position: fixed;
+          top: 0;
+          right: 0;
+          color: rgba(0, 0, 0, 0.4);
+          font-size: 50px;
+          padding: 10px;
+          cursor: pointer;
+          @media (max-width: 500px) {
+               font-size: 30px;
+          }
+     }
 }

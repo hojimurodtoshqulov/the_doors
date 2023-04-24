@@ -2,11 +2,52 @@ import Link from "next/link";
 import styles from "./contact.module.scss";
 import Button from "../../Button";
 import useIntersectionObserver from "@/utils/InterSectionObserver";
-import { useRef } from "react";
+import { useRef, useState } from "react";
+import { API_URL } from "@/shared/constants";
+import axios from "axios";
+import { toast } from "react-toastify";
 
 function FormSection() {
   const ref = useRef(null);
   const entity = useIntersectionObserver(ref, {});
+  const [disable, setDisable] = useState<boolean>(false);
+
+  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const formdata = new FormData(e.currentTarget);
+    const data = Object.fromEntries(formdata.entries());
+    setDisable(true);
+
+    axios
+      .post(`${API_URL}/api/order`, data)
+      .finally(() => setDisable(false))
+      .then((res) => {
+        e.target.reset();
+
+        toast.success("Order sent", {
+          position: "top-right",
+          autoClose: 2000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+        });
+      })
+      .catch((e) => {
+        toast.error("Cannot send your order", {
+          position: "top-right",
+          autoClose: 2000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+        });
+      });
+  };
 
   return (
     <div
@@ -14,14 +55,32 @@ function FormSection() {
       id="about"
       ref={ref}
     >
-      <form action="/" id="contact">
+      <form action="/" id="contact" onSubmit={handleSubmit}>
         <h1>Contact us</h1>
         <div className={styles.line}></div>
-        <input type="text" placeholder="First name*" />
-        <input type="text" placeholder="Phone number*" />
-        <textarea placeholder="Message"></textarea>
+        <input type="text" name="name" placeholder="Full name*" required />
+        <input
+          type="text"
+          name="phoneNumber"
+          placeholder="Phone number*"
+          required
+        />
+        <textarea name="message" placeholder="Message"></textarea>
         <div className={styles.line}></div>
-        <Button style={{ borderRadius: 10 }}>Request a call</Button>
+        <Button
+          style={{
+            borderRadius: 10,
+            ...(disable
+              ? {
+                  background:
+                    "linear-gradient(100.85deg, #0060ba8e -6.27%, #0067d58c 52.36%)",
+                }
+              : {}),
+          }}
+          disabled={disable}
+        >
+          Request a call
+        </Button>
       </form>
       <div className={styles.map}>
         {/* <div style="position:relative;overflow:hidden;"> */}

@@ -1,4 +1,3 @@
-import { useScroll } from "framer-motion";
 import styles from "./about.module.scss";
 import { useState, useEffect, useRef } from "react";
 import useIntersectionObserver from "@/utils/InterSectionObserver";
@@ -20,7 +19,6 @@ function VideoSection() {
       if (scroll - 20 < 0) {
         vdRef.current.currentTime = 0;
       }
-      console.log(window.pageYOffset > 3000);
 
       window.pageYOffset < 3000
         ? vdRef.current?.play()
