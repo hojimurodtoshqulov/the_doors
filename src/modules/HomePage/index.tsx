@@ -9,15 +9,10 @@ import FormSection from "@/components/sections/FormSection";
 import AboutSection from "@/components/sections/AboutSection";
 import styles from "./home.module.scss";
 import VideoSection from "@/components/sections/VideoSection";
-import { useTranslation } from "react-i18next";
-import { FormattedMessage, useIntl } from "react-intl";
-import { useRouter } from "next/router";
 
 function HomePage() {
-
   return (
-    <div>
-     
+    <div>    
       <section className={styles.video}>
         <Showcase />
         <VideoSection />
