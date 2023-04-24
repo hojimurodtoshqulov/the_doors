@@ -17,13 +17,12 @@ function FormSection() {
     const formdata = new FormData(e.currentTarget);
     const data = Object.fromEntries(formdata.entries());
     setDisable(true);
-    console.log(`${API_URL}/api/order`, data);
 
     axios
       .post(`${API_URL}/api/order`, data)
       .finally(() => setDisable(false))
       .then((res) => {
-        console.log(res);
+        e.target.reset();
 
         toast.success("Order sent", {
           position: "top-right",
