@@ -11,6 +11,7 @@ function FormSection() {
   const ref = useRef(null);
   const entity = useIntersectionObserver(ref, {});
   const [disable, setDisable] = useState<boolean>(false);
+
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const formdata = new FormData(e.currentTarget);

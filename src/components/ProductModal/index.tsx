@@ -19,9 +19,13 @@ function ProductModal({ product }: { product: ProductType }) {
     quantity: 1,
     productId: product.id,
   });
+  const [disable, setDisable] = useState<boolean>(false);
+
   function handleClick() {
+    setDisable(true);
     axios
       .post(`${API_URL}/api/order`, form)
+      .finally(() => setDisable(false))
       .then((res) => {
         toast.success("Order sent", {
           position: "top-right",
@@ -100,7 +104,17 @@ function ProductModal({ product }: { product: ProductType }) {
         </div>
         <Button
           onClick={handleClick}
-          style={{ width: "100%", borderRadius: 10 }}
+          style={{
+            width: "100%",
+            borderRadius: 10,
+            ...(disable
+              ? {
+                  background:
+                    "linear-gradient(100.85deg, #0060ba8e -6.27%, #0067d58c 52.36%)",
+                }
+              : {}),
+          }}
+          disabled={disable}
         >
           ОФОРМИТЬ ЗАКАЗ В ТАШКЕНТЕ
         </Button>

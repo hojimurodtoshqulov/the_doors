@@ -1,10 +1,7 @@
 import { ProductType } from "@/shared/types";
 import styles from "./modale.module.scss";
 import React, { Dispatch, SetStateAction, useEffect, useState } from "react";
-import ModalImages from "../ModalImages";
-import Button from "../Button";
-import ProductModal from "../ProductModal";
-
+import { RxCross1 } from "react-icons/rx";
 function Modal({
   product,
   children,
@@ -43,7 +40,16 @@ function Modal({
         }}
         className={styles.back}
       ></p>
-      <div className={styles.content}>{children} </div>
+      <div className={styles.content}>
+        {" "}
+        <RxCross1
+          className={styles.x}
+          onClick={() => {
+            setIsModal(false);
+          }}
+        />
+        {children}{" "}
+      </div>
     </div>
   );
 }
