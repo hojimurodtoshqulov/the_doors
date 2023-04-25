@@ -32,7 +32,7 @@ function ProductCard({
       ) : (
         ""
       )}
-      {product ? <ImageSlider images={product.attachmentContents} /> : ""}
+      {product ? <ImageSlider images={product?.attachmentContents} /> : ""}
       <h2>{product?.titleUz}</h2>
       <h1>
         from <span>{product?.price}</span>${" "}
