@@ -9,6 +9,7 @@ import { toast } from "react-toastify";
 
 function FormSection() {
   const ref = useRef(null);
+  const formRef = useRef<HTMLFormElement>(null);
   const entity = useIntersectionObserver(ref, {});
   const [disable, setDisable] = useState<boolean>(false);
 
@@ -21,17 +22,23 @@ function FormSection() {
       <form
         action="/"
         id="contact"
+        ref={formRef}
         onSubmit={(e) => {
           e.preventDefault();
           const formdata = new FormData(e.currentTarget);
           const data = Object.fromEntries(formdata.entries());
           setDisable(true);
+          console.log(data);
 
           axios
-            .post(`${API_URL}/api/order`, data)
+            .post(`${API_URL}/api/order`, data, {
+              headers: {
+                "Content-Type": "application/json",
+              },
+            })
             .finally(() => setDisable(false))
             .then((res) => {
-              e.currentTarget.reset();
+              formRef.current?.reset();
 
               toast.success("Order sent", {
                 position: "top-right",
@@ -60,7 +67,7 @@ function FormSection() {
       >
         <h1>Contact us</h1>
         <div className={styles.line}></div>
-        <input type="text" name="name" placeholder="Full name*" required />
+        <input type="text" name="fullName" placeholder="Full name*" required />
         <input
           type="text"
           name="phoneNumber"
