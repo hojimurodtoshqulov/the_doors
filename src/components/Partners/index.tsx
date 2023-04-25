@@ -49,8 +49,8 @@ function Partners({ partners }: { partners: PartnerType[] }) {
     >
       <Slider {...settings}>
         {partners.map((partners: PartnerType) => (
-          <div>
-            <Link href={partners.link} key={partners.id}>
+          <div key={partners.id}>
+            <Link href={partners.link}>
               <a>
                 <img src={partners.image} alt="" />
               </a>
