@@ -16,6 +16,8 @@ function SwitchButton({
 }: MainPropType & { onClick?: () => void }) {
   const [isOn, setIsOn] = useState(false);
 
+  const { asPath } = useRouter();
+
   const toggleSwitch = () => {
     setIsOn((prev) => {
       return !prev;
@@ -27,7 +29,7 @@ function SwitchButton({
   console.log(locale);
 
   return (
-    <Link href="/" locale={locale}>
+    <Link href={asPath} locale={locale}>
       <div className={scss.switch} data-isOn={isOn} onClick={toggleSwitch}>
         <motion.div className={scss.handle} layout transition={spring} />
       </div>
