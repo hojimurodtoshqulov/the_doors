@@ -9,45 +9,9 @@ import { toast } from "react-toastify";
 
 function FormSection() {
   const ref = useRef(null);
+  const formRef = useRef<HTMLFormElement>(null);
   const entity = useIntersectionObserver(ref, {});
   const [disable, setDisable] = useState<boolean>(false);
-
-  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    const formdata = new FormData(e.currentTarget);
-    const data = Object.fromEntries(formdata.entries());
-    setDisable(true);
-
-    axios
-      .post(`${API_URL}/api/order`, data)
-      .finally(() => setDisable(false))
-      .then((res) => {
-        e.target.reset();
-
-        toast.success("Order sent", {
-          position: "top-right",
-          autoClose: 2000,
-          hideProgressBar: false,
-          closeOnClick: true,
-          pauseOnHover: true,
-          draggable: true,
-          progress: undefined,
-          theme: "light",
-        });
-      })
-      .catch((e) => {
-        toast.error("Cannot send your order", {
-          position: "top-right",
-          autoClose: 2000,
-          hideProgressBar: false,
-          closeOnClick: true,
-          pauseOnHover: true,
-          draggable: true,
-          progress: undefined,
-          theme: "light",
-        });
-      });
-  };
 
   return (
     <div
@@ -55,10 +19,55 @@ function FormSection() {
       id="about"
       ref={ref}
     >
-      <form action="/" id="contact" onSubmit={handleSubmit}>
+      <form
+        action="/"
+        id="contact"
+        ref={formRef}
+        onSubmit={(e) => {
+          e.preventDefault();
+          const formdata = new FormData(e.currentTarget);
+          const data = Object.fromEntries(formdata.entries());
+          setDisable(true);
+          console.log(data);
+
+          axios
+            .post(`${API_URL}/api/order`, data, {
+              headers: {
+                "Content-Type": "application/json",
+              },
+            })
+            .finally(() => setDisable(false))
+            .then((res) => {
+              formRef.current?.reset();
+
+              toast.success("Order sent", {
+                position: "top-right",
+                autoClose: 2000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "light",
+              });
+            })
+            .catch((e) => {
+              toast.error("Cannot send your order", {
+                position: "top-right",
+                autoClose: 2000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "light",
+              });
+            });
+        }}
+      >
         <h1>Contact us</h1>
         <div className={styles.line}></div>
-        <input type="text" name="name" placeholder="Full name*" required />
+        <input type="text" name="fullName" placeholder="Full name*" required />
         <input
           type="text"
           name="phoneNumber"
