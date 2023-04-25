@@ -38,7 +38,7 @@ function ProductCard({
         from <span>{product?.price}</span>${" "}
         {product?.discount ? (
           <span style={{ color: "red", paddingLeft: "10px" }}>
-            {product?.price * (1 - product.discount / 100)}$
+            {Math.round(product?.price * (1 - product.discount / 100))}$
           </span>
         ) : (
           ""

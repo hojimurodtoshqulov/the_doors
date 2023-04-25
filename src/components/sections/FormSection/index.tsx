@@ -12,50 +12,52 @@ function FormSection() {
   const entity = useIntersectionObserver(ref, {});
   const [disable, setDisable] = useState<boolean>(false);
 
-  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    const formdata = new FormData(e.currentTarget);
-    const data = Object.fromEntries(formdata.entries());
-    setDisable(true);
-
-    axios
-      .post(`${API_URL}/api/order`, data)
-      .finally(() => setDisable(false))
-      .then((res) => {
-        e.target.reset();
-
-        toast.success("Order sent", {
-          position: "top-right",
-          autoClose: 2000,
-          hideProgressBar: false,
-          closeOnClick: true,
-          pauseOnHover: true,
-          draggable: true,
-          progress: undefined,
-          theme: "light",
-        });
-      })
-      .catch((e) => {
-        toast.error("Cannot send your order", {
-          position: "top-right",
-          autoClose: 2000,
-          hideProgressBar: false,
-          closeOnClick: true,
-          pauseOnHover: true,
-          draggable: true,
-          progress: undefined,
-          theme: "light",
-        });
-      });
-  };
-
   return (
     <div
       className={`${entity?.isIntersecting && styles.active} ${styles.contact}`}
       id="about"
       ref={ref}
     >
-      <form action="/" id="contact" onSubmit={handleSubmit}>
+      <form
+        action="/"
+        id="contact"
+        onSubmit={(e) => {
+          e.preventDefault();
+          const formdata = new FormData(e.currentTarget);
+          const data = Object.fromEntries(formdata.entries());
+          setDisable(true);
+
+          axios
+            .post(`${API_URL}/api/order`, data)
+            .finally(() => setDisable(false))
+            .then((res) => {
+              e.currentTarget.reset();
+
+              toast.success("Order sent", {
+                position: "top-right",
+                autoClose: 2000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "light",
+              });
+            })
+            .catch((e) => {
+              toast.error("Cannot send your order", {
+                position: "top-right",
+                autoClose: 2000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "light",
+              });
+            });
+        }}
+      >
         <h1>Contact us</h1>
         <div className={styles.line}></div>
         <input type="text" name="name" placeholder="Full name*" required />
