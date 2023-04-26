@@ -13,112 +13,117 @@ import useIntl from "react-intl/src/components/useIntl";
 import Showcase from "@/components/sections/Showcase";
 
 function Navbar() {
-	const [scrollPosition, setScrollPosition] = useState<number>(0);
-	const [isOpen, setIsOpen] = useState<boolean>(false);
-	const ref = useRef<HTMLHeadElement>(null);
-	const route = useRouter();
-	const isLight = route.pathname === "/";
-	useEffect(() => {
-		const handleScroll = () => {
-			if (!ref.current) return;
-			if (window.pageYOffset === 0) {
-				ref.current.style.backdropFilter = "blur(0px)";
-				ref.current.style.background = "transparent";
-			} else {
-				ref.current.style.backdropFilter = "blur(10px)";
-				ref.current.style.background =
-					route.pathname === "/"
-						? "rgba(255, 255, 255, 0.2)"
-						: "rgba(0, 0, 0, 0.2)";
-			}
-			const currentScrollPos = window.pageYOffset;
-			ref.current.style.translate = `0 ${
-				scrollPosition > currentScrollPos ? 0 : "-100%"
-			}`;
-			setScrollPosition(currentScrollPos);
-		};
-		window.addEventListener("scroll", handleScroll);
-		return () => window.removeEventListener("scroll", handleScroll);
-	}, [scrollPosition]);
-	const intl = useIntl();
-	const t = (id: string) => {
-		return intl.formatMessage({ id: id });
-	};
-	console.log(t("home"));
+  const [scrollPosition, setScrollPosition] = useState<number>(0);
+  const [isOpen, setIsOpen] = useState<boolean>(false);
+  const ref = useRef<HTMLHeadElement>(null);
+  const route = useRouter();
+  const isLight = route.pathname === "/";
+  useEffect(() => {
+    const handleScroll = () => {
+      if (!ref.current) return;
+      if (window.pageYOffset === 0) {
+        ref.current.style.backdropFilter = "blur(0px)";
+        ref.current.style.background = "transparent";
+      } else {
+        ref.current.style.backdropFilter = "blur(10px)";
+        ref.current.style.background =
+          route.pathname === "/"
+            ? "rgba(255, 255, 255, 0.2)"
+            : "rgba(0, 0, 0, 0.2)";
+      }
+      const currentScrollPos = window.pageYOffset;
 
-	const menuConfig: MenuRouteType[] = [
-		{
-			id: "1",
-			label: t("home"),
-			link: "/",
-		},
-		{
-			id: "2",
-			label: t("about"),
-			link: "/#about",
-		},
-		{
-			id: "3",
-			label: t("contact"),
-			link: "/contact",
-		},
-		{
-			id: "4",
-			label: t("news"),
-			link: "/news",
-		},
-		{
-			id: "5",
-			label: t("projects"),
-			link: "/projects",
-		},
-	];
+      setScrollPosition(currentScrollPos);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [scrollPosition]);
+  const intl = useIntl();
+  const t = (id: string) => {
+    return intl.formatMessage({ id: id });
+  };
+  console.log(t("home"));
 
-	return (
-		<nav
-			className={`${styles.navbar} ${
-				isLight && styles.black
-			} container-padding`}
-			ref={ref}
-		>
-			<Link href="/">
-				<a>
-					<img src={isLight ? logo.src : logolight.src} alt="" />
-				</a>
-			</Link>
-			<div
-				className={`${isOpen && styles.x} ${styles.menuBtn}`}
-				onClick={() => setIsOpen((pre) => !pre)}
-			></div>
-			<div
-				className={` ${isOpen && styles.open} ${styles.menu}`}
-				onClick={() => setIsOpen((pre) => !pre)}
-			>
-				{menuConfig.map((route: MenuRouteType) => (
-					<Link href={route.link} key={route.id}>
-						<a className={"link"}>{route.label}</a>
-					</Link>
-				))}
-				<SwitchButton />
-				<Link href={"/#contact"}>
-					<a>
-						<Button
-							style={{
-								borderRadius: 10,
-								minWidth: 160,
-								gap: 10,
-								alignItems: "center",
-								display: "flex",
-								justifyContent: "space-between",
-							}}
-						>
-							<BsFillTelephoneFill /> Request a call
-						</Button>
-					</a>
-				</Link>
-			</div>
-		</nav>
-	);
+  const menuConfig: MenuRouteType[] = [
+    {
+      id: "1",
+      label: t("home"),
+      link: "/",
+    },
+
+    {
+      id: "3",
+      label: t("contact"),
+      link: "/contact",
+    },
+    {
+      id: "4",
+      label: t("news"),
+      link: "/news",
+    },
+    {
+      id: "5",
+      label: t("projects"),
+      link: "/projects",
+    },
+  ];
+
+  const onClick = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
+    if (!e.currentTarget.dataset.to) return;
+    if (!document.getElementById(e.currentTarget.dataset.to))
+      return window.location.replace(`/#${e.currentTarget.dataset.to}`);
+
+    document
+      .getElementById(e.currentTarget.dataset.to)
+      ?.scrollIntoView({ behavior: "smooth" });
+  };
+
+  return (
+    <nav
+      className={`${styles.navbar} ${
+        isLight && styles.black
+      } container-padding`}
+      ref={ref}
+    >
+      <Link href="/">
+        <a>
+          <img src={isLight ? logo.src : logolight.src} alt="" />
+        </a>
+      </Link>
+      <div
+        className={`${isOpen && styles.x} ${styles.menuBtn}`}
+        onClick={() => setIsOpen((pre) => !pre)}
+      ></div>
+      <div
+        className={` ${isOpen && styles.open} ${styles.menu}`}
+        onClick={() => setIsOpen((pre) => !pre)}
+      >
+        {menuConfig.map((route: MenuRouteType) => (
+          <Link href={route.link} key={route.id}>
+            <a className={"link"}>{route.label}</a>
+          </Link>
+        ))}{" "}
+        <a className={"link"} data-to="about" onClick={onClick}>
+          {t("about")}
+        </a>
+        <SwitchButton />
+        <a data-to="contact" onClick={onClick}>
+          <Button
+            style={{
+              borderRadius: 10,
+              minWidth: 160,
+              gap: 10,
+              alignItems: "center",
+              display: "flex",
+              justifyContent: "space-between",
+            }}
+          >
+            <BsFillTelephoneFill /> Request a call
+          </Button>
+        </a>
+      </div>
+    </nav>
+  );
 }
 
 export default Navbar;
