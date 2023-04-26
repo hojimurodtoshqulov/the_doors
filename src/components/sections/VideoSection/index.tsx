@@ -15,11 +15,9 @@ function VideoSection() {
       if (!vdRef.current) {
         return;
       }
-
       if (scroll - 20 < 0) {
         vdRef.current.currentTime = 0;
       }
-
       window.pageYOffset < 3000
         ? vdRef.current?.play()
         : vdRef.current?.pause();
@@ -27,7 +25,6 @@ function VideoSection() {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
-
   return (
     <div
       className={styles.video}
@@ -35,7 +32,7 @@ function VideoSection() {
       ref={ref}
     >
       {/* <video src="public/media/site.mp4" controls></video> */}
-      <video loop autoPlay muted ref={vdRef}>
+      <video loop muted ref={vdRef}>
         <source src="/media/site.mp4" type="video/mp4" />
       </video>
     </div>
