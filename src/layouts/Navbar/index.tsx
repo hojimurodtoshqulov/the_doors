@@ -46,6 +46,34 @@ function Navbar() {
 	};
 	console.log(t("home"));
 
+	const menuConfig: MenuRouteType[] = [
+		{
+			id: "1",
+			label: t("home"),
+			link: "/",
+		},
+		{
+			id: "2",
+			label: t("about"),
+			link: "/#about",
+		},
+		{
+			id: "3",
+			label: t("contact"),
+			link: "/contact",
+		},
+		{
+			id: "4",
+			label: t("news"),
+			link: "/news",
+		},
+		{
+			id: "5",
+			label: t("projects"),
+			link: "/projects",
+		},
+	];
+
 	return (
 		<nav
 			className={`${styles.navbar} ${
@@ -71,13 +99,7 @@ function Navbar() {
 						<a className={"link"}>{route.label}</a>
 					</Link>
 				))}
-				{t("news")}
-				{/* <div className={styles.navbar__lang}>
-					<button className={styles.navbar__lang_ru}></button>
-					<button className={styles.navbar__lang_uz}></button>
-				</div> */}
 				<SwitchButton />
-				{/* <SwitchButton /> */}
 				<Link href={"/#contact"}>
 					<a>
 						<Button
