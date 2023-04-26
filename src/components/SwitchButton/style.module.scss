@@ -1,7 +1,8 @@
+
 .switch {
 	width: 70px;
 	height: 35px;
-	background: rgba(255, 255, 255, 0);
+	background: #ff00;
 	border: 2px solid #0d5190;
 	display: flex;
 	justify-content: flex-start;
@@ -10,14 +11,32 @@
 	cursor: pointer;
 	position: relative;
 	z-index: 10;
+	@media (max-width: 765px) {
+		width: 70px;
+		height: 35px;
+		padding: 0px 0px;
+		margin: 0 22px;
+		position: relative;
+	}
 	.handle {
 		width: 25px;
-		height: 25px;
+		height: 20px;
 		margin: 5% 0;
 		background: #0d5190;
 		background-image: url("../../../public/media/flag_uz.jpg");
 		background-size: cover;
-		border-radius: 40px;
+		border-radius: 50%;
+		@media (max-width: 765px) {
+			background-image: url("../../../public/media/flag_uz.jpg");
+			background-size: cover;
+			width: 30px;
+			height: 20px !important;
+			border-radius: 50%;
+			// margin: 0 0 100px 0;
+			position: absolute;
+			top: -2px;
+			z-index: 123;
+		}
 	}
 }
 .switch[data-isOn="true"] {

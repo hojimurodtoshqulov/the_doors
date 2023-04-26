@@ -29,7 +29,7 @@ function SwitchButton({
   console.log(locale);
 
   return (
-    <Link href={asPath} locale={locale}>
+    <Link href={asPath} locale={locale} className={scss.switchDiv}>
       <div className={scss.switch} data-isOn={isOn} onClick={toggleSwitch}>
         <motion.div className={scss.handle} layout transition={spring} />
       </div>

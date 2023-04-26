@@ -9,6 +9,8 @@ import { MenuRouteType, menuConfig } from "@/modules/menuConfig";
 import Button from "@/components/Button";
 import { useRouter } from "next/router";
 import SwitchButton from "../../components/SwitchButton";
+import useIntl from "react-intl/src/components/useIntl";
+import Showcase from "@/components/sections/Showcase";
 
 function Navbar() {
 	const [scrollPosition, setScrollPosition] = useState<number>(0);
@@ -38,6 +40,12 @@ function Navbar() {
 		window.addEventListener("scroll", handleScroll);
 		return () => window.removeEventListener("scroll", handleScroll);
 	}, [scrollPosition]);
+	const intl = useIntl();
+	const t = (id: string) => {
+		return intl.formatMessage({ id: id });
+	};
+	console.log(t("home"));
+
 	return (
 		<nav
 			className={`${styles.navbar} ${
@@ -63,6 +71,7 @@ function Navbar() {
 						<a className={"link"}>{route.label}</a>
 					</Link>
 				))}
+				{t("news")}
 				{/* <div className={styles.navbar__lang}>
 					<button className={styles.navbar__lang_ru}></button>
 					<button className={styles.navbar__lang_uz}></button>

@@ -1,4 +1,8 @@
 {
-  "hello": "salom",
-  "showcase.title": "ECOHOUSE STYLE"
+	"home": "Asosiy",
+	"about": "Haqida",
+	"contact": "Aloqa",
+	"news": "Yangiliklar",
+	"projects": "Bizning proektlar",
+	"showcase.title": "ECOHOUSE STYLE"
 }
