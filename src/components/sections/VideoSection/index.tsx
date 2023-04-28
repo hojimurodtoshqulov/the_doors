@@ -33,7 +33,10 @@ function VideoSection() {
     >
       {/* <video src="public/media/site.mp4" controls></video> */}
       <video loop muted ref={vdRef}>
-        <source src="/media/site.mp4" type="video/mp4" />
+        <source
+          src="https://ideallux-space.nyc3.digitaloceanspaces.com/IMG_0115.MP4"
+          type="video/mp4"
+        />
       </video>
     </div>
   );
