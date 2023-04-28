@@ -46,11 +46,6 @@ function Navbar() {
 
   const menuConfig: MenuRouteType[] = [
     {
-      id: "3",
-      label: t("contact"),
-      link: "/contact",
-    },
-    {
       id: "4",
       label: t("news"),
       link: "/news",
@@ -59,6 +54,11 @@ function Navbar() {
       id: "5",
       label: t("projects"),
       link: "/projects",
+    },
+    {
+      id: "3",
+      label: t("contact"),
+      link: "/contact",
     },
   ];
 
