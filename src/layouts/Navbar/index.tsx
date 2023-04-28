@@ -46,12 +46,6 @@ function Navbar() {
 
   const menuConfig: MenuRouteType[] = [
     {
-      id: "1",
-      label: t("home"),
-      link: "/",
-    },
-
-    {
       id: "3",
       label: t("contact"),
       link: "/contact",
@@ -98,14 +92,18 @@ function Navbar() {
         className={` ${isOpen && styles.open} ${styles.menu}`}
         onClick={() => setIsOpen((pre) => !pre)}
       >
+        {" "}
+        <Link href={"/"}>
+          <a className={"link"}> {t("home")}</a>
+        </Link>{" "}
+        <a className={"link"} data-to="about" onClick={onClick}>
+          {t("about")}
+        </a>
         {menuConfig.map((route: MenuRouteType) => (
           <Link href={route.link} key={route.id}>
             <a className={"link"}>{route.label}</a>
           </Link>
         ))}{" "}
-        <a className={"link"} data-to="about" onClick={onClick}>
-          {t("about")}
-        </a>
         <SwitchButton />
         <a data-to="contact" onClick={onClick}>
           <Button

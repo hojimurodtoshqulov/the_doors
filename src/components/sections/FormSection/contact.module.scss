@@ -1,19 +1,19 @@
 .map {
-     background: var(--blue-common);
+     // background: var(--blue-common);
      height: 100vh;
      display: flex;
      flex-direction: column;
      color: white;
      border-radius: 20px;
      font-size: 25px;
-     & > div {
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
-          padding: 20px 30px;
-          flex-wrap: wrap;
-          gap: 5px;
-     }
+     // & > div {
+     //      display: flex;
+     //      justify-content: space-between;
+     //      align-items: center;
+     //      padding: 20px 30px;
+     //      flex-wrap: wrap;
+     //      gap: 5px;
+     // }
 
      iframe {
           width: 100%;

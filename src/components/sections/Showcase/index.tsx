@@ -32,10 +32,10 @@ function Showcase() {
           Stay informed about the market with real estate news and insights
           provided by real estate professionals and government agencies.
         </p>
-        <div className={styles.buttons}>
+        {/* <div className={styles.buttons}>
           <button>See Our Case Studies</button>
           <button className={styles.shaffof}>Watch A Demo</button>
-        </div>
+        </div> */}
       </div>
       <div className={styles.images}>
         <div className={styles.ovals}>

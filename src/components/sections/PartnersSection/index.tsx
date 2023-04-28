@@ -22,7 +22,10 @@ const partners: PartnerType[] = [
 function PartnersSection() {
   return (
     <div className={styles.partners}>
-      <Title style={{ padding: "0 7% 20px" }}>Our Partners</Title>
+      <Title style={{ padding: "0 7% 20px" }}>
+        {" "}
+        <i>Our Partners</i>{" "}
+      </Title>
       <Partners partners={partners} />
     </div>
   );
