@@ -6,51 +6,49 @@ import VanillaTilt from "vanilla-tilt";
 import useIntersectionObserver from "@/utils/InterSectionObserver";
 
 function AboutSection() {
-  const ref1 = useRef(null);
-  const ref2 = useRef(null);
+	const ref1 = useRef(null);
+	const ref2 = useRef(null);
 
-  const ref = useRef(null);
-  const entity = useIntersectionObserver(ref, {});
+	const ref = useRef(null);
+	const entity = useIntersectionObserver(ref, {});
 
-  useEffect(() => {
-    if (!ref1.current || !ref2.current) {
-      return;
-    }
-    const options = {
-      max: 20,
-      scale: 1.05,
+	useEffect(() => {
+		if (!ref1.current || !ref2.current) {
+			return;
+		}
+		const options = {
+			max: 20,
+			scale: 1.05,
 
-      speed: 1000,
-      glare: true,
-    };
-    VanillaTilt.init(ref1.current, options);
-    VanillaTilt.init(ref2.current, options);
-  }, [ref1.current, ref2.current]);
+			speed: 1000,
+			glare: true,
+		};
+		VanillaTilt.init(ref1.current, options);
+		VanillaTilt.init(ref2.current, options);
+	}, [ref1.current, ref2.current]);
 
-  return (
-    <div
-      className={`${entity?.isIntersecting && styles.active} ${styles.about}`}
-      ref={ref}
-    >
-      <div className={styles.images}>
-        <img src={image1.src} alt="" ref={ref1} />
-        <img src={image2.src} alt="" ref={ref2} />
-      </div>
-      <div className={styles.description} id="about">
-        <h3>О нас</h3>
-        <p>
-          Международный концерн The Door — это промышленная группа
-          глубокоинтегрированных производственных предприятий, общей целью
-          которых является комплексная поставка полнокомплектных решений для
-          объектов промышленного строительства, частного домостроения, а также
-          объектов специального назначения, городской инфраструктуры и сельского
-          хозяйства. Все предлагаемые решения полностью состоят из продукции
-          DoorHan, кроме того, спроектированы и изготовлены на собственных
-          заводах концерна The Door.
-        </p>
-      </div>
-    </div>
-  );
+	return (
+		<div
+			className={`${entity?.isIntersecting && styles.active} ${styles.about}`}
+			ref={ref}
+		>
+			<div className={styles.images}>
+				<img src={image1.src} alt="" ref={ref1} />
+				<img src={image2.src} alt="" ref={ref2} />
+			</div>
+			<div className={styles.description} id="about">
+				<h3>О нас</h3>
+				<p>
+					Мы - компания «THEDOORS», специализируемся на установке автоматических
+					ворот, роллет , шлагбаумов и перегрузочного оборудования. С момента
+					нашего основания в 2000 году , мы постоянно совершенствуемся и
+					развиваемся , чтобы наши клиенты оставались довольны нашей продукцией
+					. Наша команда состоит из опытных высококвалифицированных
+					профессионалов, готовых к решению любых сложных задач!
+				</p>
+			</div>
+		</div>
+	);
 }
 
 export default AboutSection;

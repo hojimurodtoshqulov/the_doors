@@ -18,7 +18,7 @@ function Footer({ style }: MainPropType) {
     <footer style={style} className={`${ entity?.isIntersecting && styles.active} ${styles.footer}`} ref={ref}>
       <div className={styles.top}>
         <div className={styles.row}>
-          <h1>The Door</h1>
+          <h1>The Doors</h1>
           <p>
             Quis nostrud exercitatin ullamc boris nisi ut aliquip ex ea commodo
             conse.
