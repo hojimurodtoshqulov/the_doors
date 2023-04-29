@@ -92,7 +92,6 @@ function Navbar() {
         className={` ${isOpen && styles.open} ${styles.menu}`}
         onClick={() => setIsOpen((pre) => !pre)}
       >
-        {" "}
         <Link href={"/"}>
           <a className={"link"}> {t("home")}</a>
         </Link>{" "}
@@ -116,7 +115,7 @@ function Navbar() {
               justifyContent: "space-between",
             }}
           >
-            <BsFillTelephoneFill /> Request a call
+            <BsFillTelephoneFill /> Заказать звонок
           </Button>
         </a>
       </div>
