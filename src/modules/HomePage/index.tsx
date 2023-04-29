@@ -12,7 +12,7 @@ import VideoSection from "@/components/sections/VideoSection";
 
 function HomePage() {
   return (
-    <div>    
+    <div>
       <section className={styles.video}>
         <Showcase />
         <VideoSection />
@@ -27,6 +27,7 @@ function HomePage() {
         <AboutSection />
         <FormSection />
         <PartnersSection />
+         
       </section>
     </div>
   );

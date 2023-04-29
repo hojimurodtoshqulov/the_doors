@@ -1,8 +1,13 @@
 import React, { useEffect, useRef, useState } from "react";
 import logo from "../../../public/media/black logo.png";
+import logo1 from "../../../public/media/logo the doors.svg";
 import logolight from "../../../public/media/Group (1).png";
 import { AiOutlineShoppingCart } from "react-icons/ai";
-import { BsFillTelephoneFill, BsPerson } from "react-icons/bs";
+import {
+  BsFillArrowUpLeftCircleFill,
+  BsFillTelephoneFill,
+  BsPerson,
+} from "react-icons/bs";
 import styles from "./navbar.module.scss";
 import Link from "next/link";
 import { MenuRouteType, menuConfig } from "@/modules/menuConfig";
@@ -32,7 +37,8 @@ function Navbar() {
             : "rgba(0, 0, 0, 0.2)";
       }
       const currentScrollPos = window.pageYOffset;
-
+      ref.current.style.translate =
+        scrollPosition < currentScrollPos ? "0 -100%" : "0";
       setScrollPosition(currentScrollPos);
     };
     window.addEventListener("scroll", handleScroll);
@@ -46,19 +52,14 @@ function Navbar() {
 
   const menuConfig: MenuRouteType[] = [
     {
-      id: "3",
-      label: t("contact"),
-      link: "/contact",
-    },
-    {
-      id: "4",
-      label: t("news"),
-      link: "/news",
-    },
-    {
       id: "5",
       label: t("projects"),
       link: "/projects",
+    },
+    {
+      id: "3",
+      label: t("contact"),
+      link: "/contact",
     },
   ];
 
@@ -73,53 +74,57 @@ function Navbar() {
   };
 
   return (
-    <nav
-      className={`${styles.navbar} ${
-        isLight && styles.black
-      } container-padding`}
-      ref={ref}
-    >
-      <Link href="/">
-        <a>
-          <img src={isLight ? logo.src : logolight.src} alt="" />
+    <>
+      <nav
+        className={`${styles.navbar} ${
+          isLight && styles.black
+        } container-padding`}
+        ref={ref}
+      >
+        <Link href="/">
+          <a>
+            <img src={isLight ? logo.src : logolight.src} alt="" />
+          </a>
+        </Link>
+        <div
+          className={`${isOpen && styles.x} ${styles.menuBtn}`}
+          onClick={() => setIsOpen((pre) => !pre)}
+        ></div>
+        <div
+          className={` ${isOpen && styles.open} ${styles.menu}`}
+          onClick={() => setIsOpen((pre) => !pre)}
+        >
+          <a className={"link"} data-to="about" onClick={onClick}>
+            {t("about")}
+          </a>
+          {menuConfig.map((route: MenuRouteType) => (
+            <Link href={route.link} key={route.id}>
+              <a className={"link"}>{route.label}</a>
+            </Link>
+          ))}{" "}
+          <SwitchButton />
+          <a data-to="contact" onClick={onClick}>
+            <Button
+              style={{
+                borderRadius: 10,
+                minWidth: 160,
+                gap: 10,
+                alignItems: "center",
+                display: "flex",
+                justifyContent: "space-between",
+              }}
+            >
+              <BsFillTelephoneFill /> Request a call
+            </Button>
+          </a>
+        </div>
+      </nav>
+      <Link href={"/"}>
+        <a className={styles.homeicon}>
+          <BsFillArrowUpLeftCircleFill />
         </a>
       </Link>
-      <div
-        className={`${isOpen && styles.x} ${styles.menuBtn}`}
-        onClick={() => setIsOpen((pre) => !pre)}
-      ></div>
-      <div
-        className={` ${isOpen && styles.open} ${styles.menu}`}
-        onClick={() => setIsOpen((pre) => !pre)}
-      >
-        <Link href={"/"}>
-          <a className={"link"}> {t("home")}</a>
-        </Link>{" "}
-        <a className={"link"} data-to="about" onClick={onClick}>
-          {t("about")}
-        </a>
-        {menuConfig.map((route: MenuRouteType) => (
-          <Link href={route.link} key={route.id}>
-            <a className={"link"}>{route.label}</a>
-          </Link>
-        ))}{" "}
-        <SwitchButton />
-        <a data-to="contact" onClick={onClick}>
-          <Button
-            style={{
-              borderRadius: 10,
-              minWidth: 160,
-              gap: 10,
-              alignItems: "center",
-              display: "flex",
-              justifyContent: "space-between",
-            }}
-          >
-            <BsFillTelephoneFill /> Заказать звонок
-          </Button>
-        </a>
-      </div>
-    </nav>
+    </>
   );
 }
 
