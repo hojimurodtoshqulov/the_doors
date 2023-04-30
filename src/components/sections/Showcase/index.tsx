@@ -8,51 +8,51 @@ import useIntersectionObserver from "@/utils/InterSectionObserver";
 import useIntl from "react-intl/src/components/useIntl";
 
 function Showcase() {
-  const ref = useRef(null);
-  const entity = useIntersectionObserver(ref, {});
+	const ref = useRef(null);
+	const entity = useIntersectionObserver(ref, {});
 
-  const intl = useIntl();
-  const t = (id: string) => {
-    return intl.formatMessage({ id: id });
-  };
+	const intl = useIntl();
+	const t = (id: string) => {
+		return intl.formatMessage({ id: id });
+	};
 
-  return (
-    <div
-      className={`${entity?.isIntersecting && styles.active} ${
-        styles.showcase
-      }`}
-      ref={ref}
-    >
-      <div className={styles.text}>
-        <h1>
-          {/* <span>ECOHOUSE</span> <span>Style</span> */}
-          <span>{t("showcase.title")}</span>
-        </h1>
-        <p>
-          Stay informed about the market with real estate news and insights
-          provided by real estate professionals and government agencies.
-        </p>
-        {/* <div className={styles.buttons}>
+	return (
+		<div
+			className={`${entity?.isIntersecting && styles.active} ${
+				styles.showcase
+			}`}
+			ref={ref}
+		>
+			<div className={styles.text}>
+				<h1>
+					{/* <span>ECOHOUSE</span> <span>Style</span> */}
+					<span>{t("showcase.title")}</span>
+				</h1>
+				{/* <p>
+					<span>{t("showcase.desc1")}</span>
+				</p> */}
+				<p>{t("showcase.desc2")}</p>
+				{/* <div className={styles.buttons}>
           <button>See Our Case Studies</button>
           <button className={styles.shaffof}>Watch A Demo</button>
         </div> */}
-      </div>
-      <div className={styles.images}>
-        <div className={styles.ovals}>
-          <div className={`${styles.image} ${styles.image1}`}>
-            {" "}
-            <img src={hero1.src} alt="" />
-          </div>
-          <div className={styles.line}></div>{" "}
-          <div className={`${styles.image} ${styles.image2}`}>
-            {" "}
-            <img src={hero2.src} alt="" />
-          </div>
-        </div>
-        <img src={hero3.src} alt="" />
-      </div>
-    </div>
-  );
+			</div>
+			<div className={styles.images}>
+				<div className={styles.ovals}>
+					<div className={`${styles.image} ${styles.image1}`}>
+						{" "}
+						<img src={hero1.src} alt="" />
+					</div>
+					<div className={styles.line}></div>{" "}
+					<div className={`${styles.image} ${styles.image2}`}>
+						{" "}
+						<img src={hero2.src} alt="" />
+					</div>
+				</div>
+				<img src={hero3.src} alt="" />
+			</div>
+		</div>
+	);
 }
 
 export default Showcase;

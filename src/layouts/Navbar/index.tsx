@@ -118,7 +118,7 @@ function Navbar() {
 								justifyContent: "space-between",
 							}}
 						>
-							<BsFillTelephoneFill /> Заказать звонок
+							<BsFillTelephoneFill /> {t("navBtn")}
 						</Button>
 					</a>
 				</div>
