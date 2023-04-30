@@ -20,6 +20,7 @@ function ProductCard({
 }) {
   const ref = useRef(null);
   const entity = useIntersectionObserver(ref, {});
+  const [isLong, setIsLong] = useState<boolean>(false);
 
   return (
     <div
@@ -27,14 +28,14 @@ function ProductCard({
       style={style}
       ref={ref}
     >
-      {product?.discount ? (
+      {/* {product?.discount ? (
         <div className={styles.discount}>{product.discount}%</div>
       ) : (
         ""
-      )}
+      )} */}
       {product ? <ImageSlider images={product?.attachmentContents} /> : ""}
       <h2>{product?.titleUz}</h2>
-      <h1>
+      {/* <h1>
         from <span>{product?.price}</span>${" "}
         {product?.discount ? (
           <span style={{ color: "red", paddingLeft: "10px" }}>
@@ -43,7 +44,11 @@ function ProductCard({
         ) : (
           ""
         )}
-      </h1>
+      </h1> */}
+      <p>
+        {product?.descriptionUz?.slice(0, isLong ? -1 : 100)}...{" "}
+        <span onClick={() => setIsLong((prev) => !prev)}>more</span>
+      </p>
       <Button
         style={{ borderRadius: 10 }}
         onClick={() => {
