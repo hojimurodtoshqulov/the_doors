@@ -27,6 +27,10 @@ function ProductCard({
       className={`${styles.product} ${entity?.isIntersecting && styles.active}`}
       style={style}
       ref={ref}
+      onClick={() => {
+        setIsModal(true);
+        setProduct(product);
+      }}
     >
       {/* {product?.discount ? (
         <div className={styles.discount}>{product.discount}%</div>
@@ -46,18 +50,15 @@ function ProductCard({
         )}
       </h1> */}
       <p>
-        {product?.descriptionUz?.slice(0, isLong ? -1 : 100)}...{" "}
+        {product?.descriptionUz?.slice(0, isLong ? -1 : 60)}...{" "}
         <span onClick={() => setIsLong((prev) => !prev)}>more</span>
       </p>
-      <Button
+      {/* <Button
         style={{ borderRadius: 10 }}
-        onClick={() => {
-          setIsModal(true);
-          setProduct(product);
-        }}
+         
       >
         Add to cart
-      </Button>
+      </Button> */}
     </div>
   );
 }

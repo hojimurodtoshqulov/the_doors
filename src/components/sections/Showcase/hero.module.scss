@@ -1,6 +1,6 @@
 .showcase {
 	padding: 7%;
-	height: 100vh;
+	height: 50vw;
 	display: flex;
 	align-items: center;
 	position: relative;
@@ -28,7 +28,7 @@
 	}
 	h1 {
 		font-weight: 500;
-		font-size: 110px;
+		font-size: 8vw;
 		line-height: 110%;
 		width: 760px;
 		letter-spacing: -3px;
@@ -87,10 +87,13 @@
 		backdrop-filter: blur(10px);
 	}
 
+	@media (max-width: 1700px) {
+		height: 100vh;
+	}
 	@media (max-width: 900px) {
 		h1 {
-			font-size: 15vw;
 			width: 100%;
+			font-size: 10vw;
 		}
 		p {
 			font-size: calc(10px + 0.8vw);
