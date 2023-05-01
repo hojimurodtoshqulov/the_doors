@@ -28,7 +28,7 @@
 	}
 	h1 {
 		font-weight: 500;
-		font-size: 8vw;
+		font-size: 7vw;
 		line-height: 110%;
 		width: 760px;
 		letter-spacing: -3px;
@@ -128,7 +128,7 @@
 
 .images {
 	position: absolute;
-	bottom: 0;
+	bottom: -4vh;
 	right: 8vw;
 	z-index: -1;
 	width: 50vw;
@@ -137,7 +137,7 @@
 		aspect-ratio: 5/4;
 		display: flex;
 		rotate: 25deg;
-		scale: 1.2;
+		scale: 1.1;
 	}
 
 	.image {
