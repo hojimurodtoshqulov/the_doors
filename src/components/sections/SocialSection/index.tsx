@@ -5,11 +5,15 @@ import { FaFacebookF, FaTelegramPlane } from "react-icons/fa";
 import { AiFillYoutube } from "react-icons/ai";
 import Link from "next/link";
 import useIntersectionObserver from "@/utils/InterSectionObserver";
+import useIntl from "react-intl/src/components/useIntl";
 
 function SocialSection() {
   const ref = useRef(null);
   const entity = useIntersectionObserver(ref, { threshold: 0.5 });
-
+	const intl = useIntl();
+	const t = (id: string) => {
+		return intl?.formatMessage({ id: id });
+	};
   return (
     <div
       className={`${entity?.isIntersecting && styles.active} ${styles.socials}`}
