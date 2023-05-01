@@ -60,9 +60,6 @@ const ImageMagnifierGlass: React.FC<ImageMagnifierGlassProps> = ({
   const handleMouseLeave = () => {
     setShowMagnifier(false);
   };
-  console.log(
-    ((glassPosition.x + glassSize.width / 2) * 100) / imageSize.width
-  );
 
   return (
     <div className={styles.container}>

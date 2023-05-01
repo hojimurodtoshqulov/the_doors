@@ -32,7 +32,12 @@
           border-radius: 10px;
           overflow: hidden;
           position: absolute;
-          inset: 10% 7% 20% 7%;
+          // inset: 10% 7% 20% 7%;
+          top: 10%;
+          left: 7%;
+          width: 50%;
+          height: 80%;
+          max-height: 500px;
           max-width: 500px;
           z-index: 1;
      }
@@ -94,6 +99,7 @@
                position: unset;
                width: 50%;
                padding: calc(5px + 2%);
+               height: auto;
           }
           .map {
                height: unset;

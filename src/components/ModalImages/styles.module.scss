@@ -4,8 +4,17 @@
      // height: 600px;
      gap: 5px;
      max-height: 100%;
+     .miniimages img,
      img {
           border-radius: 10px;
+          &.active {
+               position: fixed;
+               z-index: 100;
+               inset: 0;
+               height: 100%;
+               object-fit: contain;
+               background-color: rgba(0, 0, 0, 0.5);
+          }
      }
      .miniimages {
           display: flex;
@@ -14,7 +23,7 @@
           width: 20%;
           // gap: 5px;
           img {
-               height: 24%;
+               height: 33%;
                width: 100%;
                object-fit: cover;
           }
