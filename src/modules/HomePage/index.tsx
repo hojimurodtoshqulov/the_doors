@@ -18,7 +18,6 @@ function HomePage() {
         <VideoSection />
         <MagnificentWork />
       </section>
-
       <section className={styles.last}>
         <Adds />
         <ProductSection />

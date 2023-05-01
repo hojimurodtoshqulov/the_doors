@@ -12,6 +12,7 @@ import React, { useRef } from "react";
 import Slider from "react-slick";
 import Image from "./Image";
 import useIntersectionObserver from "@/utils/InterSectionObserver";
+import useIntl from "react-intl/src/components/useIntl";
 
 const images = [
   image1.src,
@@ -60,6 +61,10 @@ function OurProjects() {
       },
     ],
   };
+	const intl = useIntl();
+	const t = (id: string) => {
+		return intl?.formatMessage({ id: id });
+	};
   return (
     <div
       className={`${entity?.isIntersecting && styles.active} ${
@@ -67,7 +72,7 @@ function OurProjects() {
       }`}
       ref={ref}
     >
-      <Title>Наши проекты</Title>
+      <Title>{t("projects")}</Title>
       <div className={styles.images}>
         <div className={styles.row}>
           <Image src={image1.src} />

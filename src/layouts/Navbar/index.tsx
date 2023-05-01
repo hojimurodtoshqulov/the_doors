@@ -48,8 +48,6 @@ function Navbar() {
 	const t = (id: string) => {
 		return intl.formatMessage({ id: id });
 	};
-	console.log(t("home"));
-
 	const menuConfig: MenuRouteType[] = [
 		{
 			id: "5",
@@ -62,7 +60,6 @@ function Navbar() {
 			link: "/contact",
 		},
 	];
-
 	const onClick = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
 		if (!e.currentTarget.dataset.to) return;
 		if (!document.getElementById(e.currentTarget.dataset.to))
@@ -76,7 +73,6 @@ function Navbar() {
 		window.scrollTo(0, 5500);
 	};
 	console.log(window.pageYOffset); //5500
-
 	return (
 		<>
 			<nav

@@ -4,14 +4,14 @@ import image1 from "/public/media/Rectangle 15.png";
 import image2 from "/public/media/Rectangle 9.png";
 import VanillaTilt from "vanilla-tilt";
 import useIntersectionObserver from "@/utils/InterSectionObserver";
+import Title from "@/components/Title";
+import useIntl from "react-intl/src/components/useIntl";
 
 function AboutSection() {
 	const ref1 = useRef(null);
 	const ref2 = useRef(null);
-
 	const ref = useRef(null);
 	const entity = useIntersectionObserver(ref, {});
-
 	useEffect(() => {
 		if (!ref1.current || !ref2.current) {
 			return;
@@ -26,7 +26,10 @@ function AboutSection() {
 		VanillaTilt.init(ref1.current, options);
 		VanillaTilt.init(ref2.current, options);
 	}, [ref1.current, ref2.current]);
-
+	const intl = useIntl();
+	const t = (id: string) => {
+		return intl?.formatMessage({ id: id });
+	};
 	return (
 		<div
 			className={`${entity?.isIntersecting && styles.active} ${styles.about}`}
@@ -37,15 +40,11 @@ function AboutSection() {
 				<img src={image2.src} alt="" ref={ref2} />
 			</div>
 			<div className={styles.description} id="about">
-				<h3>О нас</h3>
-				<p>
-					Мы - компания «THEDOORS», специализируемся на установке автоматических
-					ворот, роллет , шлагбаумов и перегрузочного оборудования. С момента
-					нашего основания в 2000 году , мы постоянно совершенствуемся и
-					развиваемся , чтобы наши клиенты оставались довольны нашей продукцией
-					. Наша команда состоит из опытных высококвалифицированных
-					профессионалов, готовых к решению любых сложных задач!
-				</p>
+				<Title style={{ marginBottom: "40px", color: "#666" }}>
+					{t("about")}
+				</Title>
+				{/* <h3>О нас</h3> */}
+				<p>{t("aboutDesc")}</p>
 			</div>
 		</div>
 	);

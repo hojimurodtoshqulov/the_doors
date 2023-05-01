@@ -9,6 +9,7 @@ import Modal from "@/components/Modal";
 import ProductModal from "@/components/ProductModal";
 import axios from "axios";
 import { API_URL } from "@/shared/constants";
+import useIntl from "react-intl/src/components/useIntl";
 
 function ProductSection() {
   const [product, setProduct] = useState<ProductType>();
@@ -20,11 +21,13 @@ function ProductSection() {
       setProducts(res.data);
     });
   }, []);
-
+	const intl = useIntl();
+	const t = (id: string) => {
+		return intl?.formatMessage({ id: id });
+	};
   return (
     <div className={styles.products}>
-      <Title style={{ marginBottom: "calc(20px + 2vw)" }}>Products</Title>
-
+      <Title style={{ marginBottom: "calc(20px + 2vw)" }}>{t("products")}</Title>
       <div className={styles.cardsMax}>
         {products.map((product: ProductType) => (
           <ProductCard
