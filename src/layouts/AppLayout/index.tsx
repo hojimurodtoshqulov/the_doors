@@ -12,12 +12,13 @@ function AppLayout({ children }: MainPropType) {
       setActive(false);
     }, 5000);
   }, []);
+
   return active ? (
     <video
       src="/media/Comp 1_1.mp4"
       autoPlay
       muted
-      style={{ width: "100%", height: "100vh" }}
+      style={{ width: "100%", height: "99vh" }}
     ></video>
   ) : (
     <div className={styles.layout}>

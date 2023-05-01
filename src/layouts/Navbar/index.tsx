@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-import logo from "../../../public/media/black logo.png";
+import logo from "../../../public/media/logo the doors 1.png";
 import logo1 from "../../../public/media/logo the doors.svg";
 import logolight from "../../../public/media/Group (1).png";
 import { AiOutlineShoppingCart } from "react-icons/ai";
