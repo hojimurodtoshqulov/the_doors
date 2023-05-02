@@ -48,7 +48,7 @@ function Modal({
             setIsModal(false);
           }}
         />
-        {children}{" "}
+        {children}
       </div>
     </div>
   );

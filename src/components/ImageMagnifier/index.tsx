@@ -3,6 +3,7 @@ import styles from "./image.module.scss";
 interface ImageMagnifierGlassProps {
   imageSrc: string;
   zoomLevel?: number;
+  onClick: () => void;
 }
 
 interface GlassPosition {
@@ -23,6 +24,7 @@ interface ImageSize {
 const ImageMagnifierGlass: React.FC<ImageMagnifierGlassProps> = ({
   imageSrc,
   zoomLevel = 3,
+  onClick,
 }) => {
   const [glassPosition, setGlassPosition] = useState<GlassPosition>({
     x: 0,
@@ -62,7 +64,7 @@ const ImageMagnifierGlass: React.FC<ImageMagnifierGlassProps> = ({
   };
 
   return (
-    <div className={styles.container}>
+    <div className={styles.container} onClick={onClick}>
       <img
         className={styles.mainimage}
         src={`data:image/png;base64,${imageSrc}`}

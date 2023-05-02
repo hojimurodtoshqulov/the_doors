@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { Dispatch, SetStateAction, useState } from "react";
 import styles from "./styles.module.scss";
 import ModalImages from "../ModalImages";
 import { ProductType } from "@/shared/types";
@@ -7,7 +7,18 @@ import { API_URL } from "@/shared/constants";
 import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
 
-function ProductModal({ product }: { product: ProductType }) {
+function ProductModal({
+  product,
+  setBigImage,
+}: {
+  product: ProductType;
+  setBigImage: Dispatch<
+    SetStateAction<{
+      src: string;
+      isActive: boolean;
+    }>
+  >;
+}) {
   const [form, setForm] = useState<{
     fullName: string;
     phoneNumber: string;
@@ -53,7 +64,10 @@ function ProductModal({ product }: { product: ProductType }) {
   }
   return (
     <div className={styles.content}>
-      <ModalImages images={product?.attachmentContents || []} />
+      <ModalImages
+        images={product?.attachmentContents || []}
+        setBigImage={setBigImage}
+      />
       {/* {JSON.stringify(product)} */}
       <div className={styles.text}>
         <h1>{product.titleUz}</h1>
