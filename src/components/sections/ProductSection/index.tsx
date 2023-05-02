@@ -15,7 +15,7 @@ function ProductSection() {
   const [product, setProduct] = useState<ProductType>();
   const [products, setProducts] = useState<ProductType[]>([]);
   const [isModal, setIsModal] = useState<boolean>(false);
-  const [bigImage, setBigImage] = useState({ src: "", isActive: true });
+  const [bigImage, setBigImage] = useState({ src: "", isActive: false });
 
   useEffect(() => {
     axios.get(`${API_URL}/api/products`).then((res) => {
