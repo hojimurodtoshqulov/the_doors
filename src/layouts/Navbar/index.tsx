@@ -63,14 +63,15 @@ function Navbar() {
 	const onClick = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
 		if (!e.currentTarget.dataset.to) return;
 		if (!document.getElementById(e.currentTarget.dataset.to))
-			return window.location.replace(`/#${e.currentTarget.dataset.to}`);
+			return window.location.replace(`/${e.currentTarget.dataset.to}`);
 
 		document
 			.getElementById(e.currentTarget.dataset.to)
 			?.scrollIntoView({ behavior: "smooth" });
 	};
 	const scrollToTop = () => {
-		window.scrollTo(0, 5500);
+		console.log("scrollToTop");
+		return window.scrollTo(0, 5350);
 	};
 	console.log(window.pageYOffset); //5500
 	return (
@@ -94,6 +95,11 @@ function Navbar() {
 					className={` ${isOpen && styles.open} ${styles.menu}`}
 					onClick={() => setIsOpen((pre) => !pre)}
 				>
+					{/* <Link href="/" onClick={onClick}> */}
+						{/* <span onClick={onClick}>
+							<a className={"link"}>{t("about")}</a>
+						</span> */}
+					{/* </Link> */}
 					<a className={"link"} data-to="about" onClick={onClick}>
 						{t("about")}
 					</a>

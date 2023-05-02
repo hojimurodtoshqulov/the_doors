@@ -1,7 +1,7 @@
 import styles from "./hero.module.scss";
 import React, { useRef } from "react";
-import hero1 from "../../../../public/media/showcase2.jpg";
-import hero2 from "../../../../public/media/showcase3.jpg";
+import hero1 from "../../../../public/media/showcase5.jpg";
+import hero2 from "../../../../public/media/showcase4.jpg";
 import hero3 from "../../../../public/media/Group.png";
 import useIntersectionObserver from "@/utils/InterSectionObserver";
 
