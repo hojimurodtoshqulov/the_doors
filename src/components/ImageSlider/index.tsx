@@ -4,7 +4,7 @@ import React, { useRef, useState } from "react";
 import Slider from "react-slick";
 import styles from "./slider.module.scss";
 
-function ImageSlider({ images }: { images: { data: string }[] }) {
+function ImageSlider({ images }: { images: number[] }) {
   const [currentSlide, setCurrentSlide] = useState<NodeJS.Timer>();
   const ref: React.LegacyRef<Slider> = useRef(null);
 
@@ -46,7 +46,7 @@ function ImageSlider({ images }: { images: { data: string }[] }) {
           <div key={i}>
             <img
               className={styles.image}
-              src={`data:image/png;base64,${image.data}`}
+              src={`https://the-doors.herokuapp.com/api/files/${image}`}
               alt=""
             />
           </div>

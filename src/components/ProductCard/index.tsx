@@ -4,7 +4,6 @@ import { FaRegStar, FaStar, FaStarHalfAlt } from "react-icons/fa";
 import Button from "../Button";
 import CardSlider from "../ImageSlider";
 import { Dispatch, SetStateAction, useRef, useState } from "react";
-import Modal from "../Modal";
 import ImageSlider from "../ImageSlider";
 import useIntersectionObserver from "@/utils/InterSectionObserver";
 
@@ -37,7 +36,7 @@ function ProductCard({
       ) : (
         ""
       )} */}
-      {product ? <ImageSlider images={product?.attachmentContents} /> : ""}
+      {product ? <ImageSlider images={product?.attachmentContentIds} /> : ""}
       <h2>{product?.titleUz}</h2>
       {/* <h1>
         from <span>{product?.price}</span>${" "}

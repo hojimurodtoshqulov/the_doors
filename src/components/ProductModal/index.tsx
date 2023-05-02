@@ -48,6 +48,12 @@ function ProductModal({
           progress: undefined,
           theme: "light",
         });
+        setForm({
+          fullName: "",
+          phoneNumber: "",
+          quantity: 1,
+          productId: product.id,
+        });
       })
       .catch(() =>
         toast.error("Cannot send your order", {
@@ -65,7 +71,7 @@ function ProductModal({
   return (
     <div className={styles.content}>
       <ModalImages
-        images={product?.attachmentContents || []}
+        images={product?.attachmentContentIds || []}
         setBigImage={setBigImage}
       />
       {/* {JSON.stringify(product)} */}

@@ -48,13 +48,13 @@ function ProductSection() {
           setIsModal={setIsModal}
         />
       </div>
-      <Modal product={product} setIsModal={setIsModal} isModal={isModal}>
+      <Modal setIsModal={setIsModal} isModal={isModal}>
         {product && (
           <ProductModal product={product} setBigImage={setBigImage} />
         )}
       </Modal>
       <img
-        src={`data:image/png;base64,${bigImage.src}`}
+        src={bigImage.src}
         className={styles.image}
         style={{
           scale: bigImage.isActive ? "1" : "0",
