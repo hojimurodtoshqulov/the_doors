@@ -48,7 +48,7 @@ function ProductSection() {
           setIsModal={setIsModal}
         />
       </div>
-      <Modal product={product} setIsModal={setIsModal} isModal={isModal}>
+      <Modal setIsModal={setIsModal} isModal={isModal}>
         {product && (
           <ProductModal product={product} setBigImage={setBigImage} />
         )}

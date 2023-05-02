@@ -3,12 +3,10 @@ import styles from "./modale.module.scss";
 import React, { Dispatch, SetStateAction, useEffect, useState } from "react";
 import { RxCross1 } from "react-icons/rx";
 function Modal({
-  product,
   children,
   setIsModal,
   isModal,
 }: {
-  product?: ProductType;
   setIsModal: Dispatch<SetStateAction<boolean>>;
   children: React.ReactNode;
   isModal: boolean;

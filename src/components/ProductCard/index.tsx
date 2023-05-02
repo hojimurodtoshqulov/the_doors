@@ -1,12 +1,10 @@
 import { MainPropType, ProductType } from "@/shared/types";
 import styles from "./card.module.scss";
-import { FaRegStar, FaStar, FaStarHalfAlt } from "react-icons/fa";
-import Button from "../Button";
-import CardSlider from "../ImageSlider";
-import { Dispatch, SetStateAction, useRef, useState } from "react";
-import Modal from "../Modal";
+import { Dispatch, SetStateAction, useRef, useState, useEffect } from "react";
 import ImageSlider from "../ImageSlider";
 import useIntersectionObserver from "@/utils/InterSectionObserver";
+import axios from "axios";
+import { log } from "console";
 
 function ProductCard({
   product,
@@ -21,6 +19,28 @@ function ProductCard({
   const ref = useRef(null);
   const entity = useIntersectionObserver(ref, {});
   const [isLong, setIsLong] = useState<boolean>(false);
+  const [currentProduct, setCurrentProduct] = useState(product);
+
+  useEffect(() => {
+    (async () => {
+      // Promise.race(axios.get)
+      try {
+        const attachmentContents: { data: string }[] = await Promise.all(
+          currentProduct?.attachmentContentIds.map((id) =>
+            axios.get(`https://the-doors.herokuapp.com/api/files/${id}`)
+          ) || []
+        );
+        console.log(attachmentContents);
+        setCurrentProduct(
+          currentProduct && { ...currentProduct, attachmentContents }
+        );
+      } catch (error) {
+        console.log(error);
+      }
+    })();
+  }, []);
+
+  console.log(currentProduct);
 
   return (
     <div
@@ -29,7 +49,7 @@ function ProductCard({
       ref={ref}
       onClick={() => {
         setIsModal(true);
-        setProduct(product);
+        setProduct(currentProduct);
       }}
     >
       {/* {product?.discount ? (
@@ -37,7 +57,11 @@ function ProductCard({
       ) : (
         ""
       )} */}
-      {product ? <ImageSlider images={product?.attachmentContents} /> : ""}
+      {currentProduct ? (
+        <ImageSlider images={currentProduct?.attachmentContents} />
+      ) : (
+        ""
+      )}
       <h2>{product?.titleUz}</h2>
       {/* <h1>
         from <span>{product?.price}</span>${" "}
@@ -50,7 +74,7 @@ function ProductCard({
         )}
       </h1> */}
       <p>
-        {product?.descriptionUz?.slice(0, isLong ? -1 : 60)}...{" "}
+        {currentProduct?.descriptionUz?.slice(0, isLong ? -1 : 60)}...{" "}
         <span onClick={() => setIsLong((prev) => !prev)}>more</span>
       </p>
       {/* <Button

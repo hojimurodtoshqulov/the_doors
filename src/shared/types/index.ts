@@ -16,6 +16,6 @@ export type ProductType = {
   price: number;
   attachmentContents: {
     data: string;
-    id: number;
   }[];
+  attachmentContentIds: number[];
 };
