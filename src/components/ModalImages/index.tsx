@@ -15,7 +15,7 @@ function ModalImages({
   images,
   setBigImage,
 }: {
-  images?: { data: string }[];
+  images?: number[];
   setBigImage: Dispatch<
     SetStateAction<{
       src: string;
@@ -23,10 +23,10 @@ function ModalImages({
     }>
   >;
 }) {
-  const [image, setImage] = useState<string>(images?.[0].data || "");
+  const [image, setImage] = useState(images?.[0] || 0);
 
   useEffect(() => {
-    setImage(images?.[0].data || "");
+    setImage(images?.[0] || 0);
   }, [images]);
 
   console.log(images);
@@ -34,11 +34,11 @@ function ModalImages({
   return (
     <div className={styles.images}>
       <div className={styles.miniimages}>
-        {images?.map((image: { data: string }) => (
+        {images?.map((image: number) => (
           <img
-            src={`data:image/png;base64,${image.data}`}
+            src={`https://the-doors.herokuapp.com/api/files/${image}`}
             onClick={(e) => {
-              setImage(image.data);
+              setImage(image);
             }}
           />
         ))}
@@ -52,7 +52,10 @@ function ModalImages({
       <ImageMagnifierGlass
         imageSrc={image}
         onClick={() => {
-          setBigImage({ src: image, isActive: true });
+          setBigImage({
+            src: `https://the-doors.herokuapp.com/api/files/${image}`,
+            isActive: true,
+          });
         }}
       />
     </div>

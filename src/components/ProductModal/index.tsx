@@ -65,7 +65,7 @@ function ProductModal({
   return (
     <div className={styles.content}>
       <ModalImages
-        images={product?.attachmentContents || []}
+        images={product?.attachmentContentIds || []}
         setBigImage={setBigImage}
       />
       {/* {JSON.stringify(product)} */}

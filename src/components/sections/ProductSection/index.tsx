@@ -54,7 +54,7 @@ function ProductSection() {
         )}
       </Modal>
       <img
-        src={`data:image/png;base64,${bigImage.src}`}
+        src={bigImage.src}
         className={styles.image}
         style={{
           scale: bigImage.isActive ? "1" : "0",

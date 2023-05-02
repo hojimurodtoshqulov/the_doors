@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import styles from "./image.module.scss";
 interface ImageMagnifierGlassProps {
-  imageSrc: string;
+  imageSrc: number;
   zoomLevel?: number;
   onClick: () => void;
 }
@@ -26,6 +26,9 @@ const ImageMagnifierGlass: React.FC<ImageMagnifierGlassProps> = ({
   zoomLevel = 3,
   onClick,
 }) => {
+  console.log(imageSrc);
+  const img = `https://the-doors.herokuapp.com/api/files/${imageSrc}`;
+
   const [glassPosition, setGlassPosition] = useState<GlassPosition>({
     x: 0,
     y: 0,
@@ -67,7 +70,7 @@ const ImageMagnifierGlass: React.FC<ImageMagnifierGlassProps> = ({
     <div className={styles.container} onClick={onClick}>
       <img
         className={styles.mainimage}
-        src={`data:image/png;base64,${imageSrc}`}
+        src={img}
         alt="Main Image"
         onMouseMove={handleMouseMove}
         onMouseLeave={handleMouseLeave}

@@ -14,8 +14,8 @@ export type ProductType = {
   descriptionRu: string;
   discount: number;
   price: number;
-  attachmentContents: {
-    data: string;
-  }[];
+  // attachmentContents: {
+  //   data: string;
+  // }[];
   attachmentContentIds: number[];
 };
