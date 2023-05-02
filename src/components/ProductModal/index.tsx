@@ -48,6 +48,12 @@ function ProductModal({
           progress: undefined,
           theme: "light",
         });
+        setForm({
+          fullName: "",
+          phoneNumber: "",
+          quantity: 1,
+          productId: product.id,
+        });
       })
       .catch(() =>
         toast.error("Cannot send your order", {
