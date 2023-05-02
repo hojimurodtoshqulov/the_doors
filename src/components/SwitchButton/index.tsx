@@ -15,17 +15,13 @@ function SwitchButton({
   onClick,
 }: MainPropType & { onClick?: () => void }) {
   const [isOn, setIsOn] = useState(false);
-
   const { asPath } = useRouter();
-
   const toggleSwitch = () => {
     setIsOn((prev) => {
       return !prev;
     });
   };
-
   const locale = isOn ? "uz" : "ru";
-
   console.log(locale);
 
   return (
