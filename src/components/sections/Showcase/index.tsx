@@ -1,7 +1,7 @@
 import styles from "./hero.module.scss";
 import React, { useRef } from "react";
-import hero1 from "../../../../public/media/photo_2023-04-29_12-40-56.jpg";
-import hero2 from "../../../../public/media/photo_2023-04-29_15-34-28.jpg";
+import hero1 from "../../../../public/media/showcase2.jpg";
+import hero2 from "../../../../public/media/showcase3.jpg";
 import hero3 from "../../../../public/media/Group.png";
 import useIntersectionObserver from "@/utils/InterSectionObserver";
 
@@ -40,12 +40,10 @@ function Showcase() {
 			<div className={styles.images}>
 				<div className={styles.ovals}>
 					<div className={`${styles.image} ${styles.image1}`}>
-						{" "}
 						<img src={hero1.src} alt="" />
 					</div>
 					<div className={styles.line}></div>{" "}
 					<div className={`${styles.image} ${styles.image2}`}>
-						{" "}
 						<img src={hero2.src} alt="" />
 					</div>
 				</div>
