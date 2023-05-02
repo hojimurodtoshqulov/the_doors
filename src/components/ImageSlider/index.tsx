@@ -34,6 +34,7 @@ function ImageSlider({ images }: { images: { data: string }[] }) {
       },
     ],
   };
+
   return (
     <div
       className={`image-slider-component ${styles.silder}`}
@@ -41,7 +42,7 @@ function ImageSlider({ images }: { images: { data: string }[] }) {
       onMouseEnter={handleSliderHover}
     >
       <Slider {...settings} ref={ref}>
-        {images.map((image, i) => (
+        {images?.map((image, i) => (
           <div key={i}>
             <img
               className={styles.image}
