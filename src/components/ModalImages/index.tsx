@@ -1,9 +1,28 @@
-import { MouseEvent, useEffect, useMemo, useRef, useState } from "react";
+import {
+  Dispatch,
+  MouseEvent,
+  SetStateAction,
+  useEffect,
+  useMemo,
+  useRef,
+  useState,
+} from "react";
 import styles from "./styles.module.scss";
 import hero from "../../../public/media/Rectangle 6959.png";
 import ImageMagnifierGlass from "../ImageMagnifier";
 
-function ModalImages({ images }: { images?: { data: string }[] }) {
+function ModalImages({
+  images,
+  setBigImage,
+}: {
+  images?: { data: string }[];
+  setBigImage: Dispatch<
+    SetStateAction<{
+      src: string;
+      isActive: boolean;
+    }>
+  >;
+}) {
   const [image, setImage] = useState<string>(images?.[0].data || "");
 
   useEffect(() => {
@@ -30,7 +49,12 @@ function ModalImages({ images }: { images?: { data: string }[] }) {
           }}
         /> */}
       </div>
-      <ImageMagnifierGlass imageSrc={image} />
+      <ImageMagnifierGlass
+        imageSrc={image}
+        onClick={() => {
+          setBigImage({ src: image, isActive: true });
+        }}
+      />
     </div>
   );
 }

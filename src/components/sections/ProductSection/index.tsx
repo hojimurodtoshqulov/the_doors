@@ -15,19 +15,22 @@ function ProductSection() {
   const [product, setProduct] = useState<ProductType>();
   const [products, setProducts] = useState<ProductType[]>([]);
   const [isModal, setIsModal] = useState<boolean>(false);
+  const [bigImage, setBigImage] = useState({ src: "", isActive: true });
 
   useEffect(() => {
     axios.get(`${API_URL}/api/products`).then((res) => {
       setProducts(res.data);
     });
   }, []);
-	const intl = useIntl();
-	const t = (id: string) => {
-		return intl?.formatMessage({ id: id });
-	};
+  const intl = useIntl();
+  const t = (id: string) => {
+    return intl?.formatMessage({ id: id });
+  };
   return (
     <div className={styles.products}>
-      <Title style={{ marginBottom: "calc(20px + 2vw)" }}>{t("products")}</Title>
+      <Title style={{ marginBottom: "calc(20px + 2vw)" }}>
+        {t("products")}
+      </Title>
       <div className={styles.cardsMax}>
         {products.map((product: ProductType) => (
           <ProductCard
@@ -46,8 +49,19 @@ function ProductSection() {
         />
       </div>
       <Modal product={product} setIsModal={setIsModal} isModal={isModal}>
-        {product && <ProductModal product={product} />}
+        {product && (
+          <ProductModal product={product} setBigImage={setBigImage} />
+        )}
       </Modal>
+      <img
+        src={`data:image/png;base64,${bigImage.src}`}
+        className={styles.image}
+        style={{
+          scale: bigImage.isActive ? "1" : "0",
+          opacity: bigImage.isActive ? "1" : "0",
+        }}
+        onClick={() => setBigImage((prev) => ({ ...prev, isActive: false }))}
+      />
     </div>
   );
 }
