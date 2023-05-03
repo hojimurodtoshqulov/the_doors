@@ -28,12 +28,6 @@ function SwitchButton({
 
   const changeLocale = (nextLocale: "uz" | "ru") => {
     // change just the locale and maintain all other route information including href's query
-
-    console.group();
-    console.log("pathname", pathname);
-    console.log("query", query);
-    console.log("asPath", asPath);
-    console.groupEnd();
     const toAsPath = asPath.includes("#") ? "/" : asPath;
     router.push({ pathname, query }, toAsPath, {
       locale: nextLocale,
