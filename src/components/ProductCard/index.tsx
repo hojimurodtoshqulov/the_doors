@@ -52,12 +52,12 @@ function ProductCard({
         {product?.descriptionUz?.slice(0, isLong ? -1 : 60)}...{" "}
         <span onClick={() => setIsLong((prev) => !prev)}>more</span>
       </p>
-      {/* <Button
+      <Button
         style={{ borderRadius: 10 }}
          
       >
-        Add to cart
-      </Button> */}
+        Посмотри все
+      </Button>
     </div>
   );
 }
