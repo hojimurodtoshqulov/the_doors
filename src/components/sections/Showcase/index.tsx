@@ -48,7 +48,7 @@ function Showcase() {
 				{/* <p>
 					<span>{t("showcase.desc1")}</span>
 				</p> */}
-				<p>{t("showcase.desc2")}</p>
+				<p>{products?.descriptionRu}</p> {/* {t("showcase.desc2")} */}
 				{/* <div className={styles.buttons}>
           <button>See Our Case Studies</button>
           <button className={styles.shaffof}>Watch A Demo</button>
@@ -58,13 +58,13 @@ function Showcase() {
 				<div className={styles.ovals}>
 					<div className={`${styles.image} ${styles.image1}`}>
 						<img
-							src={`${API_URL}/api/show-case/1/${productImages[0]}`}
+							src={`${API_URL}/api/files/${productImages[0]}`}
 							alt=""
 						/>
 					</div>
 					<div className={styles.line}></div>{" "}
 					<div className={`${styles.image} ${styles.image2}`}>
-						<img src={hero2.src} alt="" />
+						<img src={`${API_URL}/api/files/${productImages[1]}`} alt="" />
 					</div>
 				</div>
 				<img src={hero3.src} alt="" />
