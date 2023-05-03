@@ -17,7 +17,6 @@ function MainShowcase({
         backgroundSize: "cover",
       }}
     >
-      {" "}
       <ShowcaseContent title={children} paragraph={p}></ShowcaseContent>
     </div>
   );
