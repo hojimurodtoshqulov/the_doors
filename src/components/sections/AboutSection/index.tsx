@@ -14,7 +14,7 @@ function AboutSection() {
   const ref = useRef(null);
   const entity = useIntersectionObserver(ref, {});
 
-  const [clients, setClients] = useState<
+  const [about, setAbout] = useState<
     | {
         attachmentContentIds: [number, number];
         descriptionRu: string;
@@ -24,7 +24,7 @@ function AboutSection() {
   >();
   useEffect(() => {
     axios.get("https://the-doors.herokuapp.com/api/about-us").then((res) => {
-      setClients(res.data);
+      setAbout(res.data);
     });
   }, []);
 
@@ -55,12 +55,12 @@ function AboutSection() {
     >
       <div className={styles.images}>
         <img
-          src={`https://the-doors.herokuapp.com/api/files/${clients?.attachmentContentIds[0]}`}
+          src={`https://the-doors.herokuapp.com/api/files/${about?.attachmentContentIds[0]}`}
           alt=""
           ref={ref1}
         />
         <img
-          src={`https://the-doors.herokuapp.com/api/files/${clients?.attachmentContentIds[1]}`}
+          src={`https://the-doors.herokuapp.com/api/files/${about?.attachmentContentIds[1]}`}
           alt=""
           ref={ref2}
         />
@@ -70,7 +70,7 @@ function AboutSection() {
           {t("about")}
         </Title>
         {/* <h3>О нас</h3> */}
-        <p>{clients?.descriptionUz}</p>
+        <p>{about?.descriptionUz}</p>
       </div>
     </div>
   );
