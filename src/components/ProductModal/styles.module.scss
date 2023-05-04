@@ -5,7 +5,7 @@
 	gap: 3%;
 	background-color: white;
 	height: 100%;
-	color: rgb(108, 166, 236);
+	color: #4c4c4c;
 	.text {
 		width: 40%;
 		max-height: 100vh;
@@ -24,7 +24,7 @@
 		font-size: 22px;
 		line-height: 150%;
 		color: rgba(0, 0, 0, 0.87);
-		color: #ff8989;
+		color: #4c4c4c;
 	}
 	.form {
 		display: flex;
@@ -75,6 +75,7 @@
 	@media (max-width: 1000px) {
 		flex-wrap: wrap;
 		overflow: auto;
+		color: rgb(108, 166, 236);
 		.text {
 			width: 100%;
 			overflow: unset;
