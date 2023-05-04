@@ -5,6 +5,7 @@ import image from "../../../public/media/hero4.png";
 import { GoStar } from "react-icons/go";
 import axios from "axios";
 import { log } from "console";
+import { useTarjima } from "@/utils/getContent";
 
 type ClientType = {
   id: number;
@@ -22,6 +23,7 @@ function ClientSlider() {
       setClients(res.data);
     });
   }, []);
+  const getContent = useTarjima();
   const settings = {
     customPaging: function () {
       return (
@@ -68,7 +70,9 @@ function ClientSlider() {
                   <GoStar color="#FFB400" />
                 </div> */}
               </div>
-              <p className={styles.description}>{client.commentUz}</p>
+              <p className={styles.description}>
+                {getContent(client.commentRu, client.commentUz)}
+              </p>
               <div className={styles.profile}>
                 <img
                   src={`https://the-doors.herokuapp.com/api/files/${client.contentId}`}

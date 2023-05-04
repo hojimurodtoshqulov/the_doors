@@ -7,12 +7,14 @@ import image3 from "../../../../public/media/Rectangle 6961.png";
 import VanillaTilt from "vanilla-tilt";
 import useIntersectionObserver from "@/utils/InterSectionObserver";
 import axios from "axios";
+import { useTarjima } from "@/utils/getContent";
 
 function MagnificentWork() {
   const ref1 = useRef(null);
   const ref2 = useRef(null);
   const ref3 = useRef(null);
   const ref = useRef(null);
+  const getContent = useTarjima();
   const entity = useIntersectionObserver(ref, { rootMargin: "-20% 0px" });
   const [about, setAbout] = useState<
     | {
@@ -54,20 +56,22 @@ function MagnificentWork() {
       ref={ref}
     >
       <div className={styles.text}>
-        <h1>{about?.titleUz}</h1>
-        <p>{about?.descriptionUz}</p>
+        <h1>{getContent(about?.titleRu, about?.titleUz)}</h1>
+        <p>{getContent(about?.descriptionRu, about?.descriptionUz)}</p>
         <div className={styles.static}>
           <AiOutlineLike />
           <div>
             <h1>{about?.created}+</h1>
-            <p>Projects Done</p>
+            <p>{getContent("Созданные проекты", "Yaratilagan loyihalar")}</p>
           </div>
         </div>{" "}
         <div className={styles.static}>
           <AiOutlineLike />
           <div>
             <h1>{about?.done}</h1>
-            <p>Products Created</p>
+            <p>
+              {getContent("Реализованные проекты", "Yakunlangan loyihalar")}
+            </p>
           </div>
         </div>
       </div>

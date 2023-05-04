@@ -10,6 +10,7 @@ import ProductModal from "@/components/ProductModal";
 import axios from "axios";
 import { API_URL } from "@/shared/constants";
 import useIntl from "react-intl/src/components/useIntl";
+import { useTarjima } from "@/utils/getContent";
 
 function ProductSection() {
   const [product, setProduct] = useState<ProductType>();
@@ -31,7 +32,7 @@ function ProductSection() {
       <Title style={{ marginBottom: "calc(20px + 2vw)" }}>
         {t("products")}
       </Title>
-       
+
       <div className={styles.cardsMin}>
         <CardsSlider
           products={products}

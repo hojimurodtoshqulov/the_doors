@@ -7,6 +7,7 @@ import { Dispatch, SetStateAction, useRef, useState } from "react";
 import ImageSlider from "../ImageSlider";
 import useIntersectionObserver from "@/utils/InterSectionObserver";
 import useIntl from "react-intl/src/components/useIntl";
+import { useTarjima } from "@/utils/getContent";
 
 function ProductCard({
   product,
@@ -19,6 +20,7 @@ function ProductCard({
   setIsModal: Dispatch<SetStateAction<boolean>>;
 }) {
   const ref = useRef(null);
+  const getContent = useTarjima();
   const entity = useIntersectionObserver(ref, {});
   const [isLong, setIsLong] = useState<boolean>(false);
   const intl = useIntl();
@@ -37,7 +39,7 @@ function ProductCard({
         ""
       )} */}
       {product ? <ImageSlider images={product?.attachmentContentIds} /> : ""}
-      <h2>{product?.titleUz}</h2>
+      <h2>{getContent(product?.titleRu, product?.titleUz)}</h2>
       {/* <h1>
         from <span>{product?.price}</span>${" "}
         {product?.discount ? (
@@ -49,8 +51,11 @@ function ProductCard({
         )}
       </h1> */}
       <p>
-        {product?.descriptionUz?.slice(0, isLong ? -1 : 60)}...{" "}
-        <span onClick={() => setIsLong((prev) => !prev)}>{t("more")}</span>
+        {getContent(
+          product?.descriptionRu?.slice(0, isLong ? -1 : 60),
+          product?.descriptionUz?.slice(0, isLong ? -1 : 60)
+        )}
+        ... <span onClick={() => setIsLong((prev) => !prev)}>{t("more")}</span>
       </p>
       <Button
         style={{ borderRadius: 10 }}
