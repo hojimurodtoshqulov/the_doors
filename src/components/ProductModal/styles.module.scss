@@ -38,6 +38,9 @@
 			border: 1px solid #666;
 			color: #666;
 		}
+		@media (max-width: 700px) {
+			flex-direction: column;
+		}
 	}
 	.price input {
 		width: 40px;

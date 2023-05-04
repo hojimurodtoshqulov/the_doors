@@ -120,6 +120,7 @@ function ProductModal({
             onChange={(e) =>
               setForm((prev) => ({ ...prev, fullName: e.target.value }))
             }
+            required
           />
           <input
             type="text"
@@ -128,6 +129,7 @@ function ProductModal({
             onChange={(e) =>
               setForm((prev) => ({ ...prev, phoneNumber: e.target.value }))
             }
+            required
           />
         </div>
         <Button
