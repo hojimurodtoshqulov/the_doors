@@ -7,6 +7,7 @@ function Button({
   style,
   onClick,
   disabled,
+  ...rest
 }: MainPropType & { onClick?: () => void; disabled?: boolean }) {
   return (
     <button
@@ -14,6 +15,7 @@ function Button({
       style={style}
       onClick={onClick}
       disabled={disabled}
+      {...rest}
     >
       {children}
     </button>
