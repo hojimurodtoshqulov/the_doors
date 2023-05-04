@@ -9,11 +9,11 @@ function VideoSection() {
 	const vdRef = useRef<HTMLVideoElement>(null);
 	const ref = useRef(null);
 	const entity = useIntersectionObserver(ref, {});
-	useEffect(() => {
-		axios.get(`${API_URL}/api/files`).then((res) => {
-			setProducts(res.data);
-		});
-	}, []);
+	// useEffect(() => {
+	// 	axios.get(`${API_URL}/api/files`).then((res) => {
+	// 		setProducts(res.data);
+	// 	});
+	// }, []);
 	useEffect(() => {
 		const handleScroll = () => {
 			const scroll = window.pageYOffset;
@@ -31,7 +31,7 @@ function VideoSection() {
 		window.addEventListener("scroll", handleScroll);
 		return () => window.removeEventListener("scroll", handleScroll);
 	}, []);
-	console.log("products >>> ", products);
+	// console.log("products >>> ", products);
 	return (
 		<div
 			className={styles.video}

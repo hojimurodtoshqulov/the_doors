@@ -6,6 +6,7 @@ import Button from "../Button";
 import { API_URL } from "@/shared/constants";
 import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
+import useIntl from "react-intl/src/components/useIntl";
 
 function ProductModal({
   product,
@@ -31,7 +32,6 @@ function ProductModal({
     productId: product.id,
   });
   const [disable, setDisable] = useState<boolean>(false);
-
   function handleClick(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     setDisable(true);
@@ -69,6 +69,10 @@ function ProductModal({
         })
       );
   }
+  const intl = useIntl();
+  const t = (id: string) => {
+    return intl?.formatMessage({ id: id });
+  };
   return (
     <div className={styles.content}>
       <ModalImages
@@ -79,7 +83,9 @@ function ProductModal({
       <form className={styles.text} onSubmit={handleClick}>
         <h1>{product.titleUz}</h1>
         <div className={styles.price}>
-          <h2>from {product?.price * (1 - product.discount / 100)}$</h2>
+          <h2>
+            {t("from")} {product?.price * (1 - product.discount / 100)}$
+          </h2>
           <div>
             <button
               onClick={() =>
@@ -102,27 +108,26 @@ function ProductModal({
           </div>
         </div>
         <div className={styles.description}>{product.descriptionUz}</div>
-        <p style={{ paddingTop: 15 }}>
-          Менеджеры компании ответят на все вопросы по телефону:
+        <p style={{ paddingTop: 15, color: "#ff4c4c" }}>
+          {t("contactPageDesc")}
+          {/* Менеджеры компании ответят на все вопросы по телефону: */}
         </p>
         <div className={styles.form}>
           <input
             type="text"
-            placeholder="Full Name"
+            placeholder={t("contactUsFullName")}
             value={form.fullName}
             onChange={(e) =>
               setForm((prev) => ({ ...prev, fullName: e.target.value }))
             }
-            required
           />
           <input
             type="text"
-            placeholder="Phone number"
+            placeholder={t("contactUsNumber")}
             value={form.phoneNumber}
             onChange={(e) =>
               setForm((prev) => ({ ...prev, phoneNumber: e.target.value }))
             }
-            required
           />
         </div>
         <Button
@@ -138,7 +143,7 @@ function ProductModal({
           }}
           disabled={disable}
         >
-          ОФОРМИТЬ ЗАКАЗ В ТАШКЕНТЕ
+          {t("order")}
         </Button>
       </form>
     </div>

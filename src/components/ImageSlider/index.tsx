@@ -7,7 +7,6 @@ import styles from "./slider.module.scss";
 function ImageSlider({ images }: { images: number[] }) {
   const [currentSlide, setCurrentSlide] = useState<NodeJS.Timer>();
   const ref: React.LegacyRef<Slider> = useRef(null);
-
   const handleSliderHover = () => {
     clearInterval(currentSlide);
     if (window.innerWidth < 1200) return;
