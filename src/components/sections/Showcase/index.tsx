@@ -12,7 +12,7 @@ import useIntl from "react-intl/src/components/useIntl";
 function Showcase() {
   const ref = useRef(null);
   const entity = useIntersectionObserver(ref, {});
-  const [products, setProducts] = useState<ProductType>([]);
+  const [products, setProducts] = useState<ProductType>();
   const [productImages, setProductImages] = useState<ProductType[]>([]);
   const intl = useIntl();
   const t = (id: string) => {
