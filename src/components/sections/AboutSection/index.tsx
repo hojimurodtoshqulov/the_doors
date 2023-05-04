@@ -7,6 +7,7 @@ import useIntersectionObserver from "@/utils/InterSectionObserver";
 import Title from "@/components/Title";
 import useIntl from "react-intl/src/components/useIntl";
 import axios from "axios";
+import { useTarjima } from "@/utils/getContent";
 
 function AboutSection() {
   const ref1 = useRef(null);
@@ -27,6 +28,8 @@ function AboutSection() {
       setAbout(res.data);
     });
   }, []);
+
+  const getContent = useTarjima();
 
   useEffect(() => {
     if (!ref1.current || !ref2.current) {
@@ -70,7 +73,7 @@ function AboutSection() {
           {t("about")}
         </Title>
         {/* <h3>О нас</h3> */}
-        <p>{about?.descriptionUz}</p>
+        <p>{getContent(about?.descriptionRu, about?.descriptionUz)}</p>
       </div>
     </div>
   );

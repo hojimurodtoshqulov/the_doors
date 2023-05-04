@@ -8,6 +8,7 @@ import { ProductType } from "@/shared/types";
 import { API_URL } from "@/shared/constants";
 import axios from "axios";
 import useIntl from "react-intl/src/components/useIntl";
+import { useTarjima } from "@/utils/getContent";
 
 function Showcase() {
   const ref = useRef(null);
@@ -15,6 +16,7 @@ function Showcase() {
   const [products, setProducts] = useState<ProductType>();
   const [productImages, setProductImages] = useState<ProductType[]>([]);
   const intl = useIntl();
+  const getContent = useTarjima();
   const t = (id: string) => {
     return intl.formatMessage({ id: id });
   };
@@ -24,6 +26,8 @@ function Showcase() {
       setProductImages(res?.data?.attachmentContentIds);
     });
   }, []);
+
+  console.log(products);
   return (
     <div
       className={`${entity?.isIntersecting && styles.active} ${
@@ -36,7 +40,7 @@ function Showcase() {
 			})} */}
       <div className={styles.text}>
         <h1>
-          {products?.titleRu}
+          {getContent(products?.titleRu, products?.titleUz)}
           {/* <span>{t("showcase.title")}</span> */}
           {/* {products.map((item) => {
 						item?.titleRu;
@@ -47,7 +51,8 @@ function Showcase() {
         {/* <p>
 					<span>{t("showcase.desc1")}</span>
 				</p> */}
-        <p>{products?.descriptionRu}</p> {/* {t("showcase.desc2")} */}
+        <p>{getContent(products?.descriptionRu, products?.descriptionUz)}</p>{" "}
+        {/* {t("showcase.desc2")} */}
         {/* <div className={styles.buttons}>
           <button>See Our Case Studies</button>
           <button className={styles.shaffof}>Watch A Demo</button>

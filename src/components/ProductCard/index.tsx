@@ -7,6 +7,7 @@ import { Dispatch, SetStateAction, useRef, useState } from "react";
 import ImageSlider from "../ImageSlider";
 import useIntersectionObserver from "@/utils/InterSectionObserver";
 import useIntl from "react-intl/src/components/useIntl";
+import { useTarjima } from "@/utils/getContent";
 
 function ProductCard({
   product,
@@ -19,6 +20,7 @@ function ProductCard({
   setIsModal: Dispatch<SetStateAction<boolean>>;
 }) {
   const ref = useRef(null);
+  const getContent = useTarjima();
   const entity = useIntersectionObserver(ref, {});
   const intl = useIntl();
   const t = (id: string) => {
@@ -40,7 +42,7 @@ function ProductCard({
         ""
       )} */}
       {product ? <ImageSlider images={product?.attachmentContentIds} /> : ""}
-      <h2>{product?.titleUz}</h2>
+      <h2>{getContent(product?.titleRu, product?.titleUz)}</h2>
       {/* <h1>
         from <span>{product?.price}</span>${" "}
         {product?.discount ? (
@@ -52,7 +54,11 @@ function ProductCard({
         )}
       </h1> */}
       <p>
-        {product?.descriptionUz?.slice(0, 60)}... <span>{t("more")}</span>
+        {getContent(
+          product?.descriptionRu?.slice(0, 60),
+          product?.descriptionUz?.slice(0, 60)
+        )}
+        ... <span>{t("more")}</span>
       </p>
       <Button style={{ borderRadius: 10 }}>{t("showMore")}</Button>
     </div>

@@ -7,6 +7,7 @@ import { API_URL } from "@/shared/constants";
 import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
 import useIntl from "react-intl/src/components/useIntl";
+import { useTarjima } from "@/utils/getContent";
 
 function ProductModal({
   product,
@@ -31,6 +32,7 @@ function ProductModal({
     quantity: 1,
     productId: product.id,
   });
+  const getContent = useTarjima();
   const [disable, setDisable] = useState<boolean>(false);
   function handleClick(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -81,7 +83,7 @@ function ProductModal({
       />
       {/* {JSON.stringify(product)} */}
       <form className={styles.text} onSubmit={handleClick}>
-        <h1>{product.titleUz}</h1>
+        <h1>{getContent(product.titleRu, product.titleUz)}</h1>
         <div className={styles.price}>
           <h2>
             {t("from")} {product?.price * (1 - product.discount / 100)}$
@@ -107,7 +109,9 @@ function ProductModal({
             </button>
           </div>
         </div>
-        <div className={styles.description}>{product.descriptionUz}</div>
+        <div className={styles.description}>
+          {getContent(product.descriptionRu, product.descriptionUz)}
+        </div>
         <p style={{ paddingTop: 15, color: "#ff4c4c" }}>
           {t("contactPageDesc")}
           {/* Менеджеры компании ответят на все вопросы по телефону: */}
