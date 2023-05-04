@@ -26,7 +26,6 @@ const ImageMagnifierGlass: React.FC<ImageMagnifierGlassProps> = ({
   zoomLevel = 3,
   onClick,
 }) => {
-  console.log(imageSrc);
   const img = `https://the-doors.herokuapp.com/api/files/${imageSrc}`;
 
   const [glassPosition, setGlassPosition] = useState<GlassPosition>({

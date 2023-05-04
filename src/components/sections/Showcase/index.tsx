@@ -10,67 +10,63 @@ import axios from "axios";
 import useIntl from "react-intl/src/components/useIntl";
 
 function Showcase() {
-	const ref = useRef(null);
-	const entity = useIntersectionObserver(ref, {});
-	const [products, setProducts] = useState<ProductType[]>([]);
-	const [productImages, setProductImages] = useState<ProductType[]>([]);
-	const intl = useIntl();
-	const t = (id: string) => {
-		return intl.formatMessage({ id: id });
-	};
-	useEffect(() => {
-		axios.get(`${API_URL}/api/show-case/1`).then((res) => {
-			setProducts(res?.data);
-			setProductImages(res?.data?.attachmentContentIds);
-		});
-	}, []);
-	console.log("Showcase products >->-> ", productImages[0]);
-	return (
-		<div
-			className={`${entity?.isIntersecting && styles.active} ${
-				styles.showcase
-			}`}
-			ref={ref}
-		>
-			{/* {products.map((item) => {
+  const ref = useRef(null);
+  const entity = useIntersectionObserver(ref, {});
+  const [products, setProducts] = useState<ProductType[]>([]);
+  const [productImages, setProductImages] = useState<ProductType[]>([]);
+  const intl = useIntl();
+  const t = (id: string) => {
+    return intl.formatMessage({ id: id });
+  };
+  useEffect(() => {
+    axios.get(`${API_URL}/api/show-case/1`).then((res) => {
+      setProducts(res?.data);
+      setProductImages(res?.data?.attachmentContentIds);
+    });
+  }, []);
+  return (
+    <div
+      className={`${entity?.isIntersecting && styles.active} ${
+        styles.showcase
+      }`}
+      ref={ref}
+    >
+      {/* {products.map((item) => {
 				item.titleRu;
 			})} */}
-			<div className={styles.text}>
-				<h1>
-					{products?.titleRu}
-					{/* <span>{t("showcase.title")}</span> */}
-					{/* {products.map((item) => {
+      <div className={styles.text}>
+        <h1>
+          {products?.titleRu}
+          {/* <span>{t("showcase.title")}</span> */}
+          {/* {products.map((item) => {
 						item?.titleRu;
 						console.log(item?.titleRu);
 					})} */}
-					{/* {products.titleRu} */}
-				</h1>
-				{/* <p>
+          {/* {products.titleRu} */}
+        </h1>
+        {/* <p>
 					<span>{t("showcase.desc1")}</span>
 				</p> */}
-				<p>{products?.descriptionRu}</p> {/* {t("showcase.desc2")} */}
-				{/* <div className={styles.buttons}>
+        <p>{products?.descriptionRu}</p> {/* {t("showcase.desc2")} */}
+        {/* <div className={styles.buttons}>
           <button>See Our Case Studies</button>
           <button className={styles.shaffof}>Watch A Demo</button>
         </div> */}
-			</div>
-			<div className={styles.images}>
-				<div className={styles.ovals}>
-					<div className={`${styles.image} ${styles.image1}`}>
-						<img
-							src={`${API_URL}/api/files/${productImages[0]}`}
-							alt=""
-						/>
-					</div>
-					<div className={styles.line}></div>{" "}
-					<div className={`${styles.image} ${styles.image2}`}>
-						<img src={`${API_URL}/api/files/${productImages[1]}`} alt="" />
-					</div>
-				</div>
-				<img src={hero3.src} alt="" />
-			</div>
-		</div>
-	);
+      </div>
+      <div className={styles.images}>
+        <div className={styles.ovals}>
+          <div className={`${styles.image} ${styles.image1}`}>
+            <img src={`${API_URL}/api/files/${productImages[0]}`} alt="" />
+          </div>
+          <div className={styles.line}></div>{" "}
+          <div className={`${styles.image} ${styles.image2}`}>
+            <img src={`${API_URL}/api/files/${productImages[1]}`} alt="" />
+          </div>
+        </div>
+        <img src={hero3.src} alt="" />
+      </div>
+    </div>
+  );
 }
 
 export default Showcase;

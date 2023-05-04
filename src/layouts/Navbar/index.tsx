@@ -70,10 +70,8 @@ function Navbar() {
       ?.scrollIntoView({ behavior: "smooth" });
   };
   const scrollToTop = () => {
-    console.log("scrollToTop");
     return window.scrollTo(0, 5350);
   };
-  console.log(window.pageYOffset); //5500
   return (
     <>
       <nav

@@ -24,7 +24,6 @@ function SwitchButton({
     });
   };
   const locale = isOn ? "uz" : "ru";
-  console.log(locale);
 
   const changeLocale = (nextLocale: "uz" | "ru") => {
     // change just the locale and maintain all other route information including href's query
