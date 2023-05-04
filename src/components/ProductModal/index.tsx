@@ -32,7 +32,8 @@ function ProductModal({
   });
   const [disable, setDisable] = useState<boolean>(false);
 
-  function handleClick() {
+  function handleClick(e: React.FormEvent<HTMLFormElement>) {
+    e.preventDefault();
     setDisable(true);
     axios
       .post(`${API_URL}/api/order`, form)
@@ -75,7 +76,7 @@ function ProductModal({
         setBigImage={setBigImage}
       />
       {/* {JSON.stringify(product)} */}
-      <div className={styles.text}>
+      <form className={styles.text} onSubmit={handleClick}>
         <h1>{product.titleUz}</h1>
         <div className={styles.price}>
           <h2>from {product?.price * (1 - product.discount / 100)}$</h2>
@@ -112,6 +113,7 @@ function ProductModal({
             onChange={(e) =>
               setForm((prev) => ({ ...prev, fullName: e.target.value }))
             }
+            required
           />
           <input
             type="text"
@@ -120,10 +122,10 @@ function ProductModal({
             onChange={(e) =>
               setForm((prev) => ({ ...prev, phoneNumber: e.target.value }))
             }
+            required
           />
         </div>
         <Button
-          onClick={handleClick}
           style={{
             width: "100%",
             borderRadius: 10,
@@ -138,7 +140,7 @@ function ProductModal({
         >
           ОФОРМИТЬ ЗАКАЗ В ТАШКЕНТЕ
         </Button>
-      </div>
+      </form>
     </div>
   );
 }

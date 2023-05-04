@@ -31,16 +31,7 @@ function ProductSection() {
       <Title style={{ marginBottom: "calc(20px + 2vw)" }}>
         {t("products")}
       </Title>
-      <div className={styles.cardsMax}>
-        {products.map((product: ProductType) => (
-          <ProductCard
-            product={product}
-            setProduct={setProduct}
-            setIsModal={setIsModal}
-            key={product.id}
-          />
-        ))}
-      </div>
+       
       <div className={styles.cardsMin}>
         <CardsSlider
           products={products}

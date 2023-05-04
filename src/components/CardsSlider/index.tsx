@@ -1,5 +1,5 @@
 import React, { Dispatch, SetStateAction } from "react";
-import "./slider.module.scss";
+import styles from "./slider.module.scss";
 import Slider from "react-slick";
 import { ProductType } from "@/shared/types";
 import ProductCard from "../ProductCard";
@@ -45,11 +45,25 @@ function CardsSlider({
         },
       },
     ],
+    className:styles.slider
   };
   return (
     <div className="cards-slider-component">
       <Slider {...settings}>
-        {products.map((product: ProductType) => (
+        {products.slice(0, 3).map((product: ProductType) => (
+          <div key={product.id}>
+            <ProductCard
+              key={product.id}
+              setProduct={setProduct}
+              product={product}
+              style={{ width: "90%", margin: "0 auto" }}
+              setIsModal={setIsModal}
+            />
+          </div>
+        ))}
+      </Slider>
+      <Slider {...settings}>
+        {products.slice(3, 6).map((product: ProductType) => (
           <div key={product.id}>
             <ProductCard
               key={product.id}
