@@ -11,7 +11,7 @@ function AboutPage() {
   const [showcase, setShowcase] = useState<any>({});
   useEffect(() => {
     axios
-      .get("https://the-doors.herokuapp.com/api/show-case/53")
+      .get("https://the-doors.herokuapp.com/api/about-us-showcase")
       .then((res) => {
         setShowcase(res.data);
       });
@@ -20,7 +20,7 @@ function AboutPage() {
   return (
     <div>
       <AboutShowcase
-        image={`https://the-doors.herokuapp.com/api/files/${showcase?.attachmentContentIds?.[0]}`}
+        image={`https://the-doors.herokuapp.com/api/files/${showcase?.attachmentContentId}`}
         p={showcase?.descriptionUz}
       >
         {" "}
