@@ -1,45 +1,29 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Slider from "react-slick";
 import styles from "./client.module.scss";
 import image from "../../../public/media/hero4.png";
 import { GoStar } from "react-icons/go";
+import axios from "axios";
+import { log } from "console";
+import { useTarjima } from "@/utils/getContent";
 
 type ClientType = {
-  id: string;
-  description: string;
-  name: string;
+  id: number;
+  commentRu: string;
+  commentUz: string;
+  fullName: string;
   job: string;
-  image: string;
+  contentId: number;
 };
 
-const clients: ClientType[] = [
-  {
-    id: "1",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-    name: "Luziana Farnandes",
-    job: "Web Developer",
-    image: image.src,
-  },
-  {
-    id: "2",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-    name: "Luziana Farnandes",
-    job: "Web Developer",
-    image: image.src,
-  },
-  {
-    id: "3",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-    name: "Luziana Farnandes",
-    job: "Web Developer",
-    image: image.src,
-  },
-];
-
 function ClientSlider() {
+  const [clients, setClients] = useState<ClientType[]>([]);
+  useEffect(() => {
+    axios.get("https://the-doors.herokuapp.com/api/comments").then((res) => {
+      setClients(res.data);
+    });
+  }, []);
+  const getContent = useTarjima();
   const settings = {
     customPaging: function () {
       return (
@@ -78,25 +62,25 @@ function ClientSlider() {
                   <div></div>
                   <div></div>
                 </div>
-                <div className={styles.stars}>
+                {/* <div className={styles.stars}>
                   <GoStar color="#FFB400" />
                   <GoStar color="#FFB400" />
                   <GoStar color="#FFB400" />
                   <GoStar color="#FFB400" />
                   <GoStar color="#FFB400" />
-                </div>
+                </div> */}
               </div>
               <p className={styles.description}>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                nisi ut aliquip ex ea commodo consequat.
+                {getContent(client.commentRu, client.commentUz)}
               </p>
               <div className={styles.profile}>
-                <img src={client.image} alt="" />
+                <img
+                  src={`https://the-doors.herokuapp.com/api/files/${client.contentId}`}
+                  alt=""
+                />
                 <div>
-                  <h1>Luziana Farnandes</h1>
-                  <p>Web Developer</p>
+                  <h1>{client.fullName}</h1>
+                  <p>{client.job}</p>
                 </div>
               </div>
             </div>

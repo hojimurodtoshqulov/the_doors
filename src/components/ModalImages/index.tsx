@@ -29,8 +29,6 @@ function ModalImages({
     setImage(images?.[0] || 0);
   }, [images]);
 
-  console.log(images);
-
   return (
     <div className={styles.images}>
       <div className={styles.miniimages}>

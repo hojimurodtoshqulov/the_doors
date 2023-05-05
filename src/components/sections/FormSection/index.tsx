@@ -31,7 +31,6 @@ function FormSection() {
           const formdata = new FormData(e.currentTarget);
           const data = Object.fromEntries(formdata.entries());
           setDisable(true);
-          console.log(data);
 
           axios
             .post(`${API_URL}/api/order`, data, {

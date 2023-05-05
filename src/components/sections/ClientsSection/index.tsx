@@ -4,10 +4,12 @@ import { useRef } from "react";
 import ClientSlider from "@/components/ClientSlider";
 import Blob from "@/components/Blob";
 import useIntersectionObserver from "@/utils/InterSectionObserver";
+import { useTarjima } from "@/utils/getContent";
 
 function ClientsSection() {
   const ref = useRef(null);
   const entity = useIntersectionObserver(ref, {});
+  const getContent = useTarjima();
 
   return (
     <div
@@ -21,7 +23,9 @@ function ClientsSection() {
       <Blob blobType="third" color="blue" />
       <Blob blobType="fourth" color="blue" />
       <div className={styles.about}>
-        <Title style={{ fontSize: 45 }}>What clients say about us</Title>
+        <Title style={{ fontSize: 45 }}>
+          {getContent("Что говорят о нас клиенты", "Mizjozlarmizning fikrlari")}
+        </Title>
         <p>
           Bobore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
           exercitat ion ullamco laboris

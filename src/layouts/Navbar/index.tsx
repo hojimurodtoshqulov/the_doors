@@ -70,10 +70,8 @@ function Navbar() {
       ?.scrollIntoView({ behavior: "smooth" });
   };
   const scrollToTop = () => {
-    console.log("scrollToTop");
     return window.scrollTo(0, 5350);
   };
-  console.log(window.pageYOffset); //5500
   return (
     <>
       <nav
@@ -100,16 +98,19 @@ function Navbar() {
 							<a className={"link"}>{t("about")}</a>
 						</span> */}
           {/* </Link> */}
-          <a className={"link"} data-to="about" onClick={onClick}>
+          {/*  <a className={"link"} data-to="about" onClick={onClick}>
             {t("about")}
-          </a>
+          </a> */}
+          <Link href={"/#about"}>{t("about")}</Link>
           {menuConfig.map((route: MenuRouteType) => (
             <Link href={route.link} key={route.id}>
               <a className={"link"}>{route.label}</a>
             </Link>
           ))}{" "}
           <SwitchButton />
-          <a data-to="contact" onClick={onClick}>
+          {/* <a data-to="contact" onClick={onClick}> */}
+          {/* </a> */}
+          <Link href={"/#contact"}>
             <Button
               style={{
                 borderRadius: 10,
@@ -122,7 +123,7 @@ function Navbar() {
             >
               <BsFillTelephoneFill /> {t("navBtn")}
             </Button>
-          </a>
+          </Link>
         </div>
       </nav>
       <Link href={"/"}>

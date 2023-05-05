@@ -8,11 +8,12 @@ import image5 from "/public/media/Rectangle 754.png";
 import image6 from "/public/media/Rectangle 755.png";
 import image7 from "/public/media/Rectangle 756.png";
 import image8 from "/public/media/Rectangle 757.png";
-import React, { useRef } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import Slider from "react-slick";
 import Image from "./Image";
 import useIntersectionObserver from "@/utils/InterSectionObserver";
 import useIntl from "react-intl/src/components/useIntl";
+import axios from "axios";
 
 const images = [
   image1.src,
@@ -28,6 +29,20 @@ const images = [
 function OurProjects() {
   const ref = useRef(null);
   const entity = useIntersectionObserver(ref, { rootMargin: "-100px 0px" });
+  const [about, setAbout] = useState<
+    | {
+        attachmentContentIds: [number, number];
+        descriptionRu: string;
+        descriptionUz: string;
+      }
+    | undefined
+  >();
+  useEffect(() => {
+    axios.get("https://the-doors.herokuapp.com/api/about-us").then((res) => {
+      setAbout(res.data);
+    });
+  }, []);
+
   const settings = {
     customPaging: function () {
       return (
@@ -61,10 +76,10 @@ function OurProjects() {
       },
     ],
   };
-	const intl = useIntl();
-	const t = (id: string) => {
-		return intl?.formatMessage({ id: id });
-	};
+  const intl = useIntl();
+  const t = (id: string) => {
+    return intl?.formatMessage({ id: id });
+  };
   return (
     <div
       className={`${entity?.isIntersecting && styles.active} ${
