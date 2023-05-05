@@ -1,0 +1,11 @@
+@import url("https://www.dafontfree.net/embed/YmFuYW5hLWJyaWNrLXJlZ3VsYXImZGF0YS8xNi9iLzgxNjUwL0JCcmljay50dGY");
+/* work-sans-100 - latin */
+@font-face {
+     font-family: "Banana";
+     src: url("/public/fonts/banana/BBrick.ttf") format("woff2"); /* IE9 Compat Modes */
+}
+
+.banana {
+     font-family: "banana-brick-regular";
+     background-color: red;
+}

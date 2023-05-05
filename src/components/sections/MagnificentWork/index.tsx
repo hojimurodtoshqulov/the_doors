@@ -56,7 +56,7 @@ function MagnificentWork() {
       ref={ref}
     >
       <div className={styles.text}>
-        <h1>{getContent(about?.titleRu, about?.titleUz)}</h1>
+        <h1 className="banana">{getContent(about?.titleRu, about?.titleUz)}</h1>
         <p>{getContent(about?.descriptionRu, about?.descriptionUz)}</p>
         <div className={styles.static}>
           <AiOutlineLike />
