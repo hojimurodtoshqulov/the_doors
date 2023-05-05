@@ -50,6 +50,11 @@ function Navbar() {
   };
   const menuConfig: MenuRouteType[] = [
     {
+      id: "4",
+      label: t("about"),
+      link: "/about",
+    },
+    {
       id: "5",
       label: t("projects"),
       link: "/projects",
@@ -101,7 +106,6 @@ function Navbar() {
           {/*  <a className={"link"} data-to="about" onClick={onClick}>
             {t("about")}
           </a> */}
-          <Link href={"/#about"}>{t("about")}</Link>
           {menuConfig.map((route: MenuRouteType) => (
             <Link href={route.link} key={route.id}>
               <a className={"link"}>{route.label}</a>
