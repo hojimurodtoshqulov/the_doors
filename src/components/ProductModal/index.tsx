@@ -114,7 +114,7 @@ function ProductModal({
         <div className={styles.description}>
           {getContent(product.descriptionRu, product.descriptionUz)}
         </div>
-        <p style={{ paddingTop: 15, color: "#ff4c4c" }}>
+        <p style={{ paddingTop: 15, color: "#003D76" }}>
           {t("contactPageDesc")}
           {/* Менеджеры компании ответят на все вопросы по телефону: */}
         </p>

@@ -3,6 +3,7 @@ import { useState, useEffect, useRef } from "react";
 import useIntersectionObserver from "@/utils/InterSectionObserver";
 import axios from "axios";
 import { API_URL } from "@/shared/constants";
+
 function VideoSection() {
 	const [products, setProducts] = useState([]);
 	const [scrollPosition, setScrollPosition] = useState<number>(0);
