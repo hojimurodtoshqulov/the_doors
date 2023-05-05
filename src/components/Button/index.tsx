@@ -11,7 +11,7 @@ function Button({
 }: MainPropType & { onClick?: () => void; disabled?: boolean }) {
   return (
     <button
-      className={styles.button}
+      className={styles.button + " banana"}
       style={style}
       onClick={onClick}
       disabled={disabled}
