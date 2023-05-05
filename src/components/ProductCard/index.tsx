@@ -42,7 +42,7 @@ function ProductCard({
         ""
       )} */}
       {product ? <ImageSlider images={product?.attachmentContentIds} /> : ""}
-      <h2>{getContent(product?.titleRu, product?.titleUz)}</h2>
+      <h2 className="banana">{getContent(product?.titleRu, product?.titleUz)}</h2>
       {/* <h1>
         from <span>{product?.price}</span>${" "}
         {product?.discount ? (
@@ -53,13 +53,13 @@ function ProductCard({
           ""
         )}
       </h1> */}
-      <p>
+      {/* <p>
         {getContent(
           product?.descriptionRu?.slice(0, 60),
           product?.descriptionUz?.slice(0, 60)
         )}
         ... <span>{t("more")}</span>
-      </p>
+      </p> */}
       <Button style={{ borderRadius: 10 }}>{t("showMore")}</Button>
     </div>
   );
