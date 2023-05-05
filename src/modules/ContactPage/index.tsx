@@ -31,8 +31,8 @@ function ContactPage() {
         p={showcase.descriptionUz}
       >
         <BsFillTelephoneFill />
-        <a href="tel:+998999999999" target="_blanck">
-          +{showcase.titleUz?.split("*")[0]}
+        <a href="tel:+998999999999" target="_blanck" style={{ maxWidth: 400 }}>
+          +{showcase.titleUz?.replaceAll("*", " +")}
         </a>
       </MainShowcase>
       <SocialSection />
