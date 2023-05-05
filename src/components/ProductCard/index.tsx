@@ -22,7 +22,6 @@ function ProductCard({
   const ref = useRef(null);
   const getContent = useTarjima();
   const entity = useIntersectionObserver(ref, {});
-  const [isLong, setIsLong] = useState<boolean>(false);
   const intl = useIntl();
   const t = (id: string) => {
     return intl?.formatMessage({ id: id });
@@ -32,6 +31,10 @@ function ProductCard({
       className={`${styles.product} ${entity?.isIntersecting && styles.active}`}
       style={style}
       ref={ref}
+      onClick={() => {
+        setIsModal(true);
+        setProduct(product);
+      }}
     >
       {/* {product?.discount ? (
         <div className={styles.discount}>{product.discount}%</div>
@@ -52,20 +55,12 @@ function ProductCard({
       </h1> */}
       <p>
         {getContent(
-          product?.descriptionRu?.slice(0, isLong ? -1 : 60),
-          product?.descriptionUz?.slice(0, isLong ? -1 : 60)
+          product?.descriptionRu?.slice(0, 60),
+          product?.descriptionUz?.slice(0, 60)
         )}
-        ... <span onClick={() => setIsLong((prev) => !prev)}>{t("more")}</span>
+        ... <span>{t("more")}</span>
       </p>
-      <Button
-        style={{ borderRadius: 10 }}
-        onClick={() => {
-          setIsModal(true);
-          setProduct(product);
-        }}
-      >
-        {t("showMore")}
-      </Button>
+      <Button style={{ borderRadius: 10 }}>{t("showMore")}</Button>
     </div>
   );
 }

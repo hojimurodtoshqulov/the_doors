@@ -96,6 +96,7 @@ function ProductModal({
                   quantity: prev.quantity - 1 ? prev.quantity - 1 : 1,
                 }))
               }
+              type="button"
             >
               -
             </button>
@@ -104,6 +105,7 @@ function ProductModal({
               onClick={() =>
                 setForm((prev) => ({ ...prev, quantity: prev.quantity + 1 }))
               }
+              type="button"
             >
               +
             </button>
@@ -124,6 +126,7 @@ function ProductModal({
             onChange={(e) =>
               setForm((prev) => ({ ...prev, fullName: e.target.value }))
             }
+            required
           />
           <input
             type="text"
@@ -132,6 +135,7 @@ function ProductModal({
             onChange={(e) =>
               setForm((prev) => ({ ...prev, phoneNumber: e.target.value }))
             }
+            required
           />
         </div>
         <Button
@@ -146,6 +150,7 @@ function ProductModal({
               : {}),
           }}
           disabled={disable}
+          {...{ htmlType: "submit" }}
         >
           {t("order")}
         </Button>
