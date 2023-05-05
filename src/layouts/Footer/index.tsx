@@ -23,7 +23,7 @@ function Footer({ style }: MainPropType) {
 		>
 			<div className={styles.top}>
 				<div className={styles.row}>
-					<h1>The Doors</h1>
+					<h1 className="banana">The Doors</h1>
 					<p>{t("footerMainDesc")}</p>
 					<div className={styles.icons}>
 						<BsFacebook />
@@ -32,20 +32,20 @@ function Footer({ style }: MainPropType) {
 					</div>
 				</div>
 				<div className={styles.row}>
-					<h2>{t("footerAdress")}</h2>
+					<h2 className="banana">{t("footerAdress")}</h2>
 					<Link href="/">20, Awesome Road, New York, Usa 4D BS3</Link>
 					<Link href="/">+123 456 7890</Link>
 					<Link href="/">hello@ulina.com</Link>
 				</div>
 				<div className={styles.row}>
-					<h2>{t("footerLinks")}</h2>
+					<h2 className="banana">{t("footerLinks")}</h2>
 					<Link href="/">Shop Cupon</Link>
 					<Link href="/">About Us</Link>
 					<Link href="/">Carrer</Link>
 					<Link href="/">Supports</Link>
 				</div>
 				<div className={styles.row}>
-					<h2>{t("footerCatalog")}</h2>
+					<h2 className="banana">{t("footerCatalog")}</h2>
 					<Link href="/">Lorem</Link>
 					<Link href="/">Lorem</Link>
 					<Link href="/">Lorem</Link>

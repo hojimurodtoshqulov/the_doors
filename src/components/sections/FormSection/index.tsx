@@ -66,7 +66,7 @@ function FormSection() {
             });
         }}
       >
-        <h1>{t("contactUs")}</h1>
+        <h1 className="banana" style={{fontWeight:"100"}}>{t("contactUs")}</h1>
         <div className={styles.line}></div>
         <input
           type="text"

@@ -42,7 +42,7 @@ function ProductCard({
         ""
       )} */}
       {product ? <ImageSlider images={product?.attachmentContentIds} /> : ""}
-      <h2 className="banana">{getContent(product?.titleRu, product?.titleUz)}</h2>
+      <h2>{getContent(product?.titleRu, product?.titleUz)}</h2>
       {/* <h1>
         from <span>{product?.price}</span>${" "}
         {product?.discount ? (
