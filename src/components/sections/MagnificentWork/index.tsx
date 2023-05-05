@@ -61,14 +61,14 @@ function MagnificentWork() {
         <div className={styles.static}>
           <AiOutlineLike />
           <div>
-            <h1 className="banana">{about?.created}+</h1>
+            <h1>{about?.created}+</h1>
             <p>{getContent("Созданные проекты", "Yaratilagan loyihalar")}</p>
           </div>
         </div>{" "}
         <div className={styles.static}>
           <AiOutlineLike />
           <div>
-            <h1 className="banana">{about?.done}</h1>
+            <h1>{about?.done}</h1>
             <p>
               {getContent("Реализованные проекты", "Yakunlangan loyihalar")}
             </p>
