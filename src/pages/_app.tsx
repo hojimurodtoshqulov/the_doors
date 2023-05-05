@@ -23,6 +23,7 @@ const messages: { [key: string]: { [key: string]: string } } = {
 };
 import type { AppProps } from "next/app";
 import { ToastContainer } from "react-toastify";
+import Head from "next/head";
 
 export default function App({ Component, pageProps }: AppProps) {
   const { locale = "uz" } = useRouter();

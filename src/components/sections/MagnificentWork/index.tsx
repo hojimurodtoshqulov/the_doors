@@ -56,19 +56,19 @@ function MagnificentWork() {
       ref={ref}
     >
       <div className={styles.text}>
-        <h1>{getContent(about?.titleRu, about?.titleUz)}</h1>
+        <h1 className="banana">{getContent(about?.titleRu, about?.titleUz)}</h1>
         <p>{getContent(about?.descriptionRu, about?.descriptionUz)}</p>
         <div className={styles.static}>
           <AiOutlineLike />
           <div>
-            <h1>{about?.created}+</h1>
+            <h1 className="banana">{about?.created}+</h1>
             <p>{getContent("Созданные проекты", "Yaratilagan loyihalar")}</p>
           </div>
         </div>{" "}
         <div className={styles.static}>
           <AiOutlineLike />
           <div>
-            <h1>{about?.done}</h1>
+            <h1 className="banana">{about?.done}</h1>
             <p>
               {getContent("Реализованные проекты", "Yakunlangan loyihalar")}
             </p>
