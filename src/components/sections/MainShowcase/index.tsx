@@ -11,9 +11,7 @@ function MainShowcase({
     <div
       className={styles.showcase}
       style={{
-        background: `url("${image}")`,
-        backgroundAttachment: "fixed",
-        backgroundSize: "100% 100%",
+        backgroundImage: `url(${image})`,
       }}
     >
       <ShowcaseContent title={children} paragraph={p}></ShowcaseContent>
