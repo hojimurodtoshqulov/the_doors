@@ -32,11 +32,11 @@ export default function App({ Component, pageProps }: AppProps) {
       <Head>
         <meta
           name="viewport"
-          content="width=device-width, initial-scale=1, shrink-to-fit=no"
+          content="width=device-width, initial-scale=1, user-scalable=no"
         />
         <meta
-          name="viewport"
-          content="width=device-width, initial-scale=1, user-scalable=no"
+          name="description"
+          content="Toshkentdagi Ideallux mahsulotlar katalogi"
         />
 
         <title>Thedoors</title>
