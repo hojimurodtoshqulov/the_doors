@@ -39,24 +39,10 @@ function Showcase() {
 				item.titleRu;
 			})} */}
       <div className={styles.text}>
-        <h1>
-          {getContent(products?.titleRu, products?.titleUz)}
-          {/* <span>{t("showcase.title")}</span> */}
-          {/* {products.map((item) => {
-						item?.titleRu;
-						console.log(item?.titleRu);
-					})} */}
-          {/* {products.titleRu} */}
-        </h1>
-        {/* <p>
-					<span>{t("showcase.desc1")}</span>
-				</p> */}
-        <p>{getContent(products?.descriptionRu, products?.descriptionUz)}</p>{" "}
-        {/* {t("showcase.desc2")} */}
-        {/* <div className={styles.buttons}>
-          <button>See Our Case Studies</button>
-          <button className={styles.shaffof}>Watch A Demo</button>
-        </div> */}
+        <h1>{getContent(products?.titleRu, products?.titleUz)}</h1>
+        <p>
+          {getContent(products?.descriptionRu, products?.descriptionUz)}
+        </p>{" "}
       </div>
       <div className={styles.images}>
         <div className={styles.ovals}>
