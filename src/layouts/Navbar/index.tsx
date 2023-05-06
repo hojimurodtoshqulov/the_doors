@@ -38,7 +38,9 @@ function Navbar() {
       }
       const currentScrollPos = window.pageYOffset;
       ref.current.style.translate =
-        scrollPosition < currentScrollPos ? "0 -100%" : "0";
+        scrollPosition < currentScrollPos && currentScrollPos > 100
+          ? "0 -100%"
+          : "0";
       setScrollPosition(currentScrollPos);
     };
     window.addEventListener("scroll", handleScroll);
@@ -65,18 +67,18 @@ function Navbar() {
       link: "/contact",
     },
   ];
-  const onClick = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
-    if (!e.currentTarget.dataset.to) return;
-    if (!document.getElementById(e.currentTarget.dataset.to))
-      return window.location.replace(`/#${e.currentTarget.dataset.to}`);
+  // const onClick = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
+  //   if (!e.currentTarget.dataset.to) return;
+  //   if (!document.getElementById(e.currentTarget.dataset.to))
+  //     return window.location.replace(`/#${e.currentTarget.dataset.to}`);
 
-    document
-      .getElementById(e.currentTarget.dataset.to)
-      ?.scrollIntoView({ behavior: "smooth" });
-  };
-  const scrollToTop = () => {
-    return window.scrollTo(0, 5350);
-  };
+  //   document
+  //     .getElementById(e.currentTarget.dataset.to)
+  //     ?.scrollIntoView({ behavior: "smooth" });
+  // };
+  // const scrollToTop = () => {
+  //   return window.scrollTo(0, 5350);
+  // };
   return (
     <>
       <nav
@@ -98,35 +100,27 @@ function Navbar() {
           className={` ${isOpen && styles.open} ${styles.menu}`}
           onClick={() => setIsOpen((pre) => !pre)}
         >
-          {/* <Link href="/" onClick={onClick}> */}
-          {/* <span onClick={onClick}>
-							<a className={"link"}>{t("about")}</a>
-						</span> */}
-          {/* </Link> */}
-          {/*  <a className={"link"} data-to="about" onClick={onClick}>
-            {t("about")}
-          </a> */}
           {menuConfig.map((route: MenuRouteType) => (
             <Link href={route.link} key={route.id}>
               <a className={"link"}>{route.label}</a>
             </Link>
           ))}{" "}
           <SwitchButton />
-          {/* <a data-to="contact" onClick={onClick}> */}
-          {/* </a> */}
           <Link href={"/#contact"}>
-            <Button
-              style={{
-                borderRadius: 10,
-                minWidth: 160,
-                gap: 10,
-                alignItems: "center",
-                display: "flex",
-                justifyContent: "space-between",
-              }}
-            >
-              <BsFillTelephoneFill /> {t("navBtn")}
-            </Button>
+            <a>
+              <Button
+                style={{
+                  borderRadius: 10,
+                  minWidth: 160,
+                  gap: 10,
+                  alignItems: "center",
+                  display: "flex",
+                  justifyContent: "space-between",
+                }}
+              >
+                <BsFillTelephoneFill /> {t("navBtn")}
+              </Button>
+            </a>
           </Link>
         </div>
       </nav>
