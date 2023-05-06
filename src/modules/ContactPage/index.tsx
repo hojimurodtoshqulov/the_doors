@@ -9,6 +9,7 @@ import useIntl from "react-intl/src/components/useIntl";
 import FormSection from "@/components/sections/FormSection";
 import axios from "axios";
 import { log } from "console";
+import { useTarjima } from "@/utils/getContent";
 
 function ContactPage() {
   const intl = useIntl();
@@ -17,6 +18,7 @@ function ContactPage() {
   };
 
   const [showcase, setShowcase] = useState<any>({});
+  const getContent = useTarjima();
   useEffect(() => {
     axios
       .get("https://the-doors.herokuapp.com/api/show-case/52")
@@ -28,7 +30,7 @@ function ContactPage() {
     <div>
       <MainShowcase
         image={`https://the-doors.herokuapp.com/api/files/${showcase.attachmentContentIds?.[0]}`}
-        p={showcase.descriptionUz}
+        p={getContent(showcase.descriptionRu, showcase.descriptionUz) || ""}
       >
         <BsFillTelephoneFill />
         <a href="tel:+998999999999" target="_blanck" style={{ maxWidth: 400 }}>

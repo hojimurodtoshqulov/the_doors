@@ -6,6 +6,7 @@ import OurProjects from "@/components/sections/OurProjects";
 import useIntl from "react-intl/src/components/useIntl";
 import { useState, useEffect } from "react";
 import axios from "axios";
+import { useTarjima } from "@/utils/getContent";
 
 function ProjectsPage() {
   const intl = useIntl();
@@ -13,6 +14,7 @@ function ProjectsPage() {
     return intl?.formatMessage({ id: id });
   };
   const [showcase, setShowcase] = useState<any>({});
+  const getContent = useTarjima();
   useEffect(() => {
     axios
       .get("https://the-doors.herokuapp.com/api/show-case/53")
@@ -25,9 +27,9 @@ function ProjectsPage() {
     <div>
       <AboutShowcase
         image={`https://the-doors.herokuapp.com/api/files/${showcase.attachmentContentIds?.[0]}`}
-        p={showcase.descriptionUz}
+        p={getContent(showcase.descriptionRu, showcase.descriptionUz) || ""}
       >
-        {showcase.titleUz}
+        {getContent(showcase.titleRu, showcase.titleUz)}
       </AboutShowcase>
       <OurProjects />
       <Adds />
