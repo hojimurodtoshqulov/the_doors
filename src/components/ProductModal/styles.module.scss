@@ -13,6 +13,7 @@
 		flex-direction: column;
 		overflow: auto;
 		height: 100%;
+		padding-right: 2vw;
 	}
 	h1 {
 		font-size: 35px;
@@ -32,18 +33,23 @@
 	.form {
 		display: flex;
 		gap: 10px;
-		padding: 10px 0 24px;
-		input {
-			width: 100%;
-			padding: 2% 5%;
-			border-radius: 10px;
-			outline: none;
-			border: 1px solid #666;
-			color: #666;
-		}
+		padding: 5px 0;
+
 		@media (max-width: 700px) {
 			flex-direction: column;
 		}
+	}
+	input,
+	select {
+		width: 100%;
+		padding: 2% 5%;
+		border-radius: 10px;
+		outline: none;
+		border: 1px solid #666;
+		color: #666;
+	}
+	select {
+		margin-bottom: 20px;
 	}
 	.price input {
 		width: 40px;

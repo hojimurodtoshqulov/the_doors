@@ -42,7 +42,11 @@ function ProductSection() {
       </div>
       <Modal setIsModal={setIsModal} isModal={isModal}>
         {product && (
-          <ProductModal product={product} setBigImage={setBigImage} />
+          <ProductModal
+            product={product}
+            products={products}
+            setBigImage={setBigImage}
+          />
         )}
       </Modal>
       <img

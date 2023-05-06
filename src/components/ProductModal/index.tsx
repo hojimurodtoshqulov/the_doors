@@ -1,4 +1,4 @@
-import React, { Dispatch, SetStateAction, useState } from "react";
+import React, { Dispatch, SetStateAction, useState, useEffect } from "react";
 import styles from "./styles.module.scss";
 import ModalImages from "../ModalImages";
 import { ProductType } from "@/shared/types";
@@ -12,8 +12,10 @@ import { useTarjima } from "@/utils/getContent";
 function ProductModal({
   product,
   setBigImage,
+  products,
 }: {
   product: ProductType;
+  products: ProductType[];
   setBigImage: Dispatch<
     SetStateAction<{
       src: string;
@@ -24,19 +26,24 @@ function ProductModal({
   const [form, setForm] = useState<{
     fullName: string;
     phoneNumber: string;
-    quantity: number;
     productId: number | string;
   }>({
     fullName: "",
     phoneNumber: "",
-    quantity: 1,
     productId: product.id,
   });
   const getContent = useTarjima();
   const [disable, setDisable] = useState<boolean>(false);
+
+  useEffect(() => {
+    setForm((prev) => ({ ...prev, productId: product.id }));
+  }, [product]);
+
   function handleClick(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
+    console.log(form);
     setDisable(true);
+
     axios
       .post(`${API_URL}/api/order`, form)
       .finally(() => setDisable(false))
@@ -54,7 +61,6 @@ function ProductModal({
         setForm({
           fullName: "",
           phoneNumber: "",
-          quantity: 1,
           productId: product.id,
         });
       })
@@ -138,6 +144,16 @@ function ProductModal({
             required
           />
         </div>
+        <select
+          onChange={(e) =>
+            setForm((prev) => ({ ...prev, productId: e.target.value }))
+          }
+          value={form.productId}
+        >
+          {products.map((product) => (
+            <option value={product.id}>{product.titleUz}</option>
+          ))}
+        </select>
         <Button
           style={{
             width: "100%",
