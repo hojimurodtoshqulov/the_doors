@@ -29,6 +29,13 @@ export default function App({ Component, pageProps }: AppProps) {
   const { locale = "uz" } = useRouter();
   return (
     <IntlProvider locale={locale} messages={messages[locale]}>
+      <Head>
+        <meta
+          name="viewport"
+          content="width=device-width, initial-scale=1, shrink-to-fit=no"
+        />
+        <title>The doors</title>
+      </Head>
       <AppLayout>
         <Component {...pageProps} />
         <ToastContainer />
