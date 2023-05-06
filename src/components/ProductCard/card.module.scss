@@ -7,11 +7,18 @@
 	width: 23%;
 	opacity: 0;
 	translate: 0 20%;
-	transition: 2s;
-	box-shadow: 2px 2px 25px rgba(0, 0, 0, 0.5);
 	position: relative;
 	margin: 20px;
+	transition: 2s;
+	box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+
+	&.active:hover {
+		scale: 1.03;
+		translate: 0 -10px;
+		box-shadow: 2px 10px 10px rgba(0, 0, 0, 0.4);
+	}
 	&.active {
+		transition: 200ms;
 		translate: 0;
 		opacity: 1;
 	}
@@ -65,12 +72,48 @@
 	& > button {
 		width: 100%;
 		padding: 10px;
+		position: relative;
+		overflow: hidden;
+		&::before {
+			transition: 700ms;
+			content: "";
+			position: absolute;
+			top: -100px;
+			rotate: 30deg;
+			left: 0;
+			width: 20%;
+			height: 300px;
+			background-color: rgba(255, 255, 255, 0.2);
+			translate: 1000%;
+		}
+		&::after {
+			transition: 600ms;
+			content: "";
+			position: absolute;
+			top: -100px;
+			rotate: 30deg;
+			left: 30%;
+			width: 10%;
+			height: 300px;
+			background-color: rgba(255, 255, 255, 0.1);
+			translate: 1000%;
+		}
 	}
+	button:hover {
+		transition: 300ms;
+		translate: 0 -5px;
+		box-shadow: 0 3px 5px rgba(0, 0, 0, 0.4);
+		&::after,
+		&::before {
+			translate: 0;
+		}
+	}
+
 	p {
 		font-size: 15px;
 		line-height: 130%;
 		padding: 10px 0 20px;
-		color: #4C4C4C;
+		color: #4c4c4c;
 		// color: rgb(42, 106, 255);
 		font-family: sans-serif;
 		border-bottom: 1px solid #666;
