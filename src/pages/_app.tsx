@@ -32,8 +32,9 @@ export default function App({ Component, pageProps }: AppProps) {
       <Head>
         <meta
           name="viewport"
-          content="width=device-width, initial-scale=1, user-scalable=no"
+          content="width=device-width, initial-scale=1, user-scalable=no viewport-fit=cover"
         />
+
         <meta
           name="description"
           content="Toshkentdagi Ideallux mahsulotlar katalogi"
