@@ -6,9 +6,11 @@ import hero from "../../../public/media/hero3.png";
 import { BsFillTelephoneFill } from "react-icons/bs";
 import { useState, useEffect } from "react";
 import axios from "axios";
+import { useTarjima } from "@/utils/getContent";
 
 function AboutPage() {
   const [showcase, setShowcase] = useState<any>({});
+  const getContent = useTarjima();
   useEffect(() => {
     axios
       .get("https://the-doors.herokuapp.com/api/about-us-showcase")
@@ -21,10 +23,10 @@ function AboutPage() {
     <div>
       <AboutShowcase
         image={`https://the-doors.herokuapp.com/api/files/${showcase?.attachmentContentId}`}
-        p={showcase?.descriptionUz}
+        p={getContent(showcase?.descriptionRu, showcase?.descriptionUz) || ""}
       >
         {" "}
-        {showcase?.titleUz}{" "}
+        {getContent(showcase?.titleRu, showcase?.titleUz)}{" "}
       </AboutShowcase>
       <AboutSection />
       <Adds style={{ padding: "150px 7%" }} />
