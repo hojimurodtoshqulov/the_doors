@@ -34,7 +34,12 @@ export default function App({ Component, pageProps }: AppProps) {
           name="viewport"
           content="width=device-width, initial-scale=1, shrink-to-fit=no"
         />
-        <title>The doors</title>
+        <meta
+          name="viewport"
+          content="width=device-width, initial-scale=1, user-scalable=no"
+        />
+
+        <title>Thedoors</title>
       </Head>
       <AppLayout>
         <Component {...pageProps} />
