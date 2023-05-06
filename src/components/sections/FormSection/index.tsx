@@ -66,7 +66,9 @@ function FormSection() {
             });
         }}
       >
-        <h1 className="banana" style={{fontWeight:"100"}}>{t("contactUs")}</h1>
+        <h1 className="banana" style={{ fontWeight: "100" }}>
+          {t("contactUs")}
+        </h1>
         <div className={styles.line}></div>
         <input
           type="text"
@@ -99,7 +101,7 @@ function FormSection() {
       </form>
       <div className={styles.map}>
         {/* <div style="position:relative;overflow:hidden;"> */}
-        <iframe src="https://www.google.com/maps/embed?pb=!1m13!1m8!1m3!1d5995.219903621188!2d69.2257882!3d41.2955927!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zNDHCsDE3JzQ1LjIiTiA2OcKwMTMnNDMuNyJF!5e0!3m2!1sen!2s!4v1682008430280!5m2!1sen!2s"></iframe>{" "}
+        <iframe src="https://www.google.com/maps/embed?pb=!1m13!1m8!1m3!1d5995.47035540759!2d69.29043050787352!3d41.29286768809414!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zNDHCsDE3JzMzLjEiTiA2OcKwMTcnNTUuNyJF!5e0!3m2!1sen!2s!4v1683359063295!5m2!1sen!2s"></iframe>{" "}
         {/* <div>
           <p>20, Awesome Road, New York, Usa 4D BS3</p>
 
