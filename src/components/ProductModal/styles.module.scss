@@ -26,6 +26,9 @@
 		color: rgba(0, 0, 0, 0.87);
 		color: #4c4c4c;
 	}
+	// p {
+	// 	font-family: monospace;
+	// }
 	.form {
 		display: flex;
 		gap: 10px;
@@ -73,11 +76,14 @@
 		border-top: 1px solid #666;
 		border-bottom: 1px solid #666;
 		line-height: 24px;
+		font-family: emoji;
+		font-weight: 600;
+		text-align: justify;
 	}
 	@media (max-width: 1000px) {
 		flex-wrap: wrap;
 		overflow: auto;
-		
+
 		.text {
 			width: 100%;
 			overflow: unset;
