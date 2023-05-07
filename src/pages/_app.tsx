@@ -26,7 +26,7 @@ import { ToastContainer } from "react-toastify";
 import Head from "next/head";
 
 export default function App({ Component, pageProps }: AppProps) {
-  const { locale = "uz" } = useRouter();
+  const { locale = "ru" } = useRouter();
   return (
     <IntlProvider locale={locale} messages={messages[locale]}>
       <Head>
@@ -34,10 +34,38 @@ export default function App({ Component, pageProps }: AppProps) {
           name="viewport"
           content="width=device-width, initial-scale=1, user-scalable=no"
         />
+
+        <meta property="og:type" content="website" />
+        <link
+          rel="alternate"
+          hrefLang="uz-Oz"
+          href="https://www.thedoors.uz/uz"
+        ></link>
+        <link
+          rel="alternate"
+          hrefLang="x-default"
+          href="https://www.thedoors.uz"
+        ></link>
+        <meta name="robots" content="index,follow" />
+        <meta name="googlebot" content="index,follow" />
         <meta
           name="description"
-          content="Toshkentdagi Ideallux mahsulotlar katalogi"
-        />
+          content="The doors: Секционные гаражные ворота-это идеальный выбор в пользу качества, надёжности, долговечности и стиля!"
+        ></meta>
+        <meta property="og:url" content="https://www.thedoors.uz/"></meta>
+        <meta
+          property="og:title"
+          content="The doors: Секционные гаражные ворота-это идеальный выбор в пользу качества, надёжности, долговечности и стиля!"
+        ></meta>
+        <meta
+          property="og:description"
+          content="Мы в THEDOORS специализируемся на автоматической установке дверей, рольставен, шлагбаумов и погрузочно-разгрузочного оборудования."
+        ></meta>
+        <meta
+          property="og:image"
+          content="https://the-doors.herokuapp.com/api/files/703"
+        ></meta>
+        <link rel="canonical" href="https://www.thedoors.uz/"></link>
 
         <title>Thedoors</title>
       </Head>
