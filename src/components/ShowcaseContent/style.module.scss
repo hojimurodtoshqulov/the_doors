@@ -6,9 +6,11 @@
      align-items: center;
      flex-direction: column;
      gap: 80px;
-     inset: 0 7vw;
+     inset: 0;
+     padding: 0 7vw;
      translate: -100%;
      opacity: 0;
+     background-color: rgba(0, 0, 0, 0.3);
      & > div {
           text-align: center;
           display: flex;

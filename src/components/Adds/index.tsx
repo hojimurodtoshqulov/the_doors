@@ -8,11 +8,13 @@ import useIntersectionObserver from "@/utils/InterSectionObserver";
 import { useRef, useEffect, useState } from "react";
 import useIntl from "react-intl/src/components/useIntl";
 import axios from "axios";
+import { useTarjima } from "@/utils/getContent";
 function Adds({ style }: MainPropType) {
   const ref = useRef(null);
   const entity = useIntersectionObserver(ref, {});
   const intl = useIntl();
   const [data, setData] = useState<any>({});
+  const getContent = useTarjima();
   const t = (id: string) => {
     return intl?.formatMessage({ id: id });
   };
@@ -30,26 +32,26 @@ function Adds({ style }: MainPropType) {
     >
       <div className={styles.image}>
         <img src={poster1.src} alt="" />
-        <h1 className="banana">{data?.titleUz1}</h1>
-        <p>{data?.descriptionUz1}</p>
+        <h1 className="banana">{getContent(data?.titleRu1, data?.titleUz1)}</h1>
+        <p>{getContent(data?.descriptionRu1, data?.descriptionUz1)}</p>
       </div>
       <div className={styles.stick}></div>
       <div className={styles.image}>
         <img src={poster2.src} alt="" />
-        <h1 className="banana">{data?.titleUz2}</h1>
-        <p>{data?.descriptionUz2}</p>
+        <h1 className="banana">{getContent(data?.titleRu1, data?.titleUz1)}</h1>
+        <p>{getContent(data?.descriptionRu1, data?.descriptionUz1)}</p>
       </div>
       <div className={`${styles.stick} ${styles.blue}`}></div>
       <div className={styles.image}>
         <img src={poster3.src} alt="" />
-        <h1 className="banana">{data?.titleUz3}</h1>
-        <p>{data?.descriptionUz3}</p>
+        <h1 className="banana">{getContent(data?.titleRu1, data?.titleUz1)}</h1>
+        <p>{getContent(data?.descriptionRu1, data?.descriptionUz1)}</p>
       </div>
       <div className={styles.stick}></div>
       <div className={styles.image}>
         <img src={poster4.src} alt="" />
-        <h1 className="banana">{data?.titleUz4}</h1>
-        <p>{data?.descriptionUz4}</p>
+        <h1 className="banana">{getContent(data?.titleRu1, data?.titleUz1)}</h1>
+        <p>{getContent(data?.descriptionRu1, data?.descriptionUz1)}</p>
       </div>
     </div>
   );

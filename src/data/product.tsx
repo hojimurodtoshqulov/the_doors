@@ -3,6 +3,8 @@ import image1 from "/public/media/Rectangle 6.png";
 import image2 from "/public/media/Rectangle 7 (1).png";
 import image3 from "/public/media/Rectangle 9.png";
 
+const faq = [];
+
 export const products = [
   {
     id: "1",

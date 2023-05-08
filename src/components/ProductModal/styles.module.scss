@@ -15,6 +15,7 @@
 		height: 100%;
 		padding-right: 2vw;
 	}
+
 	h1 {
 		font-size: 35px;
 		line-height: 150%;
@@ -84,7 +85,8 @@
 		line-height: 24px;
 		font-family: emoji;
 		font-weight: 600;
-		text-align: justify;
+		// word-spacing: 0.5;
+		// text-align: justify;
 	}
 	@media (max-width: 1000px) {
 		flex-wrap: wrap;
