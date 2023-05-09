@@ -1,0 +1,50 @@
+.imageTextSection {
+  background-image: url("/media/textSectionbg.png");
+  background-size: cover;
+  padding: 40px 10%;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 5rem;
+
+  @media (max-width: 950px) {
+    flex-direction: column;
+  }
+}
+
+.imageWrap {
+  background: rgba(0, 61, 118, 0.5);
+  backdrop-filter: blur(19.2344px);
+  width: 350px;
+  height: 350px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  flex-shrink: 0;
+
+  img {
+    max-width: 60%;
+  }
+}
+
+.textWrap {
+  background: rgba(18, 44, 69, 0.2);
+  backdrop-filter: blur(23.5px);
+  /* Note: backdrop-filter has minimal browser support */
+  padding: 30px;
+
+  border-radius: 5.12917px;
+  width: auto;
+
+  p {
+    font-weight: 500;
+    font-size: 18.8069px;
+    line-height: 30px;
+
+    &:nth-child(1) {
+      margin-bottom: 2rem;
+    }
+  }
+}
