@@ -1,4 +1,7 @@
-.accordion {
-	// border: 1px solid red;
-	border-radius: 0;
+.accordionDiv {
+	padding: 60px 10%;
+	.accordion {
+		box-shadow: 2px 5px 15px rgba(0, 0, 0, 0.21);
+		margin-top: 20px;
+	}
 }

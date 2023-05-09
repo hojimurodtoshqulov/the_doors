@@ -1,7 +1,7 @@
 import React from "react";
 import { Collapse } from "antd";
 import Title from "@/components/Title";
-import scss from "./accordion.module.scss"
+import scss from "./accordion.module.scss";
 const { Panel } = Collapse;
 
 const text = `
@@ -11,7 +11,7 @@ const text = `
 `;
 
 const Accordion: React.FC = () => (
-	<div className={scss.accordionDiv}>
+	<div className={`${scss.accordionDiv}`}>
 		<Title style={{ color: "#666" }}>ОСОБЕННОСТИ И ПРЕИМУЩЕСТВА</Title>
 		<Collapse accordion className={scss.accordion}>
 			<Panel header="This is panel header 1" key="1">
