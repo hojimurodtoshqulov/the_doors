@@ -37,7 +37,7 @@ function ContactPage() {
           +{showcase.titleUz?.replaceAll("*", " +")}
         </a>
       </MainShowcase>
-      <SocialSection />
+      {/* <SocialSection /> */}
       <FormSection />
     </div>
   );

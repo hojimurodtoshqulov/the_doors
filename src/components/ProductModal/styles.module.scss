@@ -84,14 +84,12 @@
 		border-top: 1px solid #666;
 		border-bottom: 1px solid #666;
 		line-height: 24px;
-		font-family: emoji;
-		font-weight: 600;
-		font-style: italic;
+		font-family: sans-serif;
+		font-weight: 400;
 		font-size: 1.1vw;
-		word-spacing: 0.5;
-		text-align: center;
+		text-align: start;
 	}
-	@media (max-width: 1000px) {
+	@media (max-width: 1000px){
 		flex-wrap: wrap;
 		overflow: auto;
 
