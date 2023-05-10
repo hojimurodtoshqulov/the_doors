@@ -7,6 +7,7 @@ import { BsFillTelephoneFill } from "react-icons/bs";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { useTarjima } from "@/utils/getContent";
+import Certification from "@/components/sections/Certificattions";
 
 function AboutPage() {
   const [showcase, setShowcase] = useState<any>({});
@@ -29,6 +30,7 @@ function AboutPage() {
         {getContent(showcase?.titleRu, showcase?.titleUz)}{" "}
       </AboutShowcase>
       <AboutSection />
+      <Certification />
       <Adds style={{ padding: "150px 7%" }} />
     </div>
   );

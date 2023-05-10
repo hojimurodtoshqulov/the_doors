@@ -1,0 +1,49 @@
+.container {
+     padding: 7vw 7vw 0;
+}
+
+.cert {
+     padding-top: 5vw;
+     display: flex;
+     gap: 2vw;
+     justify-content: space-between;
+     img {
+          width: 67%;
+     }
+     div {
+          display: flex;
+          flex-direction: column;
+          gap: 2vw;
+          width: 33%;
+          img {
+               width: 100%;
+               height: 50%;
+          }
+     }
+     @media (max-width: 900px) {
+          flex-direction: column-reverse;
+          img {
+               width: 100%;
+          }
+          div {
+               flex-direction: row;
+               width: 100%;
+               img {
+                    width: calc(50% - 1vw);
+                    justify-content: space-between;
+               }
+          }
+     }
+     @media (max-width: 500px) {
+          flex-direction: column-reverse;
+          img {
+               width: 100%;
+          }
+          div {
+               flex-direction: column;
+               img {
+                    width: 100%;
+               }
+          }
+     }
+}

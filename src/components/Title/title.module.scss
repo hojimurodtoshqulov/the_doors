@@ -10,4 +10,7 @@
           opacity: 1;
           translate: 0;
      }
+     @media (max-width: 500px) {
+          font-size: 38px;
+     }
 }
