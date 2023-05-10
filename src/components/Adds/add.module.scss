@@ -78,12 +78,23 @@
 			background-color: var(--blue-common);
 		}
 	}
-	@media (max-width: 700px) {
+	@media (max-width: 900px) {
 		flex-wrap: wrap;
 		div {
 			width: 43%;
 		}
 		.stick.blue {
+			display: none;
+		}
+	}
+	@media (max-width: 700px) {
+		flex-wrap: wrap;
+		justify-content: center;
+		div {
+			width: 100%;
+			text-align: center;
+		}
+		.stick {
 			display: none;
 		}
 	}
