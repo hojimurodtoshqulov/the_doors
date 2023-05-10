@@ -34,8 +34,19 @@ function ContactPage() {
       >
         <BsFillTelephoneFill />
         <a href="tel:+998999999999" target="_blanck" style={{ maxWidth: 400 }}>
-          +{showcase.titleUz?.replaceAll("*", " +")}
+          {/* +{showcase.titleUz?.replaceAll("*", " +")} */}
         </a>
+        <h1
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            gap: 0,
+          }}
+        >
+          {showcase.titleUz?.split("*").map((el: string) => (
+            <a>+{el}</a>
+          ))}
+        </h1>
       </MainShowcase>
       {/* <SocialSection /> */}
       <FormSection />
