@@ -64,6 +64,11 @@ function Navbar() {
       label: t("contact"),
       link: "/contact",
     },
+    {
+      id: "2",
+      label: t("FAQ"),
+      link: "/faq",
+    },
   ];
   // const onClick = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
   //   if (!e.currentTarget.dataset.to) return;
@@ -102,7 +107,7 @@ function Navbar() {
             <Link href={route.link} key={route.id}>
               <a className={"link"}>{route.label}</a>
             </Link>
-          ))}{" "}
+          ))}
           <SwitchButton />
           <Link href={"/#contact"}>
             <a>

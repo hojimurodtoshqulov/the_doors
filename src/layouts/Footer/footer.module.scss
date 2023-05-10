@@ -27,6 +27,7 @@
 	.top {
 		display: flex;
 		justify-content: space-between;
+		align-items: center;
 		gap: 3%;
 		padding-bottom: 30px;
 		h1,
@@ -49,6 +50,9 @@
 			flex-direction: column;
 			gap: 5px;
 			padding-top: 30px;
+			a {
+				font-family: sans-serif;
+			}
 		}
 		.row:first-child {
 			width: 30%;
