@@ -1,5 +1,10 @@
 .accordionDiv {
 	padding: 7vw;
+	h1 {
+		font-size: 16px;
+		text-transform: uppercase;
+		font-weight: 500;
+	}
 	.accordion {
 		box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.21);
 		margin-top: 20px;
