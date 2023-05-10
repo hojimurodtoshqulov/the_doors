@@ -22,18 +22,20 @@ function Navbar() {
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const ref = useRef<HTMLHeadElement>(null);
   const route = useRouter();
-  const isLight = route.pathname === "/";
+  const isHome = route.pathname === "/";
   useEffect(() => {
     const handleScroll = () => {
       if (!ref.current) return;
       if (window.pageYOffset === 0) {
-        ref.current.style.backdropFilter = "blur(0px)";
+        ref.current.style.setProperty("--color", isHome ? "black" : "white");
+        // ref.current.style.backdropFilter = "blur(0px)";
         ref.current.style.background = "transparent";
-        ref.current.style.color = "rgba(255, 255, 255)";
+        // ref.current.style.color = "rgba(255, 255, 255)";
       } else {
-        ref.current.style.backdropFilter = "blur(10px)";
+        ref.current.style.setProperty("--color", "black");
+        // ref.current.style.backdropFilter = "blur(10px)";
         ref.current.style.background = "rgba(255, 255, 255)";
-        ref.current.style.color = "rgba(0, 0, 0)";
+        // ref.current.style.color = "rgba(0, 0, 0)";
       }
       const currentScrollPos = window.pageYOffset;
       ref.current.style.translate =
@@ -87,7 +89,7 @@ function Navbar() {
     <>
       <nav
         className={`${styles.navbar} ${
-          isLight && styles.black
+          isHome && styles.black
         } container-padding`}
         ref={ref}
       >
