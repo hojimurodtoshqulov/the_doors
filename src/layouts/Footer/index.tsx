@@ -25,11 +25,11 @@ function Footer({ style }: MainPropType) {
 				<div className={styles.row}>
 					<h1 className="banana">The Doors</h1>
 					<p>{t("footerMainDesc")}</p>
-					<div className={styles.icons}>
+					{/* <div className={styles.icons}>
 						<BsFacebook />
 						<AiFillInstagram />
 						<BsTwitter />
-					</div>
+					</div> */}
 				</div>
 				<div className={styles.row}>
 					<h2 className="banana">{t("footerAdress")}</h2>
