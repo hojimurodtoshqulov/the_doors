@@ -29,10 +29,11 @@ function Navbar() {
       if (window.pageYOffset === 0) {
         ref.current.style.backdropFilter = "blur(0px)";
         ref.current.style.background = "transparent";
+        ref.current.style.color = "rgba(255, 255, 255)";
       } else {
         ref.current.style.backdropFilter = "blur(10px)";
-        ref.current.style.background =
-          route.pathname === "/" ? "rgba(255, 255, 255)" : "rgba(0, 0, 0, 0.5)";
+        ref.current.style.background = "rgba(255, 255, 255)";
+        ref.current.style.color = "rgba(0, 0, 0)";
       }
       const currentScrollPos = window.pageYOffset;
       ref.current.style.translate =
@@ -92,7 +93,7 @@ function Navbar() {
       >
         <Link href="/">
           <a>
-            <img src={isLight ? logo.src : logolight.src} alt="" />
+            <img src={logo.src} alt="" />
           </a>
         </Link>
         <div

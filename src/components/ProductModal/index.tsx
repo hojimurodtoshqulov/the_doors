@@ -23,17 +23,18 @@ function ProductModal({
 		}>
 	>;
 }) {
-	const [form, setForm] = useState<{
-		fullName: string;
-		phoneNumber: string;
-		productId: number | string;
-	}>({
-		fullName: "",
-		phoneNumber: "",
-		productId: product.id,
-	});
-	const getContent = useTarjimaNode();
-	const [disable, setDisable] = useState<boolean>(false);
+  const [form, setForm] = useState<{
+    fullName: string;
+    phoneNumber: string;
+    productId: number | string;
+  }>({
+    fullName: "",
+    phoneNumber: "",
+    productId: product.id,
+  });
+  const getContent = useTarjimaNode();
+  const getContentString = useTarjima();
+  const [disable, setDisable] = useState<boolean>(false);
 
 	useEffect(() => {
 		setForm((prev) => ({ ...prev, productId: product.id }));
@@ -117,23 +118,28 @@ function ProductModal({
             </button>
           </div>
         </div> */}
-				<div className={styles.description}>
-					{getContent(product.descriptionRu, product.descriptionUz)}
-				</div>
-				{getContent(
-					<p style={{ paddingTop: 15, color: "#003D76" }}>
-						Как сделать заказ?
-						<br />
-						<br /> онлайн (на сайте компании); с помощью звонка на контактные
-						телефоны организации.
-					</p>,
-					<p style={{ paddingTop: 15, color: "#003D76" }}>
-						Buyurtmani qanday qilish kerak?
-						<br />
-						<br /> Onlayn (kompaniya veb-saytida); kontaktga qo'ng'iroq qilish
-						orqali tashkilotning telefon raqamlari.
-					</p>
-				)}
+        <div
+          className={styles.description}
+          dangerouslySetInnerHTML={{
+            __html:
+              getContentString(product.descriptionRu, product.descriptionUz) ||
+              "",
+          }}
+        ></div>
+        {getContent(
+          <p style={{ paddingTop: 15, color: "#003D76" }}>
+            Как сделать заказ?
+            <br />
+            <br /> онлайн (на сайте компании); с помощью звонка на контактные
+            телефоны организации.
+          </p>,
+          <p style={{ paddingTop: 15, color: "#003D76" }}>
+            Buyurtmani qanday qilish kerak?
+            <br />
+            <br /> Onlayn (kompaniya veb-saytida); kontaktga qo'ng'iroq qilish
+            orqali tashkilotning telefon raqamlari.
+          </p>
+        )}
 
 				<div className={styles.form}>
 					<input

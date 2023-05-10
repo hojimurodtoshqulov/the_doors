@@ -15,8 +15,8 @@ function FAQ() {
         image={`/media/images.jpg`}
         p={
           getContent(
-            "Менеджеры компании ответят на все вопросы по телефону:",
-            "Менеджеры компании ответят на все вопросы по телефону:"
+            "В данном разделе приведены ответы на часто задаваемые вопросы.",
+            "Ushbu bo'lim tez-tez beriladigan savollarga javob beradi."
           ) || ""
         }
       >
