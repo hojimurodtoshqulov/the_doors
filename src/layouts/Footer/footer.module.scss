@@ -49,6 +49,9 @@
 			flex-direction: column;
 			gap: 5px;
 			padding-top: 30px;
+			a {
+				font-family: sans-serif;
+			}
 		}
 		.row:first-child {
 			width: 30%;

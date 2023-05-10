@@ -25,31 +25,20 @@ function Footer({ style }: MainPropType) {
 				<div className={styles.row}>
 					<h1 className="banana">The Doors</h1>
 					<p>{t("footerMainDesc")}</p>
-					{/* <div className={styles.icons}>
-						<BsFacebook />
-						<AiFillInstagram />
-						<BsTwitter />
-					</div> */}
 				</div>
 				<div className={styles.row}>
 					<h2 className="banana">{t("footerAdress")}</h2>
 					<Link href="/">20, Awesome Road, New York, Usa 4D BS3</Link>
-					<Link href="/">+123 456 7890</Link>
-					<Link href="/">hello@ulina.com</Link>
+					<Link href="tel:+998935910050">+(998) 93 591 00 50</Link>
+					<Link href="tel:+998901854773">+(998) 90 185 47 73</Link>
+					<Link href="tel:+998712936877">+(998) 71 293 68 77</Link>
 				</div>
 				<div className={styles.row}>
 					<h2 className="banana">{t("footerLinks")}</h2>
-					<Link href="/">Shop Cupon</Link>
-					<Link href="/">About Us</Link>
-					<Link href="/">Carrer</Link>
-					<Link href="/">Supports</Link>
-				</div>
-				<div className={styles.row}>
-					<h2 className="banana">{t("footerCatalog")}</h2>
-					<Link href="/">Lorem</Link>
-					<Link href="/">Lorem</Link>
-					<Link href="/">Lorem</Link>
-					<Link href="/">Lorem</Link>
+					<Link href="/">{t("about")}</Link>
+					<Link href="/">{t("projects")}</Link>
+					<Link href="/">{t("contact")}</Link>
+					<Link href="/">{t("FAQ")}</Link>
 				</div>
 			</div>
 			<div className={styles.bottom}>
