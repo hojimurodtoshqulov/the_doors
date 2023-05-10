@@ -961,11 +961,6 @@
   dependencies:
     "void-elements" "3.1.0"
 
-"htmlparser@^1.7.7":
-  "integrity" "sha512-zpK66ifkT0fauyFh2Mulrq4AqGTucxGtOhZ8OjkbSfcCpkqQEI8qRkY0tSQSJNAQ4HUZkgWaU4fK4EH6SVH9PQ=="
-  "resolved" "https://registry.npmjs.org/htmlparser/-/htmlparser-1.7.7.tgz"
-  "version" "1.7.7"
-
 "http-signature@~0.10.0":
   "integrity" "sha512-coK8uR5rq2IMj+Hen+sKPA5ldgbCc1/spPdKCL1Fw6h+D0s/2LzMcRK0Cqufs1h0ryx/niwBHGFu8HC3hwU+lA=="
   "resolved" "https://registry.npmjs.org/http-signature/-/http-signature-0.10.1.tgz"
