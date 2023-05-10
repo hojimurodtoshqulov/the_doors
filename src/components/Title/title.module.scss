@@ -10,4 +10,12 @@
           opacity: 1;
           translate: 0;
      }
+     @media (max-width: 500px) {
+          font-size: 35px;
+          line-height: 120%;
+     }
+     @media (max-width: 400px) {
+          font-size: 30px;
+          // line-height: 40px;
+     }
 }

@@ -9,7 +9,9 @@ function Title({ style, children }: MainPropType) {
 
   return (
     <h1
-      className={`${entity?.isIntersecting && styles.active} ${styles.title} banana`}
+      className={`${entity?.isIntersecting && styles.active} ${
+        styles.title
+      } banana`}
       style={style}
       ref={ref}
     >

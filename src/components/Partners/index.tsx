@@ -51,8 +51,11 @@ function Partners({ partners }: { partners: PartnerType[] }) {
         {partners.map((partners: PartnerType) => (
           <div key={partners.id}>
             <Link href={partners.link}>
-              <a>
-                <img src={partners.image} alt="" />
+              <a className={styles.logo} target="_blank">
+                <img
+                  src={`https://the-doors.herokuapp.com/api/files/${partners.attachmentContentId}`}
+                  alt=""
+                />
               </a>
             </Link>
           </div>
