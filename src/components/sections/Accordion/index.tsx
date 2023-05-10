@@ -22,13 +22,13 @@ const Accordion: React.FC = () => (
     <Title style={{ color: "#666" }}>ОСОБЕННОСТИ И ПРЕИМУЩЕСТВА</Title>
     <Collapse accordion className={scss.accordion}>
       {faqData.map((faq: FaqDataItem, i) => (
-        <Panel header={<h1>{faq.quiz}</h1>} key={i}>
+        <Panel header={<h2>{faq.quiz}</h2>} key={i}>
           <div className={scss.body}>
             <p>{faq.answer}</p>
           </div>
         </Panel>
       ))}
-      <Panel header={<h1>{faqtInstallationData.quiz}</h1>} key="-1">
+      <Panel header={<h2>{faqtInstallationData.quiz}</h2>} key="-1">
         <div className={scss.body}>
           {faqtInstallationData.steps.map((faqstep: StepItem) => (
             <div className={scss.step}>

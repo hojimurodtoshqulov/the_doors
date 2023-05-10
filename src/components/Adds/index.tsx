@@ -38,20 +38,20 @@ function Adds({ style }: MainPropType) {
       <div className={styles.stick}></div>
       <div className={styles.image}>
         <img src={poster2.src} alt="" />
-        <h1 className="banana">{getContent(data?.titleRu1, data?.titleUz1)}</h1>
-        <p>{getContent(data?.descriptionRu1, data?.descriptionUz1)}</p>
+        <h1 className="banana">{getContent(data?.titleRu2, data?.titleUz2)}</h1>
+        <p>{getContent(data?.descriptionRu2, data?.descriptionUz2)}</p>
       </div>
       <div className={`${styles.stick} ${styles.blue}`}></div>
       <div className={styles.image}>
         <img src={poster3.src} alt="" />
-        <h1 className="banana">{getContent(data?.titleRu1, data?.titleUz1)}</h1>
-        <p>{getContent(data?.descriptionRu1, data?.descriptionUz1)}</p>
+        <h1 className="banana">{getContent(data?.titleRu3, data?.titleUz3)}</h1>
+        <p>{getContent(data?.descriptionRu3, data?.descriptionUz3)}</p>
       </div>
       <div className={styles.stick}></div>
       <div className={styles.image}>
         <img src={poster4.src} alt="" />
-        <h1 className="banana">{getContent(data?.titleRu1, data?.titleUz1)}</h1>
-        <p>{getContent(data?.descriptionRu1, data?.descriptionUz1)}</p>
+        <h1 className="banana">{getContent(data?.titleRu4, data?.titleUz4)}</h1>
+        <p>{getContent(data?.descriptionRu4, data?.descriptionUz4)}</p>
       </div>
     </div>
   );

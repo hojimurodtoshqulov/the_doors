@@ -74,10 +74,10 @@ function ClientSlider() {
                 {getContent(client.commentRu, client.commentUz)}
               </p>
               <div className={styles.profile}>
-                <img
+                {/* <img
                   src={`https://the-doors.herokuapp.com/api/files/${client.contentId}`}
                   alt=""
-                />
+                /> */}
                 <div>
                   <h1>{client.fullName}</h1>
                   <p>{client.job}</p>

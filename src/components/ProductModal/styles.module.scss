@@ -34,7 +34,8 @@
 	.form {
 		display: flex;
 		gap: 10px;
-		padding: 5px 0;
+		padding: 15px 0 5px;
+		// background-color: red;
 
 		@media (max-width: 700px) {
 			flex-direction: column;
@@ -85,8 +86,10 @@
 		line-height: 24px;
 		font-family: emoji;
 		font-weight: 600;
-		// word-spacing: 0.5;
-		// text-align: justify;
+		font-style: italic;
+		font-size: 1.1vw;
+		word-spacing: 0.5;
+		text-align: center;
 	}
 	@media (max-width: 1000px) {
 		flex-wrap: wrap;
