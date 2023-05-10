@@ -7,7 +7,7 @@ import { API_URL } from "@/shared/constants";
 import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
 import useIntl from "react-intl/src/components/useIntl";
-import { useTarjima } from "@/utils/getContent";
+import { useTarjima, useTarjimaNode } from "@/utils/getContent";
 
 function ProductModal({
   product,
@@ -32,7 +32,7 @@ function ProductModal({
     phoneNumber: "",
     productId: product.id,
   });
-  const getContent = useTarjima();
+  const getContent = useTarjimaNode();
   const [disable, setDisable] = useState<boolean>(false);
 
   useEffect(() => {
@@ -120,12 +120,21 @@ function ProductModal({
         <div className={styles.description}>
           {getContent(product.descriptionRu, product.descriptionUz)}
         </div>
-        <p style={{ paddingTop: 15, color: "#003D76" }}>
-          {/* {t("contactPageDesc")} */}
-          Как сделать заказ? <br />
-          <br /> онлайн (на сайте компании); с помощью звонка на контактные
-          телефоны организации.
-        </p>
+        {getContent(
+          <p style={{ paddingTop: 15, color: "#003D76" }}>
+            Как сделать заказ?
+            <br />
+            <br /> онлайн (на сайте компании); с помощью звонка на контактные
+            телефоны организации.
+          </p>,
+          <p style={{ paddingTop: 15, color: "#003D76" }}>
+            Buyurtmani qanday qilish kerak?
+            <br />
+            <br /> Onlayn (kompaniya veb-saytida); kontaktga qo'ng'iroq qilish
+            orqali tashkilotning telefon raqamlari.
+          </p>
+        )}
+
         <div className={styles.form}>
           <input
             type="text"
