@@ -1,13 +1,14 @@
 .accordionDiv {
 	padding: 7vw;
-	h1 {
-		font-size: 16px;
-		text-transform: uppercase;
-		font-weight: 500;
-	}
+
 	.accordion {
 		box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.21);
 		margin-top: 20px;
+	}
+	h2 {
+		font-size: 16px;
+		text-transform: uppercase;
+		font-weight: 500;
 	}
 	.body {
 		display: flex;
@@ -21,6 +22,7 @@
 		justify-content: space-between;
 		font-size: 20px;
 		gap: 5%;
+
 		p {
 			width: 45%;
 		}

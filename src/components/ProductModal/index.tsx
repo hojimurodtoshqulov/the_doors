@@ -121,8 +121,10 @@ function ProductModal({
           {getContent(product.descriptionRu, product.descriptionUz)}
         </div>
         <p style={{ paddingTop: 15, color: "#003D76" }}>
-          {t("contactPageDesc")}
-          {/* Менеджеры компании ответят на все вопросы по телефону: */}
+          {/* {t("contactPageDesc")} */}
+          Как сделать заказ? <br />
+          <br /> онлайн (на сайте компании); с помощью звонка на контактные
+          телефоны организации.
         </p>
         <div className={styles.form}>
           <input
