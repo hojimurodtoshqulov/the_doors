@@ -22,12 +22,14 @@ const Accordion: React.FC = () => {
   const getContent = useTarjima();
   return (
     <div className={`${scss.accordionDiv}`}>
-      <Title style={{ color: "#666" }}>ОСОБЕННОСТИ И ПРЕИМУЩЕСТВА</Title>
+      <Title style={{ color: "#666" }}>
+        {getContent(`ВОПРОСЫ И ОТВЕТЫ`, "SAVOL va javoblar")}
+      </Title>
       <Collapse accordion className={scss.accordion}>
         {faqData.map((faq: FaqDataItem, i) => (
           <Panel header={<h2>{getContent(faq.quizRu, faq.quizUz)}</h2>} key={i}>
             <div className={scss.body}>
-              <p>{getContent(faq.answerRu, faq.answerUz)}</p>
+              <p className="text">{getContent(faq.answerRu, faq.answerUz)}</p>
             </div>
           </Panel>
         ))}
@@ -45,7 +47,9 @@ const Accordion: React.FC = () => {
           <div className={scss.body}>
             {faqtInstallationData.steps.map((faqstep: StepItem) => (
               <div className={scss.step}>
-                <p>{getContent(faqstep.txtRu, faqstep.txtUz)}</p>
+                <p className="text">
+                  {getContent(faqstep.txtRu, faqstep.txtUz)}
+                </p>
                 <img src={faqstep.img} alt="" />
               </div>
             ))}

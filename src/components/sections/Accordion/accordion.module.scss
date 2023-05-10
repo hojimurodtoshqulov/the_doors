@@ -11,6 +11,9 @@
 		font-weight: 500;
 	}
 	.body {
+		p {
+			color: rgb(24, 24, 24);
+		}
 		display: flex;
 		gap: 5vw;
 		flex-direction: column;

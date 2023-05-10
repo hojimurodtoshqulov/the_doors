@@ -40,19 +40,11 @@
   width: auto;
 
   p {
-    font-weight: 500;
-    font-size: 18.8069px;
-    line-height: 30px;
-
     &:nth-child(1) {
       margin-bottom: 2rem;
     }
   }
   @media (max-width: 500px) {
     padding: 15px;
-    p {
-      font-size: 15px;
-      line-height: 25px;
-    }
   }
 }
