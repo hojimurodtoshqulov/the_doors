@@ -1,7 +1,14 @@
 .accordionDiv {
 	padding: 7vw;
 	.accordion {
-		box-shadow: 2px 5px 15px rgba(0, 0, 0, 0.21);
+		box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.21);
 		margin-top: 20px;
+	}
+	.body {
+		display: flex;
+		align-items: center;
+	}
+	img {
+		width: 50%;
 	}
 }
