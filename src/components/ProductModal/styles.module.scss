@@ -86,8 +86,10 @@
 		line-height: 24px;
 		font-family: emoji;
 		font-weight: 600;
-		// word-spacing: 0.5;
-		// text-align: justify;
+		font-style: italic;
+		font-size: 1.1vw;
+		word-spacing: 0.5;
+		text-align: center;
 	}
 	@media (max-width: 1000px) {
 		flex-wrap: wrap;
