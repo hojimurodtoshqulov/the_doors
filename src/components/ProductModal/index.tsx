@@ -33,6 +33,7 @@ function ProductModal({
     productId: product.id,
   });
   const getContent = useTarjimaNode();
+  const getContentString = useTarjima();
   const [disable, setDisable] = useState<boolean>(false);
 
   useEffect(() => {
@@ -117,9 +118,14 @@ function ProductModal({
             </button>
           </div>
         </div> */}
-        <div className={styles.description}>
-          {getContent(product.descriptionRu, product.descriptionUz)}
-        </div>
+        <div
+          className={styles.description}
+          dangerouslySetInnerHTML={{
+            __html:
+              getContentString(product.descriptionRu, product.descriptionUz) ||
+              "",
+          }}
+        ></div>
         {getContent(
           <p style={{ paddingTop: 15, color: "#003D76" }}>
             Как сделать заказ?

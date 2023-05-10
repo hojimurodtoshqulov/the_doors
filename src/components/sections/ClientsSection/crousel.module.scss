@@ -7,6 +7,8 @@
      position: relative;
      overflow: hidden;
      z-index: 2;
+     align-items: center;
+
      &.active {
           .about p {
                transform: rotate(0deg);
@@ -30,6 +32,8 @@
      }
      .about {
           width: 40%;
+          padding-bottom: 100px;
+          text-align: center;
           // mix-blend-mode: difference;
           p {
                font-weight: 300;
@@ -39,6 +43,7 @@
                color: #ededed;
                transform: rotateX(90deg);
                transition: 2s;
+               margin: 0 auto;
           }
           h1 {
                margin-bottom: 17px;
@@ -55,6 +60,7 @@
           flex-wrap: wrap;
           .about {
                width: 100%;
+               padding-bottom: 0;
           }
      }
 }

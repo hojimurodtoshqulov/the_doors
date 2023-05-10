@@ -19,7 +19,7 @@ const text = `
 
 const Accordion: React.FC = () => (
   <div className={`${scss.accordionDiv}`}>
-    <Title style={{ color: "#666" }}>ОСОБЕННОСТИ И ПРЕИМУЩЕСТВА</Title>
+    <Title style={{ color: "#666" }}>ВОПРОСЫ И ОТВЕТЫ</Title>
     <Collapse accordion className={scss.accordion}>
       {faqData.map((faq: FaqDataItem, i) => (
         <Panel header={<h2>{faq.quiz}</h2>} key={i}>
