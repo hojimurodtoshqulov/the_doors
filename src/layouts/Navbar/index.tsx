@@ -23,20 +23,25 @@ function Navbar() {
   const ref = useRef<HTMLHeadElement>(null);
   const route = useRouter();
   const isHome = route.pathname === "/";
+
+  const changeColor = () => {
+    if (!ref.current) return;
+    if (window.pageYOffset === 0) {
+      ref.current.style.setProperty("--color", isHome ? "black" : "white");
+      ref.current.style.background = "transparent";
+    } else {
+      ref.current.style.setProperty("--color", "black");
+      ref.current.style.background = "rgba(255, 255, 255)";
+    }
+  };
+
+  changeColor();
+
   useEffect(() => {
     const handleScroll = () => {
+      changeColor();
       if (!ref.current) return;
-      if (window.pageYOffset === 0) {
-        ref.current.style.setProperty("--color", isHome ? "black" : "white");
-        // ref.current.style.backdropFilter = "blur(0px)";
-        ref.current.style.background = "transparent";
-        // ref.current.style.color = "rgba(255, 255, 255)";
-      } else {
-        ref.current.style.setProperty("--color", "black");
-        // ref.current.style.backdropFilter = "blur(10px)";
-        ref.current.style.background = "rgba(255, 255, 255)";
-        // ref.current.style.color = "rgba(0, 0, 0)";
-      }
+
       const currentScrollPos = window.pageYOffset;
       ref.current.style.translate =
         scrollPosition < currentScrollPos && currentScrollPos > 100

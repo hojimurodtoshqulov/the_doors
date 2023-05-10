@@ -51,11 +51,23 @@
           line-height: 133%;
      }
 
-     @media (max-width: 600px) {
+     @media (max-width: 1000px) {
           gap: 50px;
           h1 {
                font-size: 40px;
                line-height: 50px;
+          }
+          p {
+               font-size: 20px;
+               line-height: 27px;
+               margin: 10px 0;
+          }
+     }
+     @media (max-width: 600px) {
+          gap: 50px;
+          h1 {
+               font-size: 30px;
+               line-height: 40px;
           }
           p {
                font-size: 15px;

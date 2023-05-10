@@ -12,7 +12,6 @@
 	font-size: 18px;
 	transition: 0.5s;
 	min-height: 100px;
-	--color: rgb(0, 255, 30);
 	color: var(--color);
 
 	img {
@@ -33,7 +32,7 @@
 	}
 
 	a::before {
-		background-color: rgb(0, 0, 0);
+		background-color: var(--color);
 	}
 
 	.menuBtn {
@@ -82,7 +81,7 @@
 			z-index: -12;
 		}
 		.menu a::before {
-			background-color: black;
+			background-color: var(--color);
 			transition: 1s;
 			height: 1px;
 		}
