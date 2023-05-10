@@ -1,12 +1,12 @@
 import React from "react";
 import AboutShowcase from "@/components/sections/MainShowcase";
 import Adds from "@/components/Adds";
-import hero from "../../../public/media/qwqw.png";
 import OurProjects from "@/components/sections/OurProjects";
 import useIntl from "react-intl/src/components/useIntl";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { useTarjima } from "@/utils/getContent";
+import PartnersSection from "@/components/sections/PartnersSection";
 
 function ProjectsPage() {
   const intl = useIntl();
@@ -31,6 +31,7 @@ function ProjectsPage() {
       >
         {getContent(showcase.titleRu, showcase.titleUz)}
       </AboutShowcase>
+      <PartnersSection />
       <OurProjects />
       <Adds />
     </div>
