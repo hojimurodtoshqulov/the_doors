@@ -65,7 +65,7 @@ function OurProjects() {
   const t = (id: string) => {
     return intl?.formatMessage({ id: id });
   };
-  console.log(mainImage);
+  console.log(mainImage.isActive ? 1 : 0);
 
   return (
     <>

@@ -4,11 +4,13 @@ import image1 from "../../../../public/media/photo_1_2023-05-08_13-15-15.jpg";
 import image2 from "../../../../public/media/photo_2_2023-05-08_13-15-15.jpg";
 import image3 from "../../../../public/media/photo_3_2023-05-08_13-15-15.jpg";
 import Title from "@/components/Title";
+import { useTarjima } from "@/utils/getContent";
 
 function Certification() {
+  const getContent = useTarjima();
   return (
     <div className={styles.container}>
-      <Title>Sertifications</Title>
+      <Title>{getContent("Диплом", "Diplomlar")}</Title>
       <div className={styles.cert}>
         <div>
           <img src={image2.src} alt="" />
