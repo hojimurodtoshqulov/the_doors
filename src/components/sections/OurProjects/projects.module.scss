@@ -45,10 +45,13 @@
 .mainImage {
 	position: fixed;
 	inset: 0;
-	z-index: 10000000;
-	background-color: rgba(0, 0, 0, 0.3);
+	z-index: 100;
+	background-color: rgba(0, 0, 0, 0.6);
 	aspect-ratio: unset;
-	transition: 1s;
+	transition: 0.2s;
+	height: 100%;
+	width: 100%;
+	object-fit: contain;
 }
 
 @media (max-width: 1000px) {

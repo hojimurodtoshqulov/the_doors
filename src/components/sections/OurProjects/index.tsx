@@ -65,14 +65,14 @@ function OurProjects() {
   const t = (id: string) => {
     return intl?.formatMessage({ id: id });
   };
-  console.log(mainImage.isActive ? 1 : 0);
+  console.log(mainImage);
 
   return (
     <>
       <img
         src={mainImage.src}
         alt=""
-        style={{ scale: mainImage.isActive ? 1 : 0 }}
+        style={{ transform: `scale(${mainImage.isActive ? 1 : 0})` }}
         className={styles.mainImage}
         onClick={() => setMainImage((prev) => ({ ...prev, isActive: false }))}
       />
