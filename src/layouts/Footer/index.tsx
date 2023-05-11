@@ -44,8 +44,10 @@ function Footer({ style }: MainPropType) {
 				</div>
 			</div>
 			<div className={styles.bottom}>
-				<h3>©Ulina Official 2022</h3>
-				<Link href={"/"}>
+				<h3>
+					<Link href={"https://rounded.uz/"}>©Rounded Official 2023</Link>
+				</h3>
+				{/* <Link href={"/"}>
 					<a>
 						<span>
 							<p>Privacy policy</p>
@@ -53,7 +55,7 @@ function Footer({ style }: MainPropType) {
 							<p>Terms of service</p>
 						</span>
 					</a>
-				</Link>
+				</Link> */}
 			</div>
 		</footer>
 	);
