@@ -30,7 +30,7 @@ function ContactPage() {
     <div>
       <MainShowcase
         image={`https://the-doors.herokuapp.com/api/files/${showcase.attachmentContentIds?.[0]}`}
-        p={getContent(showcase.descriptionUz, showcase.descriptionRu) || ""}
+        p={getContent(showcase.descriptionRu, showcase.descriptionUz) || ""}
       >
         <BsFillTelephoneFill />
         <h1
