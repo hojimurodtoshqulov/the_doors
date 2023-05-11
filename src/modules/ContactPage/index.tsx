@@ -32,23 +32,13 @@ function ContactPage() {
         image={`https://the-doors.herokuapp.com/api/files/${showcase.attachmentContentIds?.[0]}`}
         p={
           getContent(
+            //   showcase.descriptionUz,
+            //   showcase.descriptionRu
             <div style={{ fontSize: "20px", lineHeight: "30px" }}>
-              Городской офис в Ташкенте
-              <br /> Адрес: Узбекистан, г. Ташкент, ул. Фаргона Йули, 11А, 2
-              этаж
-              <br /> E-mail: откроем фирменный ящик !!!!!
-              <br /> Сайт: www.thedoors.uz
-              <br /> Режим работы: понедельник — пятница с 9:00 до 17:00, без
-              перерыва
+              {showcase.descriptionRu}
             </div>,
             <div style={{ fontSize: "20px", lineHeight: "30px" }}>
-              Toshkent shahar idorasi
-              <br /> Manzil: O'zbekiston, Toshkent, ko'ch. Farg‘ona yo‘li, 11A,
-              2 qavat
-              <br /> E-mail: keling kompaniya qutisini ochamiz!!!!!
-              <br /> Sayt: www.thedoors.uz
-              <br /> Ish vaqti: dushanbadan jumagacha soat 9:00 dan 17:00 gacha
-              tanaffus
+              {showcase.descriptionUz}
             </div>
           ) || ""
         }
@@ -64,7 +54,7 @@ function ContactPage() {
           {showcase.titleUz?.split("*").map((el: string) => (
             <a href={el}>
               {" "}
-              +({el.slice(0, 3)}) {el.slice(3, 5)} {el.slice(5, 8)}-
+              + {el.slice(0, 3)} ({el.slice(3, 5)}) {el.slice(5, 8)}-
               {el.slice(8, 10)}-{el.slice(10, 12)}
             </a>
           ))}
