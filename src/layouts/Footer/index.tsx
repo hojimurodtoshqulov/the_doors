@@ -31,9 +31,9 @@ function Footer({ style }: MainPropType) {
           <Link href="https://maps.windows.com/?form=WNAMSH&collection=point.41.292513_69.298799_Point">
             {t("map")}
           </Link>
-          <Link href="tel:+998935910050">+(998) 93 591 00 50</Link>
-          <Link href="tel:+998901854773">+(998) 90 185 47 73</Link>
-          <Link href="tel:+998712936877">+(998) 71 293 68 77</Link>
+          <Link href="tel:+998935910050">+ 998 (93) 591-00-50</Link>
+          <Link href="tel:+998901854773">+ 998 (90) 185-47-73</Link>
+          <Link href="tel:+998712936877">+ 998 (71) 293-68-77</Link>
         </div>
         <div className={styles.row}>
           <h2 className="banana">{t("footerLinks")}</h2>
