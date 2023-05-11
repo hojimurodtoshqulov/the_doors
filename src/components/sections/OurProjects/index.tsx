@@ -14,34 +14,19 @@ import Image from "./Image";
 import useIntersectionObserver from "@/utils/InterSectionObserver";
 import useIntl from "react-intl/src/components/useIntl";
 import axios from "axios";
+import { log } from "console";
 
 const images = [
-  image1.src,
-  image2.src,
-  image3.src,
-  image4.src,
-  image5.src,
-  image6.src,
-  image7.src,
-  image8.src,
+  [image1.src, image2.src],
+  [image3.src, image4.src],
+  [image5.src, image6.src],
+  [image7.src, image8.src],
 ];
 
 function OurProjects() {
   const ref = useRef(null);
   const entity = useIntersectionObserver(ref, { rootMargin: "-100px 0px" });
-  const [about, setAbout] = useState<
-    | {
-        attachmentContentIds: [number, number];
-        descriptionRu: string;
-        descriptionUz: string;
-      }
-    | undefined
-  >();
-  useEffect(() => {
-    axios.get("https://the-doors.herokuapp.com/api/about-us").then((res) => {
-      setAbout(res.data);
-    });
-  }, []);
+  const [mainImage, setMainImage] = useState({ isActive: false, src: "" });
 
   const settings = {
     customPaging: function () {
@@ -80,62 +65,68 @@ function OurProjects() {
   const t = (id: string) => {
     return intl?.formatMessage({ id: id });
   };
+  console.log(mainImage);
+
   return (
-    <div
-      className={`${entity?.isIntersecting && styles.active} ${
-        styles.projects
-      }`}
-      ref={ref}
-    >
-      <Title>{t("projects")}</Title>
-      <div className={styles.images}>
-        <div className={styles.row}>
-          <Image src={image1.src} />
-          <Image src={image2.src} />
+    <>
+      <img
+        src={mainImage.src}
+        alt=""
+        style={{ scale: mainImage.isActive ? 1 : 0 }}
+        className={styles.mainImage}
+        onClick={() => setMainImage((prev) => ({ ...prev, isActive: false }))}
+      />
+      <div
+        className={`${entity?.isIntersecting && styles.active} ${
+          styles.projects
+        }`}
+        ref={ref}
+      >
+        <Title>{t("projects")}</Title>
+        <div className={styles.images}>
+          {images.map((image) => (
+            <div className={styles.row}>
+              <Image
+                src={image[0]}
+                onClick={() =>
+                  setMainImage((prev) => ({ src: image[0], isActive: true }))
+                }
+              />
+              <Image
+                src={image[1]}
+                onClick={() =>
+                  setMainImage((prev) => ({ src: image[1], isActive: true }))
+                }
+              />
+            </div>
+          ))}
         </div>
-        <div className={styles.row}>
-          {" "}
-          <Image src={image3.src} />
-          <Image src={image4.src} />
-        </div>
-        <div className={styles.row}>
-          {" "}
-          <Image src={image5.src} />
-          <Image src={image6.src} />
-        </div>
-        <div className={styles.row}>
-          {" "}
-          <Image src={image7.src} />
-          <Image src={image8.src} />
-        </div>
-      </div>
-      <Slider {...settings}>
-        <div>
-          <Image src={image1.src} style={{ transition: ".3s" }} />
-        </div>
-        <div>
-          <Image src={image2.src} style={{ transition: ".3s" }} />
-        </div>
-        <div>
-          <Image src={image3.src} style={{ transition: ".3s" }} />
-        </div>
-        <div>
-          <Image src={image4.src} style={{ transition: ".3s" }} />
-        </div>
-        <div>
-          <Image src={image5.src} style={{ transition: ".3s" }} />
-        </div>
-        <div>
-          <Image src={image6.src} style={{ transition: ".3s" }} />
-        </div>
-        <div>
-          <Image src={image7.src} style={{ transition: ".3s" }} />
-        </div>
-        <div>
-          <Image src={image8.src} style={{ transition: ".3s" }} />
-        </div>
-      </Slider>
-    </div>
+        <Slider {...settings}>
+          {images.map((image) => (
+            <div>
+              <Image
+                src={image[0]}
+                style={{ transition: ".3s" }}
+                onClick={() =>
+                  setMainImage((prev) => ({ src: image[0], isActive: true }))
+                }
+              />
+            </div>
+          ))}
+          {images.map((image) => (
+            <div>
+              <Image
+                src={image[1]}
+                style={{ transition: ".3s" }}
+                onClick={() =>
+                  setMainImage((prev) => ({ src: image[1], isActive: true }))
+                }
+              />
+            </div>
+          ))}
+        </Slider>
+      </div>{" "}
+    </>
   );
 }
 

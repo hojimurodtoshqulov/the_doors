@@ -6,8 +6,10 @@
 	h1 {
 		padding-bottom: 30px;
 	}
+	img {
+		aspect-ratio: 1/1;
+	}
 	.row img {
-		aspect-ratio: 3/5;
 		object-fit: cover;
 		margin: 1vw;
 		border-radius: 10px;
@@ -33,12 +35,20 @@
 .slider {
 	display: none;
 	img {
-		aspect-ratio: 3/5;
 		width: 95%;
 		margin: 0 auto;
 		object-fit: cover;
 		border-radius: 10px;
 	}
+}
+
+.mainImage {
+	position: fixed;
+	inset: 0;
+	z-index: 10000000;
+	background-color: rgba(0, 0, 0, 0.3);
+	aspect-ratio: unset;
+	transition: 1s;
 }
 
 @media (max-width: 1000px) {
