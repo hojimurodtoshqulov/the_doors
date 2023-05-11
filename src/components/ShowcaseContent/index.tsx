@@ -8,7 +8,7 @@ function ShowcaseContent({
   children,
   title,
   paragraph,
-}: MainPropType & { title: React.ReactNode; paragraph: string }) {
+}: MainPropType & { title: React.ReactNode; paragraph: React.ReactNode }) {
   const ref = useRef(null);
   const entity = useIntersectionObserver(ref, {});
 
