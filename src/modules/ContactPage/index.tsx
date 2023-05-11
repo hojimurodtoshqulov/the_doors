@@ -18,7 +18,7 @@ function ContactPage() {
   };
 
   const [showcase, setShowcase] = useState<any>({});
-  const getContent = useTarjimaNode();
+  const getContent = useTarjima();
   useEffect(() => {
     axios
       .get("https://the-doors.herokuapp.com/api/show-case/52")
@@ -30,18 +30,7 @@ function ContactPage() {
     <div>
       <MainShowcase
         image={`https://the-doors.herokuapp.com/api/files/${showcase.attachmentContentIds?.[0]}`}
-        p={
-          getContent(
-            //   showcase.descriptionUz,
-            //   showcase.descriptionRu
-            <div style={{ fontSize: "20px", lineHeight: "30px" }}>
-              {showcase.descriptionRu}
-            </div>,
-            <div style={{ fontSize: "20px", lineHeight: "30px" }}>
-              {showcase.descriptionUz}
-            </div>
-          ) || ""
-        }
+        p={getContent(showcase.descriptionUz, showcase.descriptionRu) || ""}
       >
         <BsFillTelephoneFill />
         <h1

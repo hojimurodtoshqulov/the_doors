@@ -8,7 +8,7 @@ function ShowcaseContent({
   children,
   title,
   paragraph,
-}: MainPropType & { title: React.ReactNode; paragraph: React.ReactNode }) {
+}: MainPropType & { title: React.ReactNode; paragraph: string }) {
   const ref = useRef(null);
   const entity = useIntersectionObserver(ref, {});
 
@@ -21,7 +21,11 @@ function ShowcaseContent({
         <div>
           <h1>{title} </h1>
         </div>
-        <p>{paragraph}</p>
+        <span
+          dangerouslySetInnerHTML={{
+            __html: paragraph || "",
+          }}
+        ></span>
         {children}
       </div>
     </div>
