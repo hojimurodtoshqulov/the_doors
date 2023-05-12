@@ -38,6 +38,7 @@ function ContactPage() {
             display: "flex",
             flexDirection: "column",
             gap: 0,
+            fontFamily: "sans-serif",
           }}
         >
           {showcase.titleUz?.split("*").map((el: string) => (
