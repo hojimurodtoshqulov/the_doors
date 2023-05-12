@@ -10,7 +10,7 @@ function Certification() {
   const getContent = useTarjima();
   return (
     <div className={styles.container}>
-      <Title>{getContent("Диплом", "Diplomlar")}</Title>
+      <Title>{getContent("ДИПЛОМЫ", "Diplomlar")}</Title>
       <div className={styles.cert}>
         <div>
           <img src={image2.src} alt="" />

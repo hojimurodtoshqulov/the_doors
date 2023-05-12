@@ -2,7 +2,7 @@ import styles from "./add.module.scss";
 import poster1 from "../../../public/media/Vector (1).png";
 import poster2 from "../../../public/media/Group 10.jpg";
 import poster3 from "../../../public/media/Vector.jpg";
-import poster4 from "../../../public/media/Group 13.png";
+import poster4 from "../../../public/media/Group 13.jpg";
 import { MainPropType } from "@/shared/types";
 import useIntersectionObserver from "@/utils/InterSectionObserver";
 import { useRef, useEffect, useState } from "react";
