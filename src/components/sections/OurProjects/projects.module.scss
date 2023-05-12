@@ -51,7 +51,8 @@
 	transition: 0.2s;
 	height: 100%;
 	width: 100%;
-	object-fit: contain;
+	object-fit: cover;
+	padding: 5%;
 }
 
 @media (max-width: 1000px) {

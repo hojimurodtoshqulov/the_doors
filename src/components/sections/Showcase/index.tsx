@@ -39,10 +39,10 @@ function Showcase() {
 				item.titleRu;
 			})} */}
       <div className={styles.text}>
-        <h1>{getContent(products?.titleRu, products?.titleUz)}</h1>
-        <p>
-          {getContent(products?.descriptionRu, products?.descriptionUz)}
-        </p>{" "}
+        <h1 className="banana">
+          {getContent(products?.titleRu, products?.titleUz)}
+        </h1>
+        <p>{getContent(products?.descriptionRu, products?.descriptionUz)}</p>{" "}
       </div>
       <div className={styles.images}>
         <div className={styles.ovals}>

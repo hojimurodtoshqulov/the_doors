@@ -31,8 +31,8 @@ function ProjectsPage() {
       >
         {getContent(showcase.titleRu, showcase.titleUz)}
       </AboutShowcase>
-      <PartnersSection />
       <OurProjects />
+      <PartnersSection />
       <Adds />
     </div>
   );

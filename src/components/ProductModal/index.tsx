@@ -90,7 +90,9 @@ function ProductModal({
       />
       {/* {JSON.stringify(product)} */}
       <form className={styles.text} onSubmit={handleClick}>
-        <h1>{getContent(product.titleRu, product.titleUz)}</h1>
+        <h1 className="banana">
+          {getContent(product.titleRu, product.titleUz)}
+        </h1>
         {/* <div className={styles.price}>
           <h2>
             {t("from")} {product?.price * (1 - product.discount / 100)}$
