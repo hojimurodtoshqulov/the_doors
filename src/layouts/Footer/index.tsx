@@ -28,8 +28,8 @@ function Footer({ style }: MainPropType) {
         </div>
         <div className={styles.row}>
           <h2 className="banana">{t("footerAdress")}</h2>
-          <Link href="https://maps.windows.com/?form=WNAMSH&collection=point.41.292513_69.298799_Point">
-            {t("map")}
+          <Link href="https://www.google.com/maps?ll=41.292747,69.2987&z=12&t=m&hl=en&gl=US&mapclient=embed&cid=13799861744631380678">
+            <a target="_blank">{t("map")}</a>
           </Link>
           <Link href="tel:+998935910050">+ 998 (93) 591-00-50</Link>
           <Link href="tel:+998901854773">+ 998 (90) 185-47-73</Link>
