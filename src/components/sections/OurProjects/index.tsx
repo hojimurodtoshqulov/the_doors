@@ -15,18 +15,19 @@ import useIntersectionObserver from "@/utils/InterSectionObserver";
 import useIntl from "react-intl/src/components/useIntl";
 import axios from "axios";
 import { log } from "console";
+import { API_URL } from "@/shared/constants";
 
 const images = [
-  [image1.src, image2.src],
-  [image3.src, image4.src],
-  [image5.src, image6.src],
-  [image7.src, image8.src],
+  [1210, 1211],
+  [1212, 1217],
+  [1213, 1216],
+  [1214, 1215],
 ];
 
 function OurProjects() {
   const ref = useRef(null);
   const entity = useIntersectionObserver(ref, { rootMargin: "-100px 0px" });
-  const [mainImage, setMainImage] = useState({ isActive: false, src: "" });
+  const [mainImage, setMainImage] = useState({ isActive: false, src: 0 });
 
   const settings = {
     customPaging: function () {
@@ -70,7 +71,7 @@ function OurProjects() {
   return (
     <>
       <img
-        src={mainImage.src}
+        src={`${API_URL}/api/files/${mainImage.src}`}
         alt=""
         style={{ transform: `scale(${mainImage.isActive ? 1 : 0})` }}
         className={styles.mainImage}
@@ -87,13 +88,13 @@ function OurProjects() {
           {images.map((image) => (
             <div className={styles.row}>
               <Image
-                src={image[0]}
+                src={`${API_URL}/api/files/${image[0]}`}
                 onClick={() =>
                   setMainImage((prev) => ({ src: image[0], isActive: true }))
                 }
               />
               <Image
-                src={image[1]}
+                src={`${API_URL}/api/files/${image[1]}`}
                 onClick={() =>
                   setMainImage((prev) => ({ src: image[1], isActive: true }))
                 }
@@ -105,7 +106,7 @@ function OurProjects() {
           {images.map((image) => (
             <div>
               <Image
-                src={image[0]}
+                src={`${API_URL}/api/files/${image[0]}`}
                 style={{ transition: ".3s" }}
                 onClick={() =>
                   setMainImage((prev) => ({ src: image[0], isActive: true }))
@@ -116,7 +117,7 @@ function OurProjects() {
           {images.map((image) => (
             <div>
               <Image
-                src={image[1]}
+                src={`${API_URL}/api/files/${image[1]}`}
                 style={{ transition: ".3s" }}
                 onClick={() =>
                   setMainImage((prev) => ({ src: image[1], isActive: true }))
