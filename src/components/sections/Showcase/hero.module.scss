@@ -44,6 +44,7 @@
 		line-height: 110%;
 		width: 760px;
 		// letter-spacing: 1px;
+
 		text-transform: uppercase;
 		color: #003d76;
 		span {
@@ -117,6 +118,13 @@
 		button {
 			padding: 12px 25px;
 			font-size: 13px;
+		}
+	}
+	@media (min-width: 1800px) {
+		h1 {
+			// width: 100%;
+			font-size: 120px;
+			background-color: red;
 		}
 	}
 }
