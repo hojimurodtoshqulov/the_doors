@@ -17,7 +17,8 @@ function AboutPage() {
       .get("https://the-doors.herokuapp.com/api/about-us-showcase")
       .then((res) => {
         setShowcase(res.data);
-      });
+      })
+      .catch(console.log);
   }, []);
 
   return (

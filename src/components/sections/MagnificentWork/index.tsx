@@ -29,9 +29,12 @@ function MagnificentWork() {
     | undefined
   >();
   useEffect(() => {
-    axios.get("https://the-doors.herokuapp.com/api/magnificent").then((res) => {
-      setAbout(res.data);
-    });
+    axios
+      .get("https://the-doors.herokuapp.com/api/magnificent")
+      .then((res) => {
+        setAbout(res.data);
+      })
+      .catch(console.log);
   }, []);
   useEffect(() => {
     if (!ref1.current || !ref2.current || !ref3.current) return;
@@ -77,18 +80,18 @@ function MagnificentWork() {
       </div>
       <div className={styles.images}>
         <img
-          src={`https://the-doors.herokuapp.com/api/files/${about?.contentIds[0]}`}
+          src={`https://the-doors.herokuapp.com/api/files/${about?.contentIds?.[0]}`}
           alt=""
           ref={ref1}
         />
         <div>
           <img
-            src={`https://the-doors.herokuapp.com/api/files/${about?.contentIds[1]}`}
+            src={`https://the-doors.herokuapp.com/api/files/${about?.contentIds?.[1]}`}
             alt=""
             ref={ref2}
           />
           <img
-            src={`https://the-doors.herokuapp.com/api/files/${about?.contentIds[2]}`}
+            src={`https://the-doors.herokuapp.com/api/files/${about?.contentIds?.[2]}`}
             alt=""
             ref={ref3}
           />

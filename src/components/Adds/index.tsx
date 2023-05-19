@@ -21,7 +21,7 @@ function Adds({ style }: MainPropType) {
   useEffect(() => {
     axios.get("https://the-doors.herokuapp.com/api/advantage").then((res) => {
       setData(res.data);
-    });
+    }).catch(console.log);
   }, []);
 
   return (

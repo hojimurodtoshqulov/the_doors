@@ -20,7 +20,8 @@ function ProjectsPage() {
       .get("https://the-doors.herokuapp.com/api/show-case/53")
       .then((res) => {
         setShowcase(res.data);
-      });
+      })
+      .catch(console.log);
   }, []);
 
   return (

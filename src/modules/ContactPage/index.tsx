@@ -24,7 +24,8 @@ function ContactPage() {
       .get("https://the-doors.herokuapp.com/api/show-case/52")
       .then((res) => {
         setShowcase(res.data);
-      });
+      })
+      .catch(console.log);
   }, []);
   return (
     <div>

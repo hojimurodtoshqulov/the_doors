@@ -22,11 +22,9 @@ function HomePage() {
         <Adds />
         <ProductSection />
         <ClientsSection />
-        {/* <NewsSection /> */}
         <AboutSection />
         <FormSection />
         <PartnersSection />
-         
       </section>
     </div>
   );

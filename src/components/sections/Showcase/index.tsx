@@ -24,7 +24,8 @@ function Showcase() {
     axios.get(`${API_URL}/api/show-case/1`).then((res) => {
       setProducts(res?.data);
       setProductImages(res?.data?.attachmentContentIds);
-    });
+    })      .catch(console.log);
+    ;
   }, []);
 
   console.log(products);

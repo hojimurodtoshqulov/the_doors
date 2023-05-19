@@ -21,7 +21,8 @@ function ProductSection() {
   useEffect(() => {
     axios.get(`${API_URL}/api/products`).then((res) => {
       setProducts(res.data);
-    });
+    })      .catch(console.log);
+    ;
   }, []);
   const intl = useIntl();
   const t = (id: string) => {
