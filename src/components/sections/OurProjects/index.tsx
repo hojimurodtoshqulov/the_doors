@@ -16,12 +16,11 @@ import useIntl from "react-intl/src/components/useIntl";
 import axios from "axios";
 import { log } from "console";
 import { API_URL } from "@/shared/constants";
-
 const images = [
-  [1210, 1211],
-  [1212, 1217],
-  [1213, 1216],
-  [1214, 1215],
+  [36, 37],
+  [38, 39],
+  [40, 41],
+  [42, 43],
 ];
 
 function OurProjects() {
