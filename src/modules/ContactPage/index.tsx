@@ -21,9 +21,10 @@ function ContactPage() {
   const getContent = useTarjima();
   useEffect(() => {
     axios
-      .get("https://the-doors.herokuapp.com/api/show-case/2")
+      .get("https://the-doors.herokuapp.com/api/show-case/3")
       .then((res) => {
         setShowcase(res.data);
+        console.log(res.data);
       })
       .catch(console.log);
   }, []);
