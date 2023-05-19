@@ -17,7 +17,7 @@ function ProjectsPage() {
   const getContent = useTarjima();
   useEffect(() => {
     axios
-      .get("https://the-doors.herokuapp.com/api/show-case/53")
+      .get("https://the-doors.herokuapp.com/api/show-case/2")
       .then((res) => {
         setShowcase(res.data);
       })
