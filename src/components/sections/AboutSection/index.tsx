@@ -58,12 +58,12 @@ function AboutSection() {
     >
       <div className={styles.images}>
         <img
-          src={`https://the-doors.herokuapp.com/api/files/${about?.attachmentContentIds[0]}`}
+          src={`https://the-doors.herokuapp.com/api/files/${about?.attachmentContentIds?.[0]}`}
           alt=""
           ref={ref1}
         />
         <img
-          src={`https://the-doors.herokuapp.com/api/files/${about?.attachmentContentIds[1]}`}
+          src={`https://the-doors.herokuapp.com/api/files/${about?.attachmentContentIds?.[1]}`}
           alt=""
           ref={ref2}
         />

@@ -24,7 +24,8 @@ function Showcase() {
     axios.get(`${API_URL}/api/show-case/1`).then((res) => {
       setProducts(res?.data);
       setProductImages(res?.data?.attachmentContentIds);
-    });
+    })      .catch(console.log);
+    ;
   }, []);
 
   console.log(products);
@@ -39,10 +40,10 @@ function Showcase() {
 				item.titleRu;
 			})} */}
       <div className={styles.text}>
-        <h1>{getContent(products?.titleRu, products?.titleUz)}</h1>
-        <p>
-          {getContent(products?.descriptionRu, products?.descriptionUz)}
-        </p>{" "}
+        <h1 className="banana">
+          {getContent(products?.titleRu, products?.titleUz)}
+        </h1>
+        <p>{getContent(products?.descriptionRu, products?.descriptionUz)}</p>{" "}
       </div>
       <div className={styles.images}>
         <div className={styles.ovals}>

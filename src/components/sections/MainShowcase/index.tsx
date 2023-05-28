@@ -6,7 +6,7 @@ function MainShowcase({
   image,
   p,
   children,
-}: { image: string; p: React.ReactNode } & MainPropType) {
+}: { image: string; p: string } & MainPropType) {
   return (
     <div
       className={styles.showcase}
