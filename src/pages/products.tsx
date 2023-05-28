@@ -1,6 +1,6 @@
 import AboutPage from "@/modules/AboutPage";
-import ProjectsPage from "@/modules/ProjectsPage";
+import ProductsPage from "@/modules/ProductsPage";
 
 export default function Home() {
-  return <ProjectsPage />;
+  return <ProductsPage />;
 }
