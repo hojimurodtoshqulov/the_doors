@@ -42,7 +42,6 @@ function ProductModal({
 
 	function handleClick(e: React.FormEvent<HTMLFormElement>) {
 		e.preventDefault();
-		console.log(form);
 		setDisable(true);
 
 		axios

@@ -26,8 +26,6 @@ function Showcase() {
       setProductImages(res?.data?.attachmentContentIds);
     });
   }, []);
-
-  console.log(products);
   return (
     <div
       className={`${entity?.isIntersecting && styles.active} ${

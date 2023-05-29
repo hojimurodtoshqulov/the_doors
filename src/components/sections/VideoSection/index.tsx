@@ -26,7 +26,6 @@ function VideoSection() {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
-  // console.log("products >>> ", products);
   return (
     <div
       className={styles.video}

@@ -8,7 +8,6 @@ import { BsFillTelephoneFill } from "react-icons/bs";
 import useIntl from "react-intl/src/components/useIntl";
 import FormSection from "@/components/sections/FormSection";
 import axios from "axios";
-import { log } from "console";
 import { useTarjima } from "@/utils/getContent";
 
 function ContactPage() {

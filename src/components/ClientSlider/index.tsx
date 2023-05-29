@@ -4,7 +4,6 @@ import styles from "./client.module.scss";
 import image from "../../../public/media/hero4.png";
 import { GoStar } from "react-icons/go";
 import axios from "axios";
-import { log } from "console";
 import { useTarjima } from "@/utils/getContent";
 
 type ClientType = {
