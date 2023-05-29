@@ -1,8 +1,8 @@
 import styles from "./add.module.scss";
 import poster1 from "../../../public/media/Vector (1).png";
-import poster2 from "../../../public/media/Group 10.png";
-import poster3 from "../../../public/media/Vector.png";
-import poster4 from "../../../public/media/Group 13.png";
+import poster2 from "../../../public/media/Group 10.jpg";
+import poster3 from "../../../public/media/Vector.jpg";
+import poster4 from "../../../public/media/Group 13.jpg";
 import { MainPropType } from "@/shared/types";
 import useIntersectionObserver from "@/utils/InterSectionObserver";
 import { useRef, useEffect, useState } from "react";
@@ -21,7 +21,7 @@ function Adds({ style }: MainPropType) {
   useEffect(() => {
     axios.get("https://the-doors.herokuapp.com/api/advantage").then((res) => {
       setData(res.data);
-    });
+    }).catch(console.log);
   }, []);
 
   return (

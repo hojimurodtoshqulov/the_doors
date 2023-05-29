@@ -19,9 +19,13 @@ function ShowcaseContent({
     >
       <div>
         <div>
-          <h1>{title} </h1>
+          <h1 className="banana">{title} </h1>
         </div>
-        <p>{paragraph}</p>
+        <span
+          dangerouslySetInnerHTML={{
+            __html: paragraph || "",
+          }}
+        ></span>
         {children}
       </div>
     </div>

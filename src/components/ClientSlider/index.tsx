@@ -18,9 +18,12 @@ type ClientType = {
 function ClientSlider() {
   const [clients, setClients] = useState<ClientType[]>([]);
   useEffect(() => {
-    axios.get("https://the-doors.herokuapp.com/api/comments").then((res) => {
-      setClients(res.data);
-    });
+    axios
+      .get("https://the-doors.herokuapp.com/api/comments")
+      .then((res) => {
+        setClients(res.data);
+      })
+      .catch(console.log);
   }, []);
   const getContent = useTarjima();
   const settings = {

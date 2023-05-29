@@ -50,6 +50,13 @@ export const faqData: FaqDataItem[] = [
     answerUz:
       "Darvoza o'rnatish - bu sertifikatlangan ustalar tomonidan bajarilishi kerak bo'lgan murakkab jarayon. Siz nafaqat bizdan mahsulotlar sotib olishingiz, balki uni o'rnatishga buyurtma berishingiz mumkin.",
   },
+  {
+    quizRu: "Не нашли ответа на свой вопрос?",
+    quizUz: "Savolingizga javob topa olmadingizmi?",
+    answerRu: "Свяжитесь с нами, и мы предоставим необходимую информацию.",
+    answerUz:
+      "Biz bilan bog'laning va biz kerakli ma'lumotlarni taqdim etamiz.",
+  },
 ];
 
 export const faqtInstallationData: FaqtInstallation = {

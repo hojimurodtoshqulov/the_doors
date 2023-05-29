@@ -1,47 +1,32 @@
 import Title from "../../Title";
 import styles from "./projects.module.scss";
-import image1 from "/public/media/Rectangle 725.png";
-import image2 from "/public/media/Rectangle 726.png";
-import image3 from "/public/media/Rectangle 727.png";
-import image4 from "/public/media/Rectangle 728.png";
-import image5 from "/public/media/Rectangle 754.png";
-import image6 from "/public/media/Rectangle 755.png";
-import image7 from "/public/media/Rectangle 756.png";
-import image8 from "/public/media/Rectangle 757.png";
+import image1 from "/public/media/av1 (1).jpg";
+import image2 from "/public/media/ibu1 (2).jpg";
+import image3 from "/public/media/ibu1 (3).jpg";
+import image4 from "/public/media/kd2.jpg";
+import image5 from "/public/media/1212.jpg";
+import image6 from "/public/media/1213.jpg";
+import image7 from "/public/media/1214.jpg";
+import image8 from "/public/media/1215.jpg";
 import React, { useRef, useState, useEffect } from "react";
 import Slider from "react-slick";
 import Image from "./Image";
 import useIntersectionObserver from "@/utils/InterSectionObserver";
 import useIntl from "react-intl/src/components/useIntl";
 import axios from "axios";
-
+import { log } from "console";
+import { API_URL } from "@/shared/constants";
 const images = [
-  image1.src,
-  image2.src,
-  image3.src,
-  image4.src,
-  image5.src,
-  image6.src,
-  image7.src,
-  image8.src,
+  [36, 37],
+  [38, 39],
+  [40, 41],
+  [42, 43],
 ];
 
 function OurProjects() {
   const ref = useRef(null);
   const entity = useIntersectionObserver(ref, { rootMargin: "-100px 0px" });
-  const [about, setAbout] = useState<
-    | {
-        attachmentContentIds: [number, number];
-        descriptionRu: string;
-        descriptionUz: string;
-      }
-    | undefined
-  >();
-  useEffect(() => {
-    axios.get("https://the-doors.herokuapp.com/api/about-us").then((res) => {
-      setAbout(res.data);
-    });
-  }, []);
+  const [mainImage, setMainImage] = useState({ isActive: false, src: 0 });
 
   const settings = {
     customPaging: function () {
@@ -80,62 +65,68 @@ function OurProjects() {
   const t = (id: string) => {
     return intl?.formatMessage({ id: id });
   };
+  console.log(mainImage);
+
   return (
-    <div
-      className={`${entity?.isIntersecting && styles.active} ${
-        styles.projects
-      }`}
-      ref={ref}
-    >
-      <Title>{t("projects")}</Title>
-      <div className={styles.images}>
-        <div className={styles.row}>
-          <Image src={image1.src} />
-          <Image src={image2.src} />
+    <>
+      <img
+        src={`${API_URL}/api/files/${mainImage.src}`}
+        alt=""
+        style={{ transform: `scale(${mainImage.isActive ? 1 : 0})` }}
+        className={styles.mainImage}
+        onClick={() => setMainImage((prev) => ({ ...prev, isActive: false }))}
+      />
+      <div
+        className={`${entity?.isIntersecting && styles.active} ${
+          styles.projects
+        }`}
+        ref={ref}
+      >
+        <Title>{t("projects")}</Title>
+        <div className={styles.images}>
+          {images.map((image) => (
+            <div className={styles.row}>
+              <Image
+                src={`${API_URL}/api/files/${image[0]}`}
+                onClick={() =>
+                  setMainImage((prev) => ({ src: image[0], isActive: true }))
+                }
+              />
+              <Image
+                src={`${API_URL}/api/files/${image[1]}`}
+                onClick={() =>
+                  setMainImage((prev) => ({ src: image[1], isActive: true }))
+                }
+              />
+            </div>
+          ))}
         </div>
-        <div className={styles.row}>
-          {" "}
-          <Image src={image3.src} />
-          <Image src={image4.src} />
-        </div>
-        <div className={styles.row}>
-          {" "}
-          <Image src={image5.src} />
-          <Image src={image6.src} />
-        </div>
-        <div className={styles.row}>
-          {" "}
-          <Image src={image7.src} />
-          <Image src={image8.src} />
-        </div>
-      </div>
-      <Slider {...settings}>
-        <div>
-          <Image src={image1.src} style={{ transition: ".3s" }} />
-        </div>
-        <div>
-          <Image src={image2.src} style={{ transition: ".3s" }} />
-        </div>
-        <div>
-          <Image src={image3.src} style={{ transition: ".3s" }} />
-        </div>
-        <div>
-          <Image src={image4.src} style={{ transition: ".3s" }} />
-        </div>
-        <div>
-          <Image src={image5.src} style={{ transition: ".3s" }} />
-        </div>
-        <div>
-          <Image src={image6.src} style={{ transition: ".3s" }} />
-        </div>
-        <div>
-          <Image src={image7.src} style={{ transition: ".3s" }} />
-        </div>
-        <div>
-          <Image src={image8.src} style={{ transition: ".3s" }} />
-        </div>
-      </Slider>
-    </div>
+        <Slider {...settings}>
+          {images.map((image) => (
+            <div>
+              <Image
+                src={`${API_URL}/api/files/${image[0]}`}
+                style={{ transition: ".3s" }}
+                onClick={() =>
+                  setMainImage((prev) => ({ src: image[0], isActive: true }))
+                }
+              />
+            </div>
+          ))}
+          {images.map((image) => (
+            <div>
+              <Image
+                src={`${API_URL}/api/files/${image[1]}`}
+                style={{ transition: ".3s" }}
+                onClick={() =>
+                  setMainImage((prev) => ({ src: image[1], isActive: true }))
+                }
+              />
+            </div>
+          ))}
+        </Slider>
+      </div>{" "}
+    </>
   );
 }
 

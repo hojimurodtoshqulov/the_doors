@@ -35,37 +35,27 @@ export default function App({ Component, pageProps }: AppProps) {
           content="width=device-width, initial-scale=1, user-scalable=no viewport-fit=cover"
         />
 
-        <meta property="og:type" content="website" />
         <link
           rel="alternate"
           hrefLang="uz-Oz"
           href="https://www.thedoors.uz/uz"
         ></link>
-        <link
-          rel="alternate"
-          hrefLang="x-default"
-          href="https://www.thedoors.uz"
-        ></link>
-        <meta name="robots" content="index,follow" />
-        <meta name="googlebot" content="index,follow" />
+
         <meta
           name="description"
-          content="The doors: Секционные гаражные ворота-это идеальный выбор в пользу качества, надёжности, долговечности и стиля!"
+          content="TheDoors is the premier destination for high-quality door products, installation, and repair services in Uzbekistan. With years of experience, we are the trusted choice for homeowners and businesses alike when it comes to all their door needs.
+
+          At TheDoors, we offer a wide range of doors, including interior, exterior, custom, and more, to suit any style and budget. We also provide expert door installation and repair services to ensure your doors are installed correctly and functioning properly.
+          
+          Our team of skilled technicians has the knowledge and expertise to handle any door-related issue, from minor repairs to complete installations. We pride ourselves on providing exceptional customer service and craftsmanship on every project.
+          
+          Whether you need a single door replaced or an entire building outfitted with new doors, TheDoors has the expertise and resources to get the job done right. Contact us today to learn more about our products and services and to schedule your consultation.
+          
+          
+          
+          
+          "
         ></meta>
-        <meta property="og:url" content="https://www.thedoors.uz/"></meta>
-        <meta
-          property="og:title"
-          content="The doors: Секционные гаражные ворота-это идеальный выбор в пользу качества, надёжности, долговечности и стиля!"
-        ></meta>
-        <meta
-          property="og:description"
-          content="Мы в THEDOORS специализируемся на автоматической установке дверей, рольставен, шлагбаумов и погрузочно-разгрузочного оборудования."
-        ></meta>
-        <meta
-          property="og:image"
-          content="https://the-doors.herokuapp.com/api/files/703"
-        ></meta>
-        <link rel="canonical" href="https://www.thedoors.uz/"></link>
 
         <title>Thedoors</title>
       </Head>
