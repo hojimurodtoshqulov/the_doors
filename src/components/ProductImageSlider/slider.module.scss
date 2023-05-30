@@ -1,12 +1,24 @@
-.image{
-    width: 90%;
-    height: 400px;
-    object-fit: contain;
-    margin: 0px auto;
-    @media (max-width:1400px) {
-        height: 300px;
-    }
-    @media (max-width:800px) {
-        height: 250px;
-    }
+.image {
+  width: 90%;
+  height: 400px;
+  object-fit: contain;
+  margin: 0px auto;
+  @media (max-width: 1400px) {
+    height: 300px;
+  }
+  @media (max-width: 800px) {
+    height: 250px;
+  }
+}
+
+.modalImage {
+  transition: 0.2s;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  background-color: rgba(0, 0, 0, 0.458);
 }

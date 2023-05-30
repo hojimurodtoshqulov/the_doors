@@ -16,8 +16,7 @@ function ProductCard({
   setProduct,
   style,
   setIsModal,
-  isLink,
-}: MainPropType & {isLink?:boolean
+ }: MainPropType & { 
   product?: ProductType;
   setProduct: Dispatch<SetStateAction<ProductType | undefined>>;
   setIsModal: Dispatch<SetStateAction<boolean>>;
@@ -37,38 +36,15 @@ function ProductCard({
       style={style}
       ref={ref}
       onClick={() => {
-       if (isLink) {
-        return router.push(`/products/${product?.id}`);
-
-        }
-        setIsModal(true);
-        setProduct(product);
+    
+          router.push(`/products/${product?.id}`);
+ 
       }}
     >
-      {/* {product?.discount ? (
-        <div className={styles.discount}>{product.discount}%</div>
-      ) : (
-        ""
-      )} */}
+     
       {product ? <ImageSlider images={product?.attachmentContentIds} /> : ""}
       <h2>{getContent(product?.titleRu, product?.titleUz)}</h2>
-      {/* <h1>
-        from <span>{product?.price}</span>${" "}
-        {product?.discount ? (
-          <span style={{ color: "red", paddingLeft: "10px" }}>
-            {Math.round(product?.price * (1 - product.discount / 100))}$
-          </span>
-        ) : (
-          ""
-        )}
-      </h1> */}
-      {/* <p>
-        {getContent(
-          product?.descriptionRu?.slice(0, 60),
-          product?.descriptionUz?.slice(0, 60)
-        )}
-        ... <span>{t("more")}</span>
-      </p> */}
+     
       <Button style={{ borderRadius: 10 }}>{t("showMore")}</Button>
     </div>
   );

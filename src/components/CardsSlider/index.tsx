@@ -8,10 +8,8 @@ function CardsSlider({
   products,
   setProduct,
   setIsModal,
-  isLink
-}: {
-  isLink?:boolean
-  products: ProductType[];
+ }: {
+   products: ProductType[];
   setProduct: Dispatch<SetStateAction<ProductType | undefined>>;
   setIsModal: Dispatch<SetStateAction<boolean>>;
 }) {
@@ -56,8 +54,7 @@ function CardsSlider({
           <div key={product.id}>
             <ProductCard
               key={product.id}
-              isLink={isLink}
-              setProduct={setProduct}
+               setProduct={setProduct}
               product={product}
               style={{ width: "90%", margin: "0 auto" }}
               setIsModal={setIsModal}
@@ -70,8 +67,7 @@ function CardsSlider({
           <div key={product.id}>
             <ProductCard
               key={product.id}
-              isLink={isLink}
-              setProduct={setProduct}
+               setProduct={setProduct}
               product={product}
               style={{ width: "90%", margin: "0 auto" }}
               setIsModal={setIsModal}

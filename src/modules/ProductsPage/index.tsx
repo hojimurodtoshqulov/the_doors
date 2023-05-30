@@ -7,7 +7,7 @@ function ProjectsPage() {
  
 	return (
 		<div style={{paddingTop:200}}>
- 			<ProductSection  isLink={true}/>
+ 			<ProductSection  />
 			<Adds />
 		</div>
 	);
