@@ -8,13 +8,16 @@ import ImageSlider from "../ImageSlider";
 import useIntersectionObserver from "@/utils/InterSectionObserver";
 import useIntl from "react-intl/src/components/useIntl";
 import { useTarjima } from "@/utils/getContent";
+import { useRouter } from 'next/router';
+
 
 function ProductCard({
   product,
   setProduct,
   style,
   setIsModal,
-}: MainPropType & {
+  isLink,
+}: MainPropType & {isLink?:boolean
   product?: ProductType;
   setProduct: Dispatch<SetStateAction<ProductType | undefined>>;
   setIsModal: Dispatch<SetStateAction<boolean>>;
@@ -22,6 +25,8 @@ function ProductCard({
   const ref = useRef(null);
   const getContent = useTarjima();
   const entity = useIntersectionObserver(ref, {});
+  const router = useRouter();
+
   const intl = useIntl();
   const t = (id: string) => {
     return intl?.formatMessage({ id: id });
@@ -32,6 +37,10 @@ function ProductCard({
       style={style}
       ref={ref}
       onClick={() => {
+       if (isLink) {
+        return router.push(`/products/${product?.id}`);
+
+        }
         setIsModal(true);
         setProduct(product);
       }}

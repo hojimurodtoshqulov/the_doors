@@ -22,7 +22,7 @@ function Navbar() {
 	const [isOpen, setIsOpen] = useState<boolean>(false);
 	const ref = useRef<HTMLHeadElement>(null);
 	const route = useRouter();
-	const isHome = route.pathname === "/";
+	const isHome = route.pathname === "/" || route.pathname.startsWith("/products");
 
 	const changeColor = () => {
 		if (!ref.current) return;

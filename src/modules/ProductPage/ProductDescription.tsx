@@ -1,50 +1,50 @@
-import React, { Dispatch, SetStateAction, useState, useEffect } from "react";
-import styles from "./styles.module.scss";
-import ModalImages from "../ModalImages";
-import { ProductType } from "@/shared/types";
-import Button from "../Button";
 import { API_URL } from "@/shared/constants";
-import axios from "axios";
-import { ToastContainer, toast } from "react-toastify";
-import useIntl from "react-intl/src/components/useIntl";
+import styles from "./product.module.scss";
+import { ProductType } from "@/shared/types";
 import { useTarjima, useTarjimaNode } from "@/utils/getContent";
+ import React, { useEffect, useState } from "react";
+import axios from "axios";
+import { toast } from "react-toastify";
+import { useIntl } from "react-intl";
+import Button from "@/components/Button";
 
-function ProductModal({
-  product,
-  setBigImage,
-  products,
-}: {
-  product: ProductType;
-  products: ProductType[];
-  setBigImage: Dispatch<
-    SetStateAction<{
-      src: string;
-      isActive: boolean;
-    }>
-  >;
-}) {
+function ProductDescription({ product }: { product?: ProductType }) {
   const [form, setForm] = useState<{
     fullName: string;
     phoneNumber: string;
-    productId: number | string;
+    productId?: number | string;
   }>({
     fullName: "",
     phoneNumber: "",
-    productId: product.id,
+    productId: product?.id,
   });
   const getContent = useTarjimaNode();
   const getContentString = useTarjima();
+  const intl = useIntl();
+  const t = (id: string) => {
+    return intl?.formatMessage({ id: id });
+  };
   const [disable, setDisable] = useState<boolean>(false);
+  const [products, setProducts] = useState<ProductType[]>([]);
+ 
+  useEffect(() => {
+    setForm((prev) => ({ ...prev, productId: product?.id}))
+
+  }, [product?.id]);
 
   useEffect(() => {
-    setForm((prev) => ({ ...prev, productId: product.id }));
-  }, [product]);
+    axios
+      .get(`${API_URL}/api/products`)
+      .then((res) => {
+        setProducts(res.data);
+      })
+      .catch(console.log);
+  }, []);
 
   function handleClick(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     console.log(form);
     setDisable(true);
-
     axios
       .post(`${API_URL}/api/order`, form)
       .finally(() => setDisable(false))
@@ -62,7 +62,7 @@ function ProductModal({
         setForm({
           fullName: "",
           phoneNumber: "",
-          productId: product.id,
+          productId: product?.id,
         });
       })
       .catch(() =>
@@ -78,73 +78,34 @@ function ProductModal({
         })
       );
   }
-  const intl = useIntl();
-  const t = (id: string) => {
-    return intl?.formatMessage({ id: id });
-  };
   return (
-    <div className={styles.content}>
-      <ModalImages
-        images={product?.attachmentContentIds || []}
-        setBigImage={setBigImage}
-      />
-      {/* {JSON.stringify(product)} */}
+    <div className={styles.description}>
+      <div
+        className={styles.text}
+        dangerouslySetInnerHTML={{
+          __html:
+            getContentString(product?.descriptionRu, product?.descriptionUz) ||
+            "",
+        }}
+      ></div>
+
       <form className={styles.text} onSubmit={handleClick}>
-        <h1 className="banana">
-          {getContent(product.titleRu, product.titleUz)}
-        </h1>
-        {/* <div className={styles.price}>
-          <h2>
-            {t("from")} {product?.price * (1 - product.discount / 100)}$
-          </h2>
-          <div>
-            <button
-              onClick={() =>
-                setForm((prev) => ({
-                  ...prev,
-                  quantity: prev.quantity - 1 ? prev.quantity - 1 : 1,
-                }))
-              }
-              type="button"
-            >
-              -
-            </button>
-            <input type="text" value={form.quantity} />
-            <button
-              onClick={() =>
-                setForm((prev) => ({ ...prev, quantity: prev.quantity + 1 }))
-              }
-              type="button"
-            >
-              +
-            </button>
-          </div>
-        </div> */}
-        <div
-          className={styles.description}
-          dangerouslySetInnerHTML={{
-            __html:
-              getContentString(product.descriptionRu, product.descriptionUz) ||
-              "",
-          }}
-        ></div>
-
-      
-
-        <div className={styles.form}>  {getContent(
+        {getContent(
           <p style={{ paddingTop: 15, color: "#003D76" }}>
             Как сделать заказ?
             <br />
-            <br /> онлайн (на сайте компании); с помощью звонка на контактные
+           онлайн (на сайте компании); с помощью звонка на контактные
             телефоны организации.
           </p>,
           <p style={{ paddingTop: 15, color: "#003D76" }}>
             Buyurtmani qanday qilish kerak?
             <br />
-            <br /> Onlayn (kompaniya veb-saytida); Kontakt raqamlariga telefon
+          Onlayn (kompaniya veb-saytida); Kontakt raqamlariga telefon
             qilish orqali.
           </p>
         )}
+
+        <div className={styles.form}>
           <input
             type="text"
             placeholder={t("contactUsFullName")}
@@ -197,4 +158,4 @@ function ProductModal({
   );
 }
 
-export default ProductModal;
+export default ProductDescription;
