@@ -34,6 +34,7 @@ export default function App({ Component, pageProps }: AppProps) {
           name="viewport"
           content="width=device-width, initial-scale=1, user-scalable=no viewport-fit=cover"
         />
+        <meta name="google-site-verification" content="XdiqzKaz23c93mQ-9Kl2D_dncE_Co3gG57xklQcxg2Y" />
 
         <link
           rel="alternate"

@@ -27,8 +27,6 @@ function Showcase() {
     })      .catch(console.log);
     ;
   }, []);
-
-  console.log(products);
   return (
     <div
       className={`${entity?.isIntersecting && styles.active} ${
