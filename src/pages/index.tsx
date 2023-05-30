@@ -17,6 +17,7 @@ export default function Home() {
               alt: "The doors: seo image",
             },
           ],
+          locale: "ru-Ru"
         }}
       />
       <HomePage />
