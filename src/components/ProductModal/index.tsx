@@ -128,10 +128,7 @@ function ProductModal({
               "",
           }}
         ></div>
-
-      
-
-        <div className={styles.form}>  {getContent(
+        {getContent(
           <p style={{ paddingTop: 15, color: "#003D76" }}>
             Как сделать заказ?
             <br />
@@ -145,6 +142,8 @@ function ProductModal({
             qilish orqali.
           </p>
         )}
+
+        <div className={styles.form}>
           <input
             type="text"
             placeholder={t("contactUsFullName")}
