@@ -41,7 +41,7 @@ function SwitchButton({
     //   locale={locale}
     //   className={scss.switchDiv}
     // >
-    <div className={scss.switch} data-isOn={isOn} onClick={toggleSwitch}>
+    <div className={scss.switch} data-isOn={isOn} onClick={toggleSwitch} style={style}>
       <motion.div className={scss.handle} layout transition={spring} />
     </div>
     // </Link>

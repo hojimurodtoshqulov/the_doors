@@ -121,7 +121,7 @@ function Navbar() {
 							<a className={"link"}>{route.label}</a>
 						</Link>
 					))}
-					<SwitchButton />
+					<SwitchButton style={{margin:"15px 10%"}}/>
 					<Link href={"/#contact"}>
 						<a>
 							<Button
