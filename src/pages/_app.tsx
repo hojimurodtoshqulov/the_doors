@@ -60,9 +60,12 @@ export default function App({ Component, pageProps }: AppProps) {
 
         <title>Thedoors</title>
       </Head>
+      <p style={{display:"none"}}>
+
       Verification: b213269430540de9
 
       google-site-verification: googleec7cbd23c9bf1e24.html
+      </p>
 
       
       <AppLayout>
