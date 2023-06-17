@@ -54,15 +54,17 @@ export default function App({ Component, pageProps }: AppProps) {
           Our team of skilled technicians has the knowledge and expertise to handle any door-related issue, from minor repairs to complete installations. We pride ourselves on providing exceptional customer service and craftsmanship on every project.
           
           Whether you need a single door replaced or an entire building outfitted with new doors, TheDoors has the expertise and resources to get the job done right. Contact us today to learn more about our products and services and to schedule your consultation.
-          
-          
-          
-          
+             
           "
         ></meta>
 
         <title>Thedoors</title>
       </Head>
+      Verification: b213269430540de9
+
+      google-site-verification: googleec7cbd23c9bf1e24.html
+
+      
       <AppLayout>
         <Component {...pageProps} />
         <ToastContainer />
