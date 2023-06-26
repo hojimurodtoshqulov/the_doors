@@ -44,7 +44,7 @@ function ContactPage() {
           }}
         >
           {showcase.titleUz?.split("*").map((el: string) => (
-            <a href={el}>
+            <a href={`tel:${el}`}>
               {" "}
               + {el.slice(0, 3)} ({el.slice(3, 5)}) {el.slice(5, 8)}-
               {el.slice(8, 10)}-{el.slice(10, 12)}
