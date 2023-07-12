@@ -1,0 +1,14 @@
+User-agent: *
+Disallow: *type=*
+Disallow: *adposition=*
+Disallow: *=public*
+Allow: /*.js
+Allow: /*.css
+Allow: /*.js?*
+Allow: /*.css?*
+Allow: /*.jpg
+Allow: /*.webp
+Allow: /*.png
+Allow: /*.svg
+Allow: /*.jpeg
+https://www.thedoors.uz/sitemap.xml
