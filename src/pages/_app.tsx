@@ -18,32 +18,32 @@ import "react-toastify/dist/ReactToastify.css";
 // import "swiper/css/scrollbar";
 
 const messages: { [key: string]: { [key: string]: string } } = {
-  ru,
-  uz,
+	ru,
+	uz,
 };
 import type { AppProps } from "next/app";
 import { ToastContainer } from "react-toastify";
 import Head from "next/head";
 
 export default function App({ Component, pageProps }: AppProps) {
-  const { locale = "ru" } = useRouter();
-  return (
-    <IntlProvider locale={locale} messages={messages[locale]}>
-      <Head>
-        <meta
-          name="viewport"
-          content="width=device-width, initial-scale=1, user-scalable=no viewport-fit=cover"
-        />
+	const { locale = "ru" } = useRouter();
+	return (
+		<IntlProvider locale={locale} messages={messages[locale]}>
+			<Head>
+				<meta
+					name="viewport"
+					content="width=device-width, initial-scale=1, user-scalable=no viewport-fit=cover"
+				/>
 
-        <link
-          rel="alternate"
-          hrefLang="uz-Oz"
-          href="https://www.thedoors.uz/uz"
-        ></link>
+				<link
+					rel="alternate"
+					hrefLang="uz-Oz"
+					href="https://www.thedoors.uz/uz"
+				></link>
 
-        <meta
-          name="description"
-          content="TheDoors is the premier destination for high-quality door products, installation, and repair services in Uzbekistan. With years of experience, we are the trusted choice for homeowners and businesses alike when it comes to all their door needs.
+				<meta
+					name="description"
+					content="TheDoors is the premier destination for high-quality door products, installation, and repair services in Uzbekistan. With years of experience, we are the trusted choice for homeowners and businesses alike when it comes to all their door needs.
 
           At TheDoors, we offer a wide range of doors, including interior, exterior, custom, and more, to suit any style and budget. We also provide expert door installation and repair services to ensure your doors are installed correctly and functioning properly.
           
@@ -55,14 +55,15 @@ export default function App({ Component, pageProps }: AppProps) {
           
           
           "
-        ></meta>
+				></meta>
 
-        <title>Thedoors</title>
-      </Head>
-      <AppLayout>
+				<title>Thedoors</title>
+			</Head>
+			Сайт находится в разработке!!!
+			{/* <AppLayout>
         <Component {...pageProps} />
         <ToastContainer />
-      </AppLayout>
-    </IntlProvider>
-  );
+      </AppLayout> */}
+		</IntlProvider>
+	);
 }
