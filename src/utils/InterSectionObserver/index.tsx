@@ -18,10 +18,12 @@ function useIntersectionObserver(
   const frozen = entry?.isIntersecting && freezeOnceVisible;
 
   const updateEntry = ([entry]: IntersectionObserverEntry[]): void => {
+    
     setEntry(entry);
   };
 
   useEffect(() => {
+    
     const node = elementRef?.current; // DOM Ref
     const hasIOSupport = !!window.IntersectionObserver;
 

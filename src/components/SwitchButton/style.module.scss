@@ -23,7 +23,10 @@
 		padding: 0px 0px;
 		margin: 0 22px;
 		position: relative;
+	}	@media (max-width: 1250px) {
+		margin: 15px 10%;
 	}
+	
 	.handle {
 		width: 25px;
 		height: 25px;

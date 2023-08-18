@@ -23,6 +23,7 @@
     "i18next-resources-to-backend": "^1.1.3",
     "next": "^12.3.4",
     "next-i18next": "^13.2.2",
+    "next-seo": "^6.1.0",
     "node-modules": "^1.0.1",
     "react": "18.2.0",
     "react-dom": "18.2.0",

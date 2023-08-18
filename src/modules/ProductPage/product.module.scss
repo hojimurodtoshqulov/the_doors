@@ -1,0 +1,63 @@
+.description {
+  padding: 5vw 8% 10vw;
+  display: flex;
+  justify-content: space-between;
+  gap: 5vw;
+  & > div,
+  & > form {
+    width: 50%;
+  }
+  @media (max-width: 1250px) {
+    & > div {
+      width: 60%;
+    }
+    & > form {
+      width: 40%;
+    }
+  }
+  @media (max-width: 1000px) {
+    flex-direction: column;
+    gap: 0;
+
+    & > div,
+    & > form {
+      width: 100%;
+    }
+  }
+  .text {
+    padding: 25px 0;
+    line-height: 24px;
+    font-family: sans-serif;
+    font-weight: 400;
+    text-align: start;
+    color: #666;
+    p {
+      margin-bottom: 10px;
+    }
+  }
+
+  .form {
+    display: flex;
+    gap: 10px;
+    padding: 15px 0 5px;
+    // background-color: red;
+
+    @media (max-width: 700px) {
+      flex-direction: column;
+    }
+  }
+
+  input,
+  select {
+    width: 100%;
+    padding: 10px 25px;
+    border-radius: 10px;
+    outline: none;
+    border: 1px solid #666;
+    color: #666;
+    background-color: white;
+  }
+  select {
+    margin: 10px 0;
+  }
+}

@@ -12,7 +12,7 @@ import { API_URL } from "@/shared/constants";
 import useIntl from "react-intl/src/components/useIntl";
 import { useTarjima } from "@/utils/getContent";
 
-function ProductSection() {
+function ProductSection( ) {
   const [product, setProduct] = useState<ProductType>();
   const [products, setProducts] = useState<ProductType[]>([]);
   const [isModal, setIsModal] = useState<boolean>(false);
@@ -36,7 +36,7 @@ function ProductSection() {
 
       <div className={styles.cardsMin}>
         <CardsSlider
-          products={products}
+           products={products}
           setProduct={setProduct}
           setIsModal={setIsModal}
         />

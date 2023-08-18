@@ -25,7 +25,7 @@
 		display: inline-block;
 	}
 	.menu {
-		max-width: 70%;
+		max-width: 80%;
 		font-size: 22px;
 		display: flex;
 		gap: 10px;
@@ -62,7 +62,7 @@
 			background-image: url("../../../public/media/flag_uz.jpg");
 		}
 	}
-	@media (max-width: 1000px) {
+	@media (max-width: 1250px) {
 		min-height: 70px;
 		.menuBtn {
 			display: block;

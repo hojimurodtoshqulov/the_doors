@@ -59,7 +59,9 @@ export default function App({ Component, pageProps }: AppProps) {
 
 				<title>Thedoors</title>
 			</Head>
-			Сайт находится в разработке!!!
+			<p style={{ textAlign: "center", marginTop: "30vh" }}>
+				Сайт находится в разработке!!!
+			</p>
 			{/* <AppLayout>
         <Component {...pageProps} />
         <ToastContainer />
